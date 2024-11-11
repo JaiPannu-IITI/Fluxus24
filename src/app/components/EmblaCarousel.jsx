@@ -9,16 +9,16 @@ import styles from '../styles/about.module.css'
 const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ speed: 4, startDelay:0})
+    AutoScroll({ speed: 6, startDelay:0})
   ])
-
+console.log(slides);
   return (
     <section className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
           {slides.map((index) => (
             <div className={styles.embla__slide} key={index}>
-              <div className={styles.embla__slide__number}>{index + 1}</div>
+              <img className={styles.embla_img} src={index} alt={index+1} />
             </div>
           ))}
         </div>

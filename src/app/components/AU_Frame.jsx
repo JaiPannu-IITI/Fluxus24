@@ -12,7 +12,7 @@ const OPTIONS = {
     loop: true, 
 }
 const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+const SLIDES = ["/static/images/Image1.jpg", "/static/images/Image2.jpg", "/static/images/Image3.jpg", "/static/images/Image4.jpg", "/static/images/Image5.jpg"]
 
 const AU_Frame = () => {
     return (
