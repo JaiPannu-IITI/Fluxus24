@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      // backgroundImage:{
+      //   frame: "url('/src/app/assets/videoframe_6768.png')",
+      // }
     },
   },
   plugins: [],
