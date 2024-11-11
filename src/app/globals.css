@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+/* .custom-gradient{
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 2%, transparent 75%, rgba(0,0,0,0.8) 100%);
+} */
