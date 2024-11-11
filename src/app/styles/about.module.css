@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+.AU{
+    display: flex;
+}
+
+.left_AU, .right_AU{
+    height: 100vh;
+    overflow: hidden;
+}
+
 .navabout {
     position: relative;
     display: flex;
@@ -33,7 +42,7 @@
 .contentContainer{
     background-color: #F5F0EA;
     width: 60vw;
-    height: 60vh;
+    height: 75vh;
     border-top: 2px dashed #C0A686;
     border-bottom: 2px dashed #C0A686;
     color: black;
@@ -43,3 +52,51 @@
     font-size: x-large;
     padding: 50px;
 }
+
+.frame{
+    background: url('/static/images/frame.png'); 
+    height: 96.5vh;
+    width: 40vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px 0;
+    box-sizing: border-box;
+    
+}
+
+.embla {
+    max-width: 48rem;
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+    touch-action: pan-x pinch-zoom;
+    margin-top: calc(var(--slide-spacing) * -1);
+    height: calc(var(--slide-spacing) + var(--slide-height));
+    flex-direction: column;
+  }
+  .embla__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-height: 0;
+    padding-top: var(--slide-spacing);
+  }
+  .embla__slide__number {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    user-select: none;
+    /* color: black; */
+  }
+  

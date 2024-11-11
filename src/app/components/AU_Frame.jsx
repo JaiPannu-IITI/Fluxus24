@@ -1,11 +1,26 @@
-import Image from 'next/image';
-import frame from '../assets/frame.png';
+"use client"
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import EmblaCarousel from './EmblaCarousel'
+
+import styles from '../styles/about.module.css'
+
+
+const OPTIONS = {
+    axis: 'y', 
+    loop: true, 
+}
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 const AU_Frame = () => {
     return (
         <>
-            <div className="frame custom-gradient h-[100vh] w-[600px] overflow-hidden object-center object-cover">
-                <Image src={frame} className='z-[-10] relative h-full' alt="Video Frame" layout="responsive" />
+            <div className={styles.frame}>
+                {/* <img src="/static/images/frame.png" alt="" /> */}
+                <EmblaCarousel className="relative z-[-5]" slides={SLIDES} options={OPTIONS} />
+
             </div>
         </>
     );
