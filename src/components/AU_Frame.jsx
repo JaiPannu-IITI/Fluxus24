@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import EmblaCarousel from './EmblaCarousel'
 
-import styles from '../styles/about.module.css'
+import styles from '../app/styles/about.module.css'
 
 
 const OPTIONS = {

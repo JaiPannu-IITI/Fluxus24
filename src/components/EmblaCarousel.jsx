@@ -4,12 +4,12 @@ import {React, useRef} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 
-import styles from '../styles/about.module.css'
+import styles from '../app/styles/about.module.css'
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ speed: 6, startDelay:0})
+    AutoScroll({ speed: 7, startDelay:0})
   ])
 console.log(slides);
   return (

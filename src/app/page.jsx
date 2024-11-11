@@ -1,6 +1,6 @@
 // import Image from "next/image";
-import AU_Carousel from "./components/AU_Frame";
-import Navbar from "./components/Navbar";
+import AU_Carousel from "../components/AU_Frame";
+import Navbar from "../components/Navbar";
 import Workshop from "./Pages/Workshop/Workshop";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       
      <Navbar/>
      <Workshop/>
-     <AU_Carousel/>
+     {/* <AU_Carousel/> */}
     </>
   );
 }

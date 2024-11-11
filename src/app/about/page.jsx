@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from '../styles/about.module.css'
 
-import AU_Frame from '../components/AU_Frame'
+import AU_Frame from '../../components/AU_Frame'
+import Footer from '../../components/Footer'
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
           <AU_Frame />
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
