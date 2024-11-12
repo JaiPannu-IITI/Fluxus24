@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar"
+import Camerawheel from "@/components/camerawheel"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[100dvw] overflow-x-clip` }
       >
+        <Navbar/>
+        {/* <Camerawheel/> */}
         {children}
       </body>
     </html>
