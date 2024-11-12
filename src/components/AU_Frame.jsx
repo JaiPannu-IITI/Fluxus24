@@ -1,28 +1,37 @@
 "use client"
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React, { useState, useEffect } from 'react'
 import EmblaCarousel from './EmblaCarousel'
-
 import styles from '../app/styles/about.module.css'
 
-
-const OPTIONS = {
-    axis: 'y', 
-    loop: true, 
-}
 const SLIDE_COUNT = 5
 const SLIDES = ["/static/images/Image1.jpg", "/static/images/Image2.jpg", "/static/images/Image3.jpg", "/static/images/Image4.jpg", "/static/images/Image5.jpg"]
 
 const AU_Frame = () => {
-    return (
-        <>
-            <div className={styles.frame}>
-                {/* <img src="/static/images/frame.png" alt="" /> */}
-                <EmblaCarousel className="relative z-[-5]" slides={SLIDES} options={OPTIONS} />
+    const [carouselOptions, setCarouselOptions] = useState({
+        axis: 'y',
+        loop: true,
+    });
 
-            </div>
-        </>
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1108) {
+                setCarouselOptions({loop: true });
+            } else {
+                setCarouselOptions({ axis: 'y', loop: true });
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return (
+        <div className={styles.frame}>
+            <EmblaCarousel className="relative z-[-5]" slides={SLIDES} options={carouselOptions} />
+        </div>
     );
 }
 
