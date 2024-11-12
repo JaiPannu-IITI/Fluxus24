@@ -15,8 +15,8 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <div style={textContainer}>
-        <span>© FLUXUS'25, IIT Indore</span>
-        <span style={separatorStyle}>•</span>
+        <span>{"© FLUXUS'25, IIT Indore"}</span>
+        <span style={separatorStyle}>{"•"}</span>
       </div>
       <div style={socialIconsStyle}>
         <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
