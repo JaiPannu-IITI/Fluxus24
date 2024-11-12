@@ -88,6 +88,8 @@
     margin-top: calc(var(--slide-spacing) * -1);
     height: 731px;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .embla__slide {
@@ -100,11 +102,12 @@
     justify-content: center;
     position: relative;
     left: 4px;
+    width: 405px;
 }
 
 .embla_img {
     height: 100% !important;
-    width: 405px;
+    object-fit: cover;
 }
 
 @media screen and (max-width:1108px) {
