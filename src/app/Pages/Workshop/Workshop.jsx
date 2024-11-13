@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { data } from "./dummydata"
+import { data } from "./data"
 import { QRCodeSVG } from 'qrcode.react'
+import Image from 'next/image'
 
 export default function Workshop() {
     const [scrollPosition, setScrollPosition] = useState(0)
@@ -47,9 +48,11 @@ export default function Workshop() {
                                 transition={{ duration: 2 }}
                                 className="aspect-video bg-neutral-900 mb-4 sm:mb-0 relative group"
                             >
-                                <img
+                                <Image
                                     src={item.image}
                                     alt={`${item.title} thumbnail`}
+                                    width={600}
+                                    height={400}
                                     className="h-full w-full object-cover grayscale"
                                 />
                                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -70,7 +73,7 @@ export default function Workshop() {
                                 className="flex flex-col justify-between p-4"
                             >
                                 <div>
-                                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">{item.title}</h2>
+                                    <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold">{item.title}</h2>
                                     <div className="flex items-center gap-4 mt-3 sm:mt-5">
                                         <p className="text-sm sm:text-base">{item.description}</p>
                                     </div>
@@ -90,7 +93,7 @@ export default function Workshop() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">Scan to Register</h2>
                     <div className="flex justify-center">
                         <div className="bg-white p-4 rounded-lg">
-                            <QRCodeSVG 
+                            <QRCodeSVG
                                 value="https://docs.google.com/forms/d/e/1FAIpQLSfssOQnFi8M9evBn4SjMey9IGOHOPbuiP8gH4UDKT42a17YeQ/viewform?usp=sf_link" 
                                 size={200}
                             />

@@ -13,10 +13,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between items-center bg-[#F5F0EA] font-bold tracking-widest text-black text-[24px] py-2.5 px-4 border-dashed border-y-[2px] border-y-[#c0a686]">
-      <div className="flex items-center">
-        <span className="max-[642px]:text-[20px]">© FLUXUS'25, IIT Indore</span>
-        <span className="mx-[5px]">•</span>
+    <footer style={footerStyle}>
+      <div style={textContainer}>
+        <span>{"© FLUXUS'25, IIT Indore"}</span>
+        <span style={separatorStyle}>{"•"}</span>
       </div>
       <div className="flex gap-[12px]">
         {/* <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
