@@ -7,11 +7,11 @@ import Spline from "@/components/herosection/spline"
 export default function Home() {
   return (
     <>
-      {/* <Spline /> */}
+      <Spline />
     {/* <Navbar/>
-    <Workshop/> */}
-     {/* <AU_Carousel/> */}
-     <Workshop/>
+    <Workshop/>
+     <AU_Carousel/> */}
+     {/* <Workshop/> */}
     </>
   );
 }
