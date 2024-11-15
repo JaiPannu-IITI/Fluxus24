@@ -37,34 +37,44 @@ export default function Workshop() {
             </div>
 
             {/* Workshop components */}
-            <div ref={contentRef} className="relative z-10 mt-[0vh] space-y-40 bg-black/80 px-8 pb-40 pt-20">
+            <div ref={contentRef} className="relative z-10 mt-[0vh] space-y-40 bg-black/85 px-8 pb-40 pt-20">
                 {data.map((item, index) => (
                     <div key={index} className="mx-auto max-w-6xl">
-                        <div key={index} className="mx-auto max-w-6xl">
                         <div className="flex flex-col sm:grid sm:grid-cols-3 sm:gap-8 md:grid-cols-[60%,40%]">
                             <motion.div
                                 whileInView={{ opacity: 1, x: 0 }}
                                 initial={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 2 }}
-                                className="aspect-video bg-neutral-900 mb-4 sm:mb-0 relative group"
+                                className="aspect-video rounded-xl bg-neutral-900 mb-4 sm:mb-0 relative group overflow-hidden"
                             >
-                                <Image
-                                    src={item.image}
-                                    alt={`${item.title} thumbnail`}
-                                    width={600}
-                                    height={400}
-                                    className="h-full w-full object-cover grayscale"
-                                />
-                                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                    
+                                >
+                                    <Image
+                                        src={item.image}
+                                        alt={`${item.title} thumbnail`}
+                                        width={600}
+                                        height={400}
+                                        className="h-full w-full  object-cover"
+                                    />
+                                </motion.div>
+                                <motion.div 
+                                    className="absolute inset-0 bg-black/70 flex items-center justify-center"
+                                    initial={{ opacity: 0 }}
+                                    whileHover={{ opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                >
                                     <a 
                                         href="https://docs.google.com/forms/d/e/1FAIpQLSfssOQnFi8M9evBn4SjMey9IGOHOPbuiP8gH4UDKT42a17YeQ/viewform?usp=sf_link"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white hover:underline text-lg font-medium"
+                                        className="text-white hover:text-yellow-400 text-lg font-medium transition-colors duration-300 font-sans"
                                     >
-                                        Click here for registration
+                                        Click Here For Registration
                                     </a>
-                                </div>
+                                </motion.div>
                             </motion.div>
                             <motion.div
                                 whileInView={{opacity: 1 , x: 0}}
@@ -81,16 +91,15 @@ export default function Workshop() {
                             </motion.div>
                         </div>
                     </div>
-                    </div>
                 ))}
-                  {/* QR Code Section */}
-                  <motion.div 
+                {/* QR Code Section */}
+                <motion.div 
                     className="mx-auto max-w-6xl mt-20 sm:mt-40 text-center"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">Scan to Register</h2>
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 font-sans">Scan To Register</h2>
                     <div className="flex justify-center">
                         <div className="bg-white p-4 rounded-lg">
                             <QRCodeSVG
@@ -99,7 +108,7 @@ export default function Workshop() {
                             />
                         </div>
                     </div>
-                    <p className="mt-6 text-lg">Scan the QR code above to access the registration form</p>
+                    <p className="mt-6 text-lg font-sans">Scan The QR Code Above To Access The Registration Form</p>
                 </motion.div>
             </div>
         </div>

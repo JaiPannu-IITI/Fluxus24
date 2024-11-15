@@ -1,21 +1,68 @@
-import Spline from '@splinetool/react-spline/next';
+import dynamic from "next/dynamic";
+import Link from "next/link";
+
+// Dynamically import the Spline component with lazy loading
+const Spline = dynamic(() => import("@splinetool/react-spline/next"), {
+  ssr: false, // Disable server-side rendering for Spline
+  loading: () => (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#000",
+        color: "#fff",
+        fontSize: "1rem",
+      }}
+    >
+      <img
+              src="/logo/fluxus.png"
+              alt="Fluxus 24"
+              className="h-[10rem] brightness-0 invert"
+            />
+    </div>
+  ),
+});
 
 export default function Home() {
+  const scrolls = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Services",
+      link: "/services",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+    },
+  ];
+
   return (
-    <main>
+    <div className=" h-[100dvh] w-[100dvw]">
       <Spline
-       scene="https://prod.spline.design/SwUc29cRI54eAPAJ/scene.splinecode" 
-                className= " absolute w-[100dvw] h-[100dvh]"
-      />
-      <Spline
-        scene="https://prod.spline.design/yRJ6gL146xvWBlxi/scene.splinecode" 
-        className= "  absolute w-[100dvw] h-[100dvh]"
+        scene="https://prod.spline.design/F3-FHsfqj4t-hIH7/scene.splinecode"
+        className="fixed top-0 w-[100dvw] h-[100dvh]"
       />
 
-<div className=' h-[70px] rounded-tl-3xl  w-[180px] bottom-[0px] right-0 absolute bg-[rgba(0,0,0,1)] '>
-
-</div>
-
-    </main>
+      <div className="absolute h-[70px] bottom-[18px] z-10 w-full flex justify-end px-[18px]">
+        <Link href="#">
+          <div className="flex items-center justify-center font-bold h-[70px] rounded-xl w-[140px] bg-[rgba(20,20,20,1)] hover:scale-[1.05] transition-all duration-300">
+            {/* <img
+              src="/logo/fluxus.png"
+              alt="Fluxus 24"
+              className="h-[3rem] brightness-0 invert"
+            /> */}
+          </div>
+        </Link>
+      </div>
+    </div>
   );
 }
