@@ -46,7 +46,7 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className=" h-[100dvh] w-[100dvw]">
       <Spline
         scene="https://prod.spline.design/F3-FHsfqj4t-hIH7/scene.splinecode"
         className="absolute w-[100dvw] h-[100dvh]"
