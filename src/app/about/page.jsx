@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/about.module.css'
+import Image from 'next/image'
 
 import AU_Frame from '../../components/AU_Frame'
 import Footer from '../../components/Footer'
@@ -10,8 +11,8 @@ const page = () => {
       <div className={styles.AU}>
         <div className={styles.left_AU}>
           <nav className={styles.navabout}>
-            <img src="/static/images/cam-removebg-preview 1.png" className={styles.projector} alt="" />
-            <img src="/static/images/Polygon 1.png" alt="" className={styles.polygon} />
+            <Image src="/static/images/cam-removebg-preview 1.png" width={196} height={146} className={styles.projector} alt="" />
+            <Image src="/static/images/Polygon 1.png" alt="" width={281} height={99} className={styles.polygon} />
             <div className={styles.aboutTitle}>About Us</div>
           </nav>
           <div className={styles.contentContainer}>
