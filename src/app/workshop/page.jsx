@@ -37,7 +37,7 @@ export default function Workshop() {
             </div>
 
             {/* Workshop components */}
-            <div ref={contentRef} className="relative z-10 mt-[0vh] space-y-40 bg-black/80 px-8 pb-40 pt-20">
+            <div ref={contentRef} className="relative z-10 mt-[0vh] space-y-40 bg-black/85 px-8 pb-40 pt-20">
                 {data.map((item, index) => (
                     <div key={index} className="mx-auto max-w-6xl">
                         <div className="flex flex-col sm:grid sm:grid-cols-3 sm:gap-8 md:grid-cols-[60%,40%]">
@@ -45,18 +45,19 @@ export default function Workshop() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 initial={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 2 }}
-                                className="aspect-video bg-neutral-900 mb-4 sm:mb-0 relative group overflow-hidden"
+                                className="aspect-video rounded-xl bg-neutral-900 mb-4 sm:mb-0 relative group overflow-hidden"
                             >
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
+                                    
                                 >
                                     <Image
                                         src={item.image}
                                         alt={`${item.title} thumbnail`}
                                         width={600}
                                         height={400}
-                                        className="h-full w-full object-cover"
+                                        className="h-full w-full  object-cover"
                                     />
                                 </motion.div>
                                 <motion.div 
