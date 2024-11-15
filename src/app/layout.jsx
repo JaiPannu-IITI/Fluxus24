@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Fluxus 24'",
+  title: "Fluxus 25'",
   description: "IIT Indore's Annual Cultural Fest",
 };
 

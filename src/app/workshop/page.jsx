@@ -20,49 +20,44 @@ export default function Workshop() {
     }, [])
 
     return (
-        <div className="relative bg-[#f4f1ea] text-white overflow-x-hidden">
-            <div className="fixed top-0 left-0 w-full h-[50vh] sm:h-screen z-10 pointer-events-none">
-                <div className="flex flex-col h-full justify-center items-center sm:items-start overflow-hidden">
-                    <div
-                        className="whitespace-nowrap text-[10vw] font-bold leading-none tracking-tighter text-black text-center sm:text-left w-full"
-                        style={{
-                            animation: 'moveText 20s linear infinite',
-                        }}
-                    >
-                        REGISTER NOW / REGISTER NOW / REGISTER NOW / REGISTER NOW / REGISTER NOW
-                    </div>
-                    <div
-                        className="whitespace-nowrap text-[9.5vw] font-bold leading-none tracking-tighter text-neutral-500 text-center sm:text-left w-full mt-4 sm:mt-8"
-                        style={{
-                            animation: 'moveText 25s linear infinite reverse',
-                        }}
-                    >
-                        AI-ML / MARKETING / OUTREACH / WEB DEV / AI-ML / MARKETING / OUTREACH / WEB DEV
-                    </div>
+        <div className="relative bg-[#f4f1ea] text-white">
+            <div className="sticky top-0 h-screen overflow-hidden max-h-[70vh] ">
+                <div
+                    className="absolute left-0 top-[25%] whitespace-nowrap text-[10vw] font-bold leading-none tracking-tighter text-black "
+                    style={{ transform: `translate3d(${-scrollPosition * 0.5}px, 0, 0)` }}
+                >
+                    REGISTER NOW / REGISTER NOW / REGISTER NOW
+                </div>
+                <div
+                    className="absolute left-0 top-[70%] -translate-y-1/2 whitespace-nowrap text-[9.5vw] font-bold leading-none tracking-tighter text-neutral-500  "
+                    style={{ transform: `translate3d(${-scrollPosition * 0.2}px, -50%, 0)` }}
+                >
+                    AI-ML / MARKETING / OUTREACH / WEB DEV /
                 </div>
             </div>
 
             {/* Workshop components */}
-            <div ref={contentRef} className="relative z-20 mt-[50vh] sm:mt-[100vh] space-y-40 bg-black/80 px-4 sm:px-8 pb-40 pt-20">
+            <div ref={contentRef} className="relative z-10 mt-[0vh] space-y-40 bg-black/85 px-8 pb-40 pt-20">
                 {data.map((item, index) => (
                     <div key={index} className="mx-auto max-w-6xl">
                         <div className="flex flex-col sm:grid sm:grid-cols-3 sm:gap-8 md:grid-cols-[60%,40%]">
                             <motion.div
                                 whileInView={{ opacity: 1, x: 0 }}
                                 initial={{ opacity: 0, x: -100 }}
-                                transition={{ duration: 1 }}
-                                className="aspect-video bg-neutral-900 mb-4 sm:mb-0 relative group overflow-hidden"
+                                transition={{ duration: 2 }}
+                                className="aspect-video rounded-xl bg-neutral-900 mb-4 sm:mb-0 relative group overflow-hidden"
                             >
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
+                                    
                                 >
                                     <Image
                                         src={item.image}
                                         alt={`${item.title} thumbnail`}
                                         width={600}
                                         height={400}
-                                        className="h-full w-full object-cover"
+                                        className="h-full w-full  object-cover"
                                     />
                                 </motion.div>
                                 <motion.div 
@@ -116,17 +111,6 @@ export default function Workshop() {
                     <p className="mt-6 text-lg font-sans">Scan The QR Code Above To Access The Registration Form</p>
                 </motion.div>
             </div>
-            <style jsx>{`
-                @keyframes moveText {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-            `}</style>
         </div>
     )
 }
-

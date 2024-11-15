@@ -3,6 +3,7 @@
 import {React, useRef} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
+import Image from 'next/image'
 
 import styles from '../app/styles/about.module.css'
 
@@ -18,7 +19,7 @@ console.log(slides);
         <div className={styles.embla__container}>
           {slides.map((index) => (
             <div className={styles.embla__slide} key={index}>
-              <img className={styles.embla_img} src={index} alt={index+1} />
+              <Image width={1000} height={1000} className={styles.embla_img} src={index} alt={index+1} />
             </div>
           ))}
         </div>

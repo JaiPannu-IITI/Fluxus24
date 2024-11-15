@@ -1,8 +1,19 @@
+"use client";
 import Link from "next/link"
+import {motion} from "framer-motion"
 
 export default function Navbar() {
+
+
   return (
-   <nav className=" absolute flex items-center z-50 top-0 w-full h-[5rem] bg-[rgb(20,20,20)]">
+
+    <motion.div 
+    initial={{top:-100}}
+    animate={{top:0}}
+    transition={{duration:2, delay: 3}}
+    className=" fixed top-0 flex items-center z-50 w-full h-[5rem] bg-[rgb(20,20,20)]"
+    >
+  
 
     <div className=" absolute left-0 h-full w-[200px] bg-gradient-to-r from-[rgb(0,0,0)] to-[rgb(20,20,20)]">
 
@@ -21,11 +32,12 @@ export default function Navbar() {
 
 
 
+
     <div className=" absolute right-0 h-full w-[200px] bg-gradient-to-l from-[rgb(0,0,0)] to-[rgb(20,20,20)]">
 
     </div>
 
 
-   </nav>
+    </motion.div>
   )
 }

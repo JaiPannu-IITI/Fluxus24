@@ -13,7 +13,7 @@
     position: relative;
     display: flex;
     height: 150px;
-    width: calc(100vw - 560px);
+    width: calc(100vw - 500px);
     background-color: #F5F0EA;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -45,7 +45,7 @@
 
 .contentContainer {
     background-color: #F5F0EA;
-    width: calc(100vw - 560px);
+    width: calc(100vw - 500px);
     height: 555px;
     border-top: 2px dashed #C0A686;
     border-bottom: 2px dashed #C0A686;
@@ -62,7 +62,7 @@
 .frame {
     background: url('/static/images/frame.png');
     height: 715px;
-    width: 560px;
+    width: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 10px 0;
@@ -101,71 +101,93 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 4px;
+    left: 3px;
     width: 405px;
 }
 
 .embla_img {
     height: 100% !important;
     object-fit: cover;
+    width: 362px;
 }
 
 @media screen and (max-width:1108px) {
     .AU {
         flex-direction: column;
     }
-
-    .frame {
-        background: url('/static/images/frameX.png');
-        width: 100vw;
-        height: 560px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        align-items: center;
-
-    }
-
     .navabout {
         width: 100vw;
         height: 100px;
         /* font-size: 20px; */
     }
-
     .aboutTitle {
         font-size: 70px;
+        /* right: 25px; */
     }
-
     .contentContainer {
         width: 100vw;
         height: auto;
         padding: 50px 30px 100px 30px;
     }
-
     .right_AU {
         display: flex;
         justify-content: center;
         align-items: center;
         height: auto;
     }
-
     .projector {
         transform: scale(0.9);
+        display: none;
         top: -5px;
         left: -10px;
     }
-
     .polygon {
+        display: none;
         transform: scale(0.7);
-        left: 30px;
+        left: 15px;
         top: -13px
     }
+    .frame {
+        background: url('/static/images/frameX.png');
+        width: 100vw;
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+    }
+    .embla__viewport{
+        width: 100vw;
+    }
     .embla_img{
-        height: 404px !important;
+        height: 362px !important;
         width: 280px;
     }
-
+    .embla {
+        max-width: 48rem;
+        margin: auto 0;
+        --slide-height: 19rem;
+        --slide-spacing: 1rem;
+        --slide-size: 280px;
+    }
+    .embla__viewport {
+        overflow: hidden;
+    }
+    .embla__container {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+        margin-left: 0;
+        flex-direction: row;
+    }
+    .embla__slide {
+        transform: translate3d(0, 0, 0);
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        bottom: 104px;
+        padding-left: var(--slide-spacing);
+        width: 280px;
+    }
 }
 
 @media screen and (max-width:642px) {
