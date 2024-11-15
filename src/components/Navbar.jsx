@@ -11,7 +11,7 @@ export default function Navbar() {
     initial={{top:-100}}
     animate={{top:0}}
     transition={{duration:2, delay: 3}}
-    className=" absolute flex items-center z-50 w-full h-[5rem] bg-[rgb(20,20,20)]"
+    className=" fixed top-0 flex items-center z-50 w-full h-[5rem] bg-[rgb(20,20,20)]"
     >
   
 

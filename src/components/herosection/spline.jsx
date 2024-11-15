@@ -49,7 +49,7 @@ export default function Home() {
     <div className=" h-[100dvh] w-[100dvw]">
       <Spline
         scene="https://prod.spline.design/F3-FHsfqj4t-hIH7/scene.splinecode"
-        className="absolute w-[100dvw] h-[100dvh]"
+        className="fixed top-0 w-[100dvw] h-[100dvh]"
       />
 
       <div className="absolute h-[70px] bottom-[18px] z-10 w-full flex justify-end px-[18px]">
