@@ -39,6 +39,34 @@ const Footer = () => {
   );
 };
 
+// Styling for the components
+const footerStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "10px 20px",
+  color: "#000000",
+  fontFamily: "Arial, sans-serif",
+  fontSize: "18px",
+  backgroundColor: "#F5F0EA",
+  borderTop: "2px dashed #c0a686",
+  borderBottom: "2px dashed #c0a686",
+};
+
+const textContainer = {
+  display: "flex",
+  alignItems: "center",
+};
+
+const separatorStyle = {
+  margin: "0 5px",
+};
+
+const socialIconsStyle = {
+  display: "flex",
+  gap: "12px",
+};
+
 const iconStyle = {
   fontSize: "22px",
   color: "#000000",
