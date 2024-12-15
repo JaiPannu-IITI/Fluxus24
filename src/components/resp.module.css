@@ -2,12 +2,12 @@
 
 .content {
 	--yellow: #ffdd40;
-	--dark: #2f313a;
+	--dark: black;
 	--deg: -86deg;
 	--trans: all 0.4s ease 0s;
 }
 
-.body {
+.section {
 	margin: 15px;
 	padding: 0;
 	overflow-x: hidden;
@@ -18,9 +18,9 @@
 	font-size: 1em;
 }
 
-.body *,
-.body *:before,
-.body *:after {
+.section *,
+.section *:before,
+.section *:after {
 	box-sizing: border-box;
 }
 
@@ -39,6 +39,7 @@
 }
 
 .member {
+	width: 60vw;
 	margin: 1.5em 0 0.5em;
 	padding: 0.73em;
 	background: linear-gradient(
@@ -51,6 +52,7 @@
 	display: inline-block;
 	transform: scale(0.85);
 	transition: var(--trans);
+	margin-top: 25px;
 }
 
 .member:nth-of-type(even) {
@@ -60,6 +62,11 @@
 		var(--yellow) 0 97%,
 		#fff0 calc(97% + 1px) 100%
 	);
+	margin-left: 100px;
+}
+
+.member:nth-of-type(odd){
+	margin-right: 100px;
 }
 
 
@@ -125,7 +132,8 @@
 
 .description p {
 	padding: 0 2em;
-	margin-bottom: 1em;
+	margin-bottom: 1.6em;
+	margin-top: 15px;
 }
 
 .h3 {
@@ -139,7 +147,7 @@
 	padding: 0.3em 0.75em;
 	color: var(--yellow);
 	border-radius: 0.25em;
-	font-size: 1.35em;
+	font-size: 1.5em;
 	transform-origin: left bottom;
 }
 

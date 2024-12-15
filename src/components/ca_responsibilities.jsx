@@ -5,7 +5,7 @@ import styles from './resp.module.css'
 const Ca_responsibilities = () => {
     return (
         <>
-        <div className={styles.body}>
+        <div className={styles.section}>
             <div className={styles.content}>
 
                 `   <ul className={styles.team}>
