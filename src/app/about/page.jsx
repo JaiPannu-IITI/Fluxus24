@@ -4,13 +4,11 @@ import Image from 'next/image'
 
 import AU_Frame from '../../components/AU_Frame'
 import Footer from '../../components/Footer'
-import Faq from '@/components/faq'
 
 const page = () => {
   return (
     <>
-    <Faq/>
-      {/* <div className={styles.AU}>
+      <div className={styles.AU}>
         <div className={styles.left_AU}>
           <nav className={styles.navabout}>
             <Image src="/static/images/cam-removebg-preview 1.png" width={196} height={146} className={styles.projector} alt="" />
@@ -25,7 +23,7 @@ const page = () => {
           <AU_Frame />
         </div>
       </div>
-      <Footer/> */}
+      <Footer/>
     </>
   )
 }
