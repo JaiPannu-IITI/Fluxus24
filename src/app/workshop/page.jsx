@@ -1,95 +1,141 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
-import { data } from "./data"
-import { QRCodeSVG } from 'qrcode.react'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
-export default function Workshop() {
-    const [scrollPosition, setScrollPosition] = useState(0)
-    const contentRef = useRef(null)
+export default function KineticTypographyMarquee() {
+  const [isMounted, setIsMounted] = useState(false)
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY)
-        }
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+  if (!isMounted) {
+    return null
+  }
 
-    return (
-        <div className="relative bg-neutral-200 text-white overflow-hidden">
-            <div className="sticky top-0 h-screen overflow-hidden max-h-[30vh] sm:max-h-[50vh]">
-                <div className="flex flex-col h-full justify-center items-center sm:items-start overflow-hidden">
-                    <div
-                        className="whitespace-nowrap text-[10vw] font-bold leading-none tracking-tighter text-black text-center sm:text-left w-full"
-                        style={{
-                            animation: 'moveText 18s linear infinite',
-                        }}
-                    >
-                        WHY CA / WHY CA / WHY CA / WHY CA / WHY CA / WHY CA
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden font-mono relative">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-20">
+        {[...Array(100)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute bg-white"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3}px`,
+              height: `${Math.random() * 3}px`,
+            }}
+          />
+        ))}
+      </div>
 
-            {/* Workshop components */}
-            <div ref={contentRef} className="relative z-10 space-y-20 sm:space-y-40 bg-black/85 px-4 sm:px-8 pb-20 sm:pb-40 pt-10 sm:pt-20">
-                {data.map((item, index) => (
-                    <div key={index} className="mx-auto max-w-6xl -mt-2">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-8">
-                            {/* Image container */}
-                            <motion.div
-                                whileInView={{ opacity: 1, x: 0 }}
-                                initial={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 1 }}
-                                className="w-full sm:w-1/3 aspect-video rounded-xl bg-neutral-900 mb-2 sm:mb-0 relative group overflow-hidden"
-                            >
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <Image
-                                        src={item.image}
-                                        alt="Workshop thumbnail"
-                                        width={400}
-                                        height={300}
-                                        className="h-full w-full object-cover rounded-xl shadow-[10px_10px_20px_rgba(255,255,255,0.3),-10px_-10px_20px_rgba(0,0,0,0.2)]"
-                                    />
-                                </motion.div>
-                               
-                            </motion.div>
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
+        <KineticText text="COMING" />
+        <KineticText text="SOON" delay={0.5} />
 
-                            {/* Text container */}
-                            <motion.div
-                                whileInView={{ opacity: 1, x: 0 }}
-                                initial={{ opacity: 0, x: 50 }}
-                                transition={{ duration: 1 }}
-                                className="flex-1 flex flex-col justify-center"
-                            >
-                                <div className="mt-2 sm:mt-0">
-                                    <p className="text-sm sm:text-base md:text-lg">{item.description}</p>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                ))}
-
-                
-            </div>
-
-            <style jsx>{`
-                @keyframes moveText {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-            `}</style>
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <p className="text-xl sm:text-2xl mb-4">New Workshops Loading</p>
+          <div className="w-64 sm:w-96 h-4 bg-white rounded-sm overflow-hidden mb-8">
+          <motion.div
+            className="h-full w-full bg-[linear-gradient(to_right,#000,#000_2px,transparent_2px,transparent_4px)] bg-[length:4px_100%]"
+            animate={{
+              x: [0, -4],
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 0.1,
+              ease: 'linear',
+            }}
+          />
         </div>
-    )
+
+          <ul className="text-lg sm:text-xl space-y-2">
+            <li>AI-ML</li>
+            <li>Marketing</li>
+            <li>Outreach</li>
+            <li>Web Dev</li>
+          </ul>
+        </motion.div>
+      </div>
+
+      {/* Moving lines */}
+      <MovingLines />
+
+      {/* Scrolling text at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden h-16 bg-white bg-opacity-10">
+        <motion.div
+          className="whitespace-nowrap text-2xl"
+          animate={{
+            x: [0, -2000],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 20,
+              ease: 'linear',
+            },
+          }}
+        >
+          STAY TUNED FOR EXCITING NEW WORKSHOPS • AI-ML • MARKETING • OUTREACH • WEB DEV • COMING TO A SCREEN NEAR YOU •&nbsp;
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
+function KineticText({ text, delay = 0 }) {
+  return (
+    <div className="flex overflow-hidden">
+      {text.split('').map((char, index) => (
+        <motion.span
+          key={index}
+          className="text-6xl sm:text-8xl font-bold inline-block"
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{
+            delay: delay + index * 0.1,
+            duration: 0.8,
+            ease: [0.6, 0.01, -0.05, 0.9],
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </div>
+  )
+}
+
+function MovingLines() {
+  return (
+    <>
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute left-0 w-full h-px bg-white opacity-20"
+          style={{ top: `${(i + 1) * 15}%` }}
+          animate={{
+            x: ['-100%', '100%'],
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 10 + i * 2,
+            ease: 'linear',
+          }}
+        />
+      ))}
+    </>
+  )
 }
 
