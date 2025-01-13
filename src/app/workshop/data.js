@@ -1,23 +1,26 @@
-
 export const data = [
     {
         image: "/workshop/cp.jpeg",
-        title: "Competitive Programming (CP) / Data Structures & Algorithms (DSA)",
-        description: "This workshop focuses on enhancing your problem-solving skills through complex coding challenges and mastering efficient algorithms. You'll gain a deep understanding of data structures and algorithmic strategies, vital for building robust software solutions. Designed to boost your confidence, this hands-on training prepares you for coding competitions, technical interviews, and beyond.",
+        description: `
+        ● Fluxus, IIT Indore is Central India’s Largest Techno-Cultural Festival, and the CA Program is its backbone. (reach)
+         `,
     },
     {
         image: "/workshop/ai.jpeg",
-        title: "Artificial Intelligence (AI) & Machine Learning (ML)",
-        description: "Immerse yourself in the fascinating world of AI and ML, exploring everything from data preprocessing and model development to deployment. This workshop offers practical experience in building intelligent systems, complemented by real-world projects and case studies. Learn how AI-driven solutions are transforming industries and revolutionizing decision-making processes.",
+        description: `
+        ● We at Fluxus aspire to reach out to college students across the country to bring them closer to Technology and Culture, and provide them with a platform to pursue the same. (connecting students)
+         `,
     },
     {
         image: '/workshop/web.jpeg',
-        title: "Web Development",
-        description: "This workshop introduces you to the art of building dynamic, user-friendly websites and web applications using both front-end and back-end technologies. You'll explore essential frameworks, tools, and best practices needed to create modern, responsive web experiences. Perfect for aspiring developers, it offers the foundation and skills needed to excel in the fast-growing world of web technology.",
+        description: `
+        ● The CA Program helps us realize this vision. Here, the CAs build a network of students from 1000+ colleges and learn about social media, marketing, event planning and execution. (upskilling)
+         `,
     },
     {
         image: "/workshop/marketing.jpeg",
-        title: "Marketing and Business",
-        description: "Gain a deep understanding of branding, market strategies, and consumer engagement in today’s competitive environment. This workshop delves into the nuances of successful marketing campaigns, market analysis, and business growth techniques. Ideal for budding marketers and entrepreneurs, it equips you with the skills to create impactful strategies and achieve business success.",
+        description: `
+       ● They are rewarded for fulfilling their responsibilities and motivated to continually strive to improve their personal skills. The role of the CAs is more critical than ever before, and this is an excellent opportunity for us all to work together and make the 11th edition of Fluxus a grand success. (driving success)
+        `,
     },
 ];
