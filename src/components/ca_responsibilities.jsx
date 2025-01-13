@@ -8,7 +8,7 @@ const Ca_responsibilities = () => {
         <div className={styles.section}>
             <div className={styles.content}>
 
-                `   <ul className={styles.team}>
+                   <ul className={styles.team}>
                     <li className={styles.member}>
                         <div className={styles.thumb}><Image src="/workshop/marketing.jpeg" width={"120"} height={"120"} /></div>
                         <div className={styles.description}>
@@ -41,7 +41,7 @@ const Ca_responsibilities = () => {
                         <div className={styles.thumb}><Image width={"120"} height={"120"} src="/workshop/marketing.jpeg" /></div>
                         <div className={styles.description}>
                             <h3 className={styles.h3} >Rachel Smith</h3>
-                            <p className=' text-lg text-black'>Rachel is a full stack'er in Australia. Not only a creative and talented designer and developer, but a great technical writer.</p>
+                            <p className=' text-lg text-black'>Rachel is a full stacker in Australia. Not only a creative and talented designer and developer, but a great technical writer.</p>
                         </div>
                     </li>
                     <li className={styles.member}>
