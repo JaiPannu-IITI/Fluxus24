@@ -22,7 +22,7 @@ export const metadata = {
   keywords:
     "Fluxus 2025, IIT Indore Fest, Cultural Festival, Tech Fest, IIT Indore Events, Fluxus IIT Indore, Live Performances, Workshops, Competitions",
   author: "IIT Indore",
-  ogImage: "/assets/images/fluxus-banner.jpg",
+  ogImage: "/logo/fluxus.png",
   url: "https://fluxus.iiti.ac.in/",
 };
 
