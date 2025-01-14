@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import AboutUs from '@/components/AboutUs'
-import Footer from '../../components/Footer'
-
+import AboutUs from "@/components/aboutUs";
+import Footer from "../../components/Footer";
 
 const page = () => {
   return (
     <>
-      <AboutUs/>
-      <Footer/>
+      <AboutUs />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
