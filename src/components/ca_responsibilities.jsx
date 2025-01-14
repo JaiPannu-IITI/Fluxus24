@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from './resp.module.css'
+import styles from '../app/styles/resp.module.css'
 
 import { User, Calendar, Megaphone, Users, Share, Brush } from "lucide-react";
 
@@ -41,7 +41,7 @@ const responsibilities = [
 const Ca_responsibilities = () => {
     return (
         <>
-            <div className={styles.section}>
+            <div id='responsibilities' className={styles.section}>
                 <div className={styles.content}>
                     <div className={styles.heading1}>{"YOUR"}</div>
                     <div className={styles.heading2}>{"RESPONSIBILITIES"}</div>

@@ -6,10 +6,12 @@ import Footer from "../../components/Footer";
 import FAQ from "@/components/faq";
 import WhyCA from "@/components/Incentives&whyCA/WhyCA";
 import CampusAmbassadorIncentives from "@/components/Incentives&whyCA/caincentives";
+import Nav from "@/components/Nav";
 
 const page = () => {
   return (
     <>
+      <Nav />
       <AboutUs />
       <WhyCA />
       <CampusAmbassadorIncentives />

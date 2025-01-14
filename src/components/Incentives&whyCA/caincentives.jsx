@@ -85,7 +85,7 @@ const incentives = [
 
 const CampusAmbassadorIncentives = () => {
   return (
-    <div className="min-h-screen pb-20 w-full bg-[#FFF8E1] p-6 relative overflow-hidden">
+    <div id='incentives' className="min-h-screen pb-20 w-full bg-[#FFF8E1] p-6 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]] bg-[size:14px_24px]" />
       

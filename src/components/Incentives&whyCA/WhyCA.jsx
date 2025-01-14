@@ -54,7 +54,7 @@ export default function WhyCA() {
   };
 
   return (
-    <div className="relative max-w-full mx-auto py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+    <div id="whyCA" className="relative max-w-full mx-auto py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
       <motion.h1
         className="text-center text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse"
         initial="hidden"
