@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link"
 import {motion} from "framer-motion"
-
+import Image from "next/image"
 export default function Navbar() {
 
 
@@ -23,7 +23,7 @@ export default function Navbar() {
 
     <div className=" w-full flex items-center justify-center gap-5">
     <Link href="/">
-      <img src="/logo/fluxus.png" alt="Fluxus 24" className=" h-[3rem] brightness-0 invert"/>
+      <Image src="/logo/fluxus.png" alt="Fluxus 24" height={100} width={100}  className=" h-[3rem] brightness-0 invert"/>
       </Link>
     </div>
 

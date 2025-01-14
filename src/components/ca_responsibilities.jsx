@@ -48,7 +48,7 @@ const Ca_responsibilities = () => {
 
                     <ol className={styles.list}>
                         {responsibilities.map((resp, index) => (
-                            <li>
+                            <li key={index}>
                                 <div className={styles.icon}>{resp.icon}</div>
                                 <div className={styles.title}>{resp.title}</div>
                                 <div className={styles.descr}>{resp.desc}</div>
