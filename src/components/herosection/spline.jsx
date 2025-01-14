@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
+import Image from "next/image";
 // Dynamically import the Spline component with lazy loading
 const Spline = dynamic(() => import("@splinetool/react-spline/next"), {
   ssr: false, // Disable server-side rendering for Spline
@@ -16,9 +16,11 @@ const Spline = dynamic(() => import("@splinetool/react-spline/next"), {
         fontSize: "1rem",
       }}
     >
-      <img
+      <Image
               src="/logo/fluxus.png"
               alt="Fluxus 24"
+              height={2000}
+              width={2000}
               className="h-[10rem] brightness-0 invert"
             />
     </div>
@@ -55,11 +57,7 @@ export default function Home() {
       <div className="absolute h-[70px] bottom-[18px] z-10 w-full flex justify-end px-[18px]">
         <Link href="#">
           <div className="flex items-center justify-center font-bold h-[70px] rounded-xl w-[140px] bg-[rgba(20,20,20,1)] hover:scale-[1.05] transition-all duration-300">
-            {/* <img
-              src="/logo/fluxus.png"
-              alt="Fluxus 24"
-              className="h-[3rem] brightness-0 invert"
-            /> */}
+          
           </div>
         </Link>
       </div>

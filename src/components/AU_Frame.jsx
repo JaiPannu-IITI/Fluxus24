@@ -9,8 +9,9 @@ const OPTIONS = {
     loop: true, 
 }
 const SLIDE_COUNT = 5
-const SLIDES = ["/static/images/Image1.jpg", "/static/images/Image2.jpg", "/static/images/Image3.jpg", "/static/images/Image4.jpg", "/static/images/Image5.jpg"]
+// const SLIDES = ["/images/carouselImages/img1.JPG", "/images/carouselImages/img2.JPG", "/images/carouselImages/img3.JPG", "/images/carouselImages/img4.JPG", "/images/carouselImages/img5.JPG"]
 
+const SLIDES = [""]
 const AU_Frame = () => {
     const [carouselOptions, setCarouselOptions] = useState({
         axis: 'y',
