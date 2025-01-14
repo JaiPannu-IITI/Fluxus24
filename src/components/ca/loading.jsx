@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-
+import Link from 'next/link'
 export default function KineticTypographyMarquee() {
   const [isMounted, setIsMounted] = useState(false)
 
@@ -43,7 +43,7 @@ export default function KineticTypographyMarquee() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <p className="text-xl sm:text-2xl mb-4">New Workshops Loading</p>
+          <p className="text-xl sm:text-2xl mb-4">Campus Ambassador Loading</p>
           <div className="w-64 sm:w-96 h-4 bg-white rounded-sm overflow-hidden mb-8">
           <motion.div
             className="h-full w-full bg-[linear-gradient(to_right,#000,#000_2px,transparent_2px,transparent_4px)] bg-[length:4px_100%]"
@@ -60,10 +60,7 @@ export default function KineticTypographyMarquee() {
         </div>
 
           <ul className="text-lg sm:text-xl space-y-2">
-            <li>AI-ML</li>
-            <li>Marketing</li>
-            <li>Outreach</li>
-            <li>Web Dev</li>
+           <Link href="/ca"><li className=' uppercase border-[2px]'>View CA</li></Link>
           </ul>
         </motion.div>
       </div>
@@ -87,7 +84,7 @@ export default function KineticTypographyMarquee() {
             },
           }}
         >
-          STAY TUNED FOR EXCITING NEW WORKSHOPS • AI-ML • MARKETING • OUTREACH • WEB DEV • COMING TO A SCREEN NEAR YOU •&nbsp;
+          STAY TUNED FOR FLUXUS CAMPUS AMBASSADOR • COMING TO A SCREEN NEAR YOU •&nbsp;
         </motion.div>
       </div>
     </div>
