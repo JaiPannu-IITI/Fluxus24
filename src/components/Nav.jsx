@@ -9,7 +9,7 @@ const Nav = () => {
                 <nav className="flex justify-between items-center flex-nowrap relative w-screen bg-[rgba(31,31,31,0.5)] h-[85px] opacity-100 px-[60px] backdrop-blur-[20px]">
                     <div className="logo">
                         <Link href="/">
-                            <Image width={100} height={10} src="/../public/images/logo/white_logo.png" alt='logo'/>
+                            <Image width={200} height={200} src="/logo/white_logo.png" alt='logo'/>
                         </Link>
                     </div>
                     <div className="flex flex-none flex-nowrap gap-[35px] h-min overflow-visible p-0 relative w-min">
