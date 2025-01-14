@@ -82,7 +82,7 @@
 }
 
 .frame {
-    background: url('/static/images/frame.png');
+    background: url('/images/frame.png');
     height: 725px;
     width: 500px;
     background-size: cover;
