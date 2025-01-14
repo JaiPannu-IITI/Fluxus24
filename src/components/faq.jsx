@@ -34,25 +34,26 @@ const FAQ = () => {
   };
 
   return (
-    <div className="section bg-[#fffdfa]">
-      <div className="max-w-3xl bg-[#fffdfa] h-screen mx-auto px-4 py-8">
-        <h2 className="faq text-[2.5em] font-bold text-gray-800 mb-12 mt-8 text-center">Frequently Asked Questions</h2>
+    <div className="section bg-[#FFF8E1]">
+      <div className="max-w-3xl bg-[#FFF8E1] h-screen overflow-hidden mx-auto px-4 py-8">
+        <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">{"Frequently Asked"}</h2>
+        <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">{"Questions"}</h2>
         <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden"
+              className="border border-gray-200 bg-[#ffe9cf] rounded-lg overflow-hidden"
             >
               <button
-                className="w-full px-6 py-4 flex justify-between items-center focus:outline-none hover:bg-gray-50"
+                className="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-left text-[19px] text-gray-900 font-medium">{faq.question}</span>
+                <span className="text-[1.3em] font-semibold tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300">{faq.question}</span>
                 <span className="ml-6 flex-shrink-0">
-                  <div className={`p-[3px] rounded-full border border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`}>
-                    <FiChevronDown className="h-4 w-4 text-purple-600" />
+                  <div className={`p-[3px] rounded-full border-2 border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`}>
+                    <FiChevronDown className="h-4 w-4 text-purple-600 font-bold" />
                   </div>
                 </span>
               </button>
@@ -65,8 +66,8 @@ const FAQ = () => {
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
               >
-                <div className="p-4 border-t border-gray-200">
-                  <p className="text-gray-700 px-2">{faq.answer}</p>
+                <div className="p-4 border-t border-gray-200 bg-[#fff3e4]">
+                  <p className="text-[#333333] px-2">{faq.answer}</p>
                 </div>
               </div>
             </div>

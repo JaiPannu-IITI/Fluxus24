@@ -85,15 +85,15 @@ const incentives = [
 
 const CampusAmbassadorIncentives = () => {
   return (
-    <div className="min-h-screen w-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-gray-900 via-gray-900 to-black p-6 relative overflow-hidden">
+    <div className="min-h-screen pb-20 w-full bg-[#FFF8E1] p-6 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
+      <div className="absolute inset-0 bg-[[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]] bg-[size:14px_24px]" />
       
       <div className="max-w-4xl mx-auto bg-black border-0 shadow-[0_0_0_1px_rgba(255,255,255,0.1)] overflow-hidden relative rounded-lg">
         {/* Animated gradient border */}
         <div className="absolute inset-0 p-[1px] rounded-lg bg-gradient-to-r from-gray-500 via-white to-gray-500 mask-gradient animate-borderFlow" />
         
-        <div className="relative rounded-lg bg-black overflow-hidden">
+        <div className="relative rounded-lg bg-[#FFF8E1] overflow-hidden">
           <div className="relative border-b border-white/10 py-10">
             {/* Header background effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-y-[-8deg] transform-gpu" />
@@ -102,21 +102,21 @@ const CampusAmbassadorIncentives = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <h1 className="text-5xl md:text-6xl font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">
-                Campus Ambassador
+              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">
+                {"Campus Ambassador"}
               </h1>
-              <p className="text-2xl md:text-3xl font-light text-gray-400 tracking-wider">
+              <p className="text-2xl md:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider">
                 Incentives & Rewards
               </p>
             </div>
           </div>
 
-          <div className="h-[70vh] overflow-y-auto custom-scrollbar">
+          <div className="h-[75vh] overflow-y-auto custom-scrollbar">
             <div className="grid gap-6 p-6">
               {incentives.map((incentive, index) => (
                 <div 
                   key={index} 
-                  className="group relative overflow-hidden border-0 bg-white/5 backdrop-blur-sm
+                  className="group relative overflow-hidden bg-[#ffe7c9] backdrop-blur-sm
                            transition-all duration-500 ease-out rounded-lg
                            hover:bg-white/10 hover:scale-[1.02]
                            hover:shadow-[0_0_25px_rgba(255,255,255,0.1)]"
@@ -139,7 +139,7 @@ const CampusAmbassadorIncentives = () => {
 
                     <div className="flex-1 space-y-3">
                       <div className="flex items-center justify-between gap-4">
-                        <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
+                        <h3 className="text-[1.5em] font-bold tracking-tight text-[#ff6f00] group-hover:text-[#e65f00] group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
                           {incentive.title}
                         </h3>
                         <span 
@@ -151,7 +151,7 @@ const CampusAmbassadorIncentives = () => {
                           {incentive.badge}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      <p className="text-m text-gray-600 leading-1 group-hover:text-gray-800 transition-colors duration-300">
                         {incentive.description}
                       </p>
                     </div>

@@ -50,7 +50,7 @@ const footerStyle = {
   fontSize: "22px",
   fontWeight: "bold",
   letterSpacing: "2px",
-  backgroundColor: "#F5F0EA",
+  backgroundColor: "#FFF8E1",
   borderTop: "2px dashed #c0a686",
   borderBottom: "2px dashed #c0a686",
 };
