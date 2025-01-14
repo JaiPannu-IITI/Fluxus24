@@ -102,11 +102,11 @@ const CampusAmbassadorIncentives = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">
+              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text">
                 {"Campus Ambassador"}
               </h1>
               <p className="text-2xl md:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider">
-                Incentives & Rewards
+                {"Incentives & Rewards"}
               </p>
             </div>
           </div>

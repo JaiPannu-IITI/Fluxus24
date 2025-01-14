@@ -36,8 +36,8 @@ const FAQ = () => {
   return (
     <div className="section bg-[#FFF8E1]">
       <div className="max-w-3xl bg-[#FFF8E1] h-screen overflow-hidden mx-auto px-4 py-8">
-        <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">{"Frequently Asked"}</h2>
-        <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-gradient-to-br from-white to-gray-500 text-transparent bg-clip-text">{"Questions"}</h2>
+        <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-clip-text">{"Frequently Asked"}</h2>
+        <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-clip-text">{"Questions"}</h2>
         <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div
@@ -50,7 +50,7 @@ const FAQ = () => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-[1.3em] font-semibold tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300">{faq.question}</span>
+                <span className="text-[1.3em] font-semibold text-left tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300">{faq.question}</span>
                 <span className="ml-6 flex-shrink-0">
                   <div className={`p-[3px] rounded-full border-2 border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`}>
                     <FiChevronDown className="h-4 w-4 text-purple-600 font-bold" />
