@@ -7,6 +7,8 @@ const Ca_responsibilities = () => {
         <>
         <div className={styles.section}>
             <div className={styles.content}>
+                <div className={styles.heading1}>YOUR</div>
+                <div className={styles.heading2}>RESPONSIBILITIES</div>
 
                    <ul className={styles.team}>
                     <li className={styles.member}>

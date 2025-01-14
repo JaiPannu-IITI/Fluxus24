@@ -34,9 +34,9 @@ const FAQ = () => {
   };
 
   return (
-    <div className="section bg-white">
-      <div className="max-w-3xl bg-white h-screen mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
+    <div className="section bg-[#fffdfa]">
+      <div className="max-w-3xl bg-[#fffdfa] h-screen mx-auto px-4 py-8">
+        <h2 className="faq text-[2.5em] font-bold text-gray-800 mb-12 mt-8 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div

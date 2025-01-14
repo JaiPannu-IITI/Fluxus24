@@ -10,7 +10,7 @@ import styles from '../app/styles/about.module.css'
 const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ speed: 10, startDelay:0})
+    AutoScroll({ speed: 8, startDelay:0})
   ])
 console.log(slides);
   return (
