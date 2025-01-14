@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Luckiest+Guy&display=swap');
 
 .AU {
     display: flex;
@@ -11,14 +12,19 @@
 
 .navabout {
     position: relative;
-    display: flex;
-    height: 150px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 10px; */
+    /* text-align: center; */
+    padding: 30px;
+    padding-left: 40px;
+    height: 120px;
     width: calc(100vw - 500px);
-    background-color: #F5F0EA;
+    background-color: #FFF8E1;
     margin-top: 10px;
-    margin-bottom: 10px;
-    border-top: 2px dashed #C0A686;
-    border-bottom: 2px dashed #C0A686;
+    /* margin-bottom: 10px; */
+    /* border-top: 2px dashed #C0A686;
+    border-bottom: 2px dashed #C0A686; */
 }
 
 .polygon {
@@ -33,40 +39,61 @@
 }
 
 .aboutTitle {
-    color: #664228;
+    color: rgb(50,50,50);
+    /* text-shadow: 3px 7px rgb(204,117,0); */
+    /* letter-spacing: 4px; */
     margin: auto;
-    font-family: "Annie Use Your Telescope", cursive;
-    font-weight: 500;
-    font-size: 80px;
-    font-style: normal;
+    /* font-family: "Luckiest Guy", serif; */
+    font-weight: 900;
+    font-size: 3.75rem;
+    font-style: bold;
     position: relative;
-    bottom: 12px;
+    /* bottom: 12px; */
+}
+.aboutTitle2 {
+    color: #cc7500;
+    /* text-shadow: 3px 7px rgb(204,117,0); */
+    /* letter-spacing: 4px; */
+    margin: auto;
+    /* font-family: "Luckiest Guy", serif; */
+    font-weight: 900;
+    font-size: 3.75rem;
+    font-style: bold;
+    position: relative;
+    /* bottom: 12px; */
 }
 
 .contentContainer {
-    background-color: #F5F0EA;
+    background-color: #FFF8E1;
+    color: rgb(204,117,0) !important;
     width: calc(100vw - 500px);
-    height: 555px;
-    border-top: 2px dashed #C0A686;
-    border-bottom: 2px dashed #C0A686;
+    height: 595px;
+    /* border-bottom: 2px dashed #C0A686; */
     color: black;
     font-family: "Annie Use Your Telescope", cursive;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
-    font-size: x-large;
-    padding: 50px;
+    font-size: 1.95em;
+    padding: 40px;
+    padding-top: 15px;
+    padding-right: 60px;
     text-align: justify;
     /* padding-right: 50px; */
 }
 
 .frame {
     background: url('/static/images/frame.png');
-    height: 715px;
+    height: 725px;
     width: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 10px 0;
     box-sizing: border-box;
+    margin-right: 10px;
+    /* border: 2px dashed #C0A686;
+    border-right: none; */
+    overflow: hidden;
+    padding-top: 3px;
 
 }
 
@@ -101,7 +128,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 3px;
+    left: 0px;
     width: 405px;
 }
 
@@ -109,6 +136,13 @@
     height: 100% !important;
     object-fit: cover;
     width: 362px;
+}
+
+@media screen and (max-width:1221px){
+    .contentContainer{
+        padding-top: 15px;
+        font-size: 1.7em;
+    }
 }
 
 @media screen and (max-width:1108px) {
@@ -119,21 +153,23 @@
         width: 100vw;
         height: 100px;
         /* font-size: 20px; */
+        padding-left: 30px;
     }
-    .aboutTitle {
-        font-size: 70px;
+    .aboutTitle, .aboutTitle2 {
+        font-size: 3.5rem;
         /* right: 25px; */
     }
     .contentContainer {
         width: 100vw;
         height: auto;
-        padding: 50px 30px 100px 30px;
+        padding: 25px 30px 60px 30px;
+        font-size: 1.75em;
     }
     .right_AU {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: auto;
+        height: 505px;
     }
     .projector {
         transform: scale(0.9);
@@ -150,12 +186,15 @@
     .frame {
         background: url('/static/images/frameX.png');
         width: 100vw;
-        height: 500px;
+        height: 505px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         display: flex;
         align-items: center;
+        border-left: none;
+        border-top: none;
+        padding-top: 0;
     }
     .embla__viewport{
         width: 100vw;
@@ -184,14 +223,25 @@
         transform: translate3d(0, 0, 0);
         flex: 0 0 var(--slide-size);
         min-width: 0;
-        bottom: 104px;
+        bottom: 105px;
         padding-left: var(--slide-spacing);
         width: 280px;
     }
 }
 
 @media screen and (max-width:642px) {
-    .aboutTitle {
-        font-size: 60px;
+    .aboutTitle, .aboutTitle2 {
+        font-size: 3.2rem;
+    }
+    .contentContainer{
+        font-size: 1.7em;
+    }
+}
+@media screen and (max-width:512px) {
+    .aboutTitle, .aboutTitle2 {
+        font-size: 2.6rem;
+    }
+    .contentContainer{
+        font-size: 1.4em;
     }
 }
