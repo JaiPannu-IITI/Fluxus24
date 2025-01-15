@@ -14,7 +14,7 @@ const Aboutus = () => {
                   alt="Background"
                   layout="fill"
                   objectFit="cover"
-                  quality={100}
+          
                   className="z-0 AUbg"
                 /> */}
         <div className={styles.left_AU}>
