@@ -90,6 +90,7 @@ const CampusAmbassadorIncentives = () => {
     <div id='incentives' className="min-h-screen pb-20 w-full bg-[#FFF8E1] p-6 relative overflow-hidden">
               <Image
                         src={bglight || "/placeholder.svg"}
+                        blurDataURL={bglight}
                         alt="Background"
                         layout="fill"
                         objectFit="cover"

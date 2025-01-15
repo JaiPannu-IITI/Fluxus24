@@ -19,7 +19,7 @@ console.log(slides);
         <div className={styles.embla__container}>
           {slides.map((index) => (
             <div className={styles.embla__slide} key={index}>
-              <Image width={1000} height={1000} className={styles.embla_img} src={index} alt={index+1} />
+              <Image width={1000} height={1000} className={styles.embla_img} src={index} blurDataURL={index} alt={index+1} />
             </div>
           ))}
         </div>

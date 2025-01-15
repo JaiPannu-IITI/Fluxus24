@@ -44,6 +44,7 @@ const Ca_responsibilities = () => {
              <div id='responsibilities' className={`${styles.section} relative min-h-screen w-full overflow-hidden`}>
             <Image
                 src={bgdark || "/placeholder.svg"}
+                blurDataURL={bgdark}
                 alt="Background"
                 layout="fill"
                 objectFit="cover"
