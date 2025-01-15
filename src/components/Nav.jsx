@@ -13,12 +13,12 @@ const Nav = () => {
                         </Link>
                     </div>
                     <div className="flex flex-none flex-nowrap gap-[35px] h-min overflow-visible p-0 relative w-min">
-                        <div className='flex flex-nowrap w-max'><Link href="#">Home</Link></div>
-                        <div className='flex flex-nowrap w-max'><Link href="#AU">About Us</Link></div>
-                        <div className='flex flex-nowrap w-max'><Link href="#whyCA">Why CA</Link></div>
-                        <div className='flex flex-nowrap w-max'><Link href="#incentives">Incentives</Link></div>
-                        <div className='flex flex-nowrap w-max'><Link href="#responsibilities">Responsibilities</Link></div>
-                        <div className='flex flex-nowrap w-max'><Link href="#FAQ">FAQ</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#">Home</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#AU">About Us</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#whyCA">Why CA</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#incentives">Incentives</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#responsibilities">Responsibilities</Link></div>
+                        <div className='flex flex-nowrap w-max' style={{fontFamily:"var(--font-aileron-bold)"}}><Link href="#FAQ">FAQ</Link></div>
                     </div>
                 </nav>
             </div>

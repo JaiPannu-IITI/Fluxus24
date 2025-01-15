@@ -36,8 +36,8 @@ const FAQ = () => {
   return (
     <div id="FAQ" className="section bg-[#FFF8E1]">
       <div className="max-w-3xl bg-[#FFF8E1] h-screen overflow-hidden mx-auto px-4 py-8">
-        <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-clip-text">{"Frequently Asked"}</h2>
-        <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-clip-text">{"Questions"}</h2>
+        <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Frequently Asked"}</h2>
+        <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Questions"}</h2>
         <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div
@@ -50,9 +50,9 @@ const FAQ = () => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-[1.3em] font-semibold text-left tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300">{faq.question}</span>
+                <span className="text-[1.3em] font-semibold text-left tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300" style={{fontFamily:"var(--font-aileron-bold)"}}>{faq.question}</span>
                 <span className="ml-6 flex-shrink-0">
-                  <div className={`p-[3px] rounded-full border-2 border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`}>
+                  <div className={`p-[3px] rounded-full border-2 border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`} style={{borderColor:"rgb(18, 149, 145)"}}>
                     <FiChevronDown className="h-4 w-4 text-purple-600 font-bold" />
                   </div>
                 </span>
@@ -67,7 +67,7 @@ const FAQ = () => {
                 aria-labelledby={`faq-question-${index}`}
               >
                 <div className="p-4 border-t border-gray-200 bg-[#fff3e4]">
-                  <p className="text-[#333333] px-2">{faq.answer}</p>
+                  <p className="text-[#333333] px-2" style={{fontFamily:"var(--font-aileron-bold)"}}>{faq.answer}</p>
                 </div>
               </div>
             </div>
