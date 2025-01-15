@@ -8,24 +8,28 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards including Visa, MasterCard, American Express, and Discover. We also support PayPal and various digital payment methods for your convenience."
+      question: "Who can Apply?",
+      answer: "Students from all colleges across the globe are welcome to apply."
     },
     {
-      question: "How long does shipping take?",
-      answer: "Shipping times vary depending on your location. Typically, domestic orders arrive within 3-5 business days, while international shipping can take 7-14 business days. Express shipping options are available at checkout."
+      question: "How to Apply for the post of Campus Ambassador?",
+      answer: "Click on Register. You will have registered successfully once you submit the form."
     },
     {
-      question: "What is your return policy?",
-      answer: "We offer a 30-day return policy for all unused items in their original packaging. Simply contact our customer service team to initiate a return. Return shipping costs may apply unless the item is defective."
+      question: "What is the Selection Process?",
+      answer: "After registration, you will have to go through a short telephonic interview before being selected."
     },
     {
-      question: "Do you offer international shipping?",
-      answer: "Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. You can calculate shipping costs at checkout by entering your delivery address."
+      question: "Can there be multiple College Ambassadors from a single college?",
+      answer: "Yes, depending on the size of the college, we can appoint multiple College Ambassadors."
     },
     {
-      question: "How can I track my order?",
-      answer: "Once your order ships, you'll receive a confirmation email with tracking information. You can use this tracking number on our website or the carrier's website to monitor your package's progress."
+      question: "How can I get assistance from Team Fluxus?",
+      answer: "All campus ambassadors will be allotted managers, who will be their point of contact during the entire course of the program. You will receive all guidance and assistance from your managers."
+    },
+    {
+      question:"How will my progress be monitored?",
+      answer:"You will submit proofs of your work to your managers; upon verifications you will be rewarded with points that measure your progress. Please feel free to contact your managers if you have any queries."
     }
   ];
 
