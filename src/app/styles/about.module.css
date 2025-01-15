@@ -85,7 +85,7 @@
 }
 
 .frame {
-    background: url('/static/images/frame.png');
+    background: url('/images/frame.png');
     height: 725px;
     width: 500px;
     background-size: cover;
@@ -187,7 +187,7 @@
         top: -13px
     }
     .frame {
-        background: url('/static/images/frameX.png');
+        background: url('/images/frameX.png');
         width: 100vw;
         height: 505px;
         background-size: cover;
