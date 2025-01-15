@@ -8,19 +8,17 @@ import AU_Frame from './AU_Frame'
 const Aboutus = () => {
   return (
     <>
-      <div id='AU' className={`${styles.AU} min-h-screen`}>
-        <Image
-          src={bglight || "/placeholder.svg"}
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          className="z-0"
-        />
+        <div id='AU' className={styles.AU}>
+          {/* <Image
+                  src={bglight || "/placeholder.svg"}
+                  alt="Background"
+                  layout="fill"
+                  objectFit="cover"
+                  quality={100}
+                  className="z-0 AUbg"
+                /> */}
         <div className={styles.left_AU}>
           <nav className={styles.navabout}>
-            {/* <Image src="/static/images/cam-removebg-preview 1.png" width={196} height={146} className={styles.projector} alt="" />
-            <Image src="/static/images/Polygon 1.png" alt="" width={281} height={99} className={styles.polygon} /> */}
             <span className={styles.aboutTitle}>{"About"}</span>
             <span className={styles.aboutTitle2}>{"FLUXUS"}</span>
           </nav>

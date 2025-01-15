@@ -57,6 +57,7 @@ export default function WhyCA() {
         <div id="whyCA" className="relative min-h-screen w-full overflow-hidden">
       <Image
         src={bgdark || "/placeholder.svg"}
+        blurDataURL={bgdark}
         alt="Background"
         layout="fill"
         objectFit="cover"
