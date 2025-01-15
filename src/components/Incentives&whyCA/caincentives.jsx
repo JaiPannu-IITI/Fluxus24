@@ -112,7 +112,7 @@ const CampusAmbassadorIncentives = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>
+              <h1 className="text-4xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>
                 {"Campus Ambassador"}
               </h1>
               <p className="text-2xl md:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider" style={{fontFamily:"var(--font-monument-extended)"}}>
