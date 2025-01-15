@@ -112,8 +112,8 @@ const CampusAmbassadorIncentives = () => {
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white to-transparent" />
             </div>
             
-            <div className="text-center space-y-2 sm:space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-2 sm:mt-4 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>
+            <div className="text-center space-y-4">
+              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>
                 {"Campus Ambassador"}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider" style={{fontFamily:"var(--font-monument-extended)"}}>
