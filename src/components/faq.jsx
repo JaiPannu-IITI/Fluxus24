@@ -39,7 +39,7 @@ const FAQ = () => {
 
   return (
     <div id="FAQ" className="section bg-[#FFF8E1]">
-      <div className="max-w-3xl bg-[#FFF8E1] h-screen overflow-hidden mx-auto px-4 py-8">
+      <div className="max-w-3xl bg-[#FFF8E1] overflow-hidden mx-auto px-4 py-8 h-fit">
         <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Frequently Asked"}</h2>
         <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Questions"}</h2>
         <div className="space-y-4">
