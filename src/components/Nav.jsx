@@ -14,8 +14,8 @@ const Nav = () => {
     return (
         <>
             <div className="nav-container flex-none h-auto sticky top-0 z-10">
-                <nav className="flex justify-between items-center flex-nowrap relative w-screen bg-[rgba(31,31,31,0.5)] h-[85px] opacity-100 px-4 md:px-[60px] backdrop-blur-[20px]">
-                    <div className="logo">
+                <nav className={`${isMenuOpen? 'flex-col justify-items-start': 'flex-row justify-between items-center'} flex   flex-nowrap relative w-screen bg-[rgba(31,31,31,0.5)] h-[85px] opacity-100 px-4 md:px-[60px] backdrop-blur-[20px]`}>
+                    <div className={` logo`}>
                         <Link href="/">
                             <Image width={200} height={200} src="/logo/white_logo.png" alt="logo" />
                         </Link>
@@ -60,8 +60,8 @@ const Nav = () => {
                     </div>
                     <div
                         className={`${
-                            isMenuOpen ? 'block' : 'hidden'
-                        } md:flex md:flex-none md:flex-nowrap gap-[35px] h-min overflow-visible p-0 relative w-full md:w-min bg-[rgba(31,31,31,0.9)] md:bg-transparent md:static top-[85px] left-0 md:top-auto md:left-auto md:p-0 z-20`}
+                            isMenuOpen ? 'block top-[11.5px]' : 'hidden top-[85px]'
+                        } md:flex md:flex-none md:flex-nowrap gap-[35px] h-min overflow-visible p-0 relative w-full md:w-min bg-[rgba(31,31,31,0.9)] md:bg-transparent md:static  left-0 md:top-auto md:left-auto md:p-0 z-20`}
                     >
                         <div className="flex flex-col md:flex-row md:flex-nowrap w-full md:w-max md:gap-x-8" style={{ fontFamily: 'var(--font-aileron-bold)' }}>
                             <Link href="#" className="block py-4 px-6 md:py-0 md:px-0 md:inline">Home</Link>
