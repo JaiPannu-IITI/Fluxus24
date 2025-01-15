@@ -51,8 +51,8 @@ const Ca_responsibilities = () => {
                 className="z-0"
             />
             <div className={`${styles.content} relative z-10`}>
-                <div className={`${styles.heading1} text-[22px] md:text-[50px]`}>{"YOUR"}</div>
-                <div className={`${styles.heading2} text-[27px] md:text-[50px]`}>{"RESPONSIBILITIES"}</div>
+                <div className={`${styles.heading1} text-[50px]`}>{"YOUR"}</div>
+                <div className={`${styles.heading2} text-[50px]`}>{"RESPONSIBILITIES"}</div>
 
                 <ol className={styles.list}>
                     {responsibilities.map((resp, index) => (
