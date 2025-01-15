@@ -3,6 +3,16 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
+const monumentExtended = localFont({
+  src: './fonts/MonumentExtended-Ultrabold.otf',
+  variable: '--font-monument-extended',
+});
+
+const aileron = localFont({
+  src: './fonts/Aileron-Bold.otf',
+  variable: '--font-aileron-bold',
+});
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -53,7 +63,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[100dvw] overflow-x-clip`}
+        className={`${geistSans.variable} ${geistMono.variable} ${monumentExtended.variable} ${aileron.variable} antialiased max-w-[100dvw] overflow-x-clip`}
       >
         {/* <Navbar /> */}
         {children}

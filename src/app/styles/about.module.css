@@ -48,6 +48,8 @@
     font-size: 3.75rem;
     font-style: bold;
     position: relative;
+    padding-left: 50px;
+    font-family: var(--font-monument-extended), sans-serif;
     /* bottom: 12px; */
 }
 .aboutTitle2 {
@@ -56,6 +58,7 @@
     /* letter-spacing: 4px; */
     margin: auto;
     /* font-family: "Luckiest Guy", serif; */
+    font-family: var(--font-monument-extended), sans-serif;
     font-weight: 900;
     font-size: 3.75rem;
     font-style: bold;
@@ -70,13 +73,13 @@
     height: 595px;
     /* border-bottom: 2px dashed #C0A686; */
     color: black;
-    font-family: "Annie Use Your Telescope", cursive;
+    font-family: var(--font-aileron-bold), sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 1.95em;
-    padding: 40px;
+    font-size: 1.5em;
+    padding: 90px;
     padding-top: 15px;
-    padding-right: 60px;
+    padding-right: 120px;
     text-align: justify;
     /* padding-right: 50px; */
 }

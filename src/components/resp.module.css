@@ -33,7 +33,7 @@
 .heading1 {
 	text-align: center;
 	color: rgb(255, 168, 0);
-	font-family: "Ranchers", serif;
+	font-family: var(--font-monument-extended), serif;
 	font-size: 35px;
 	line-height: 60px;
 	font-weight: 600;
@@ -43,7 +43,7 @@
 .heading2 {
 	text-align: center;
 	color: rgb(255, 168, 0);
-	font-family: "Annie Use Your Telescope", cursive;
+	font-family: var(--font-monument-extended), sarif;
 	font-size: 70px;
 	letter-spacing: 4px;
 	line-height: 30px;
@@ -86,7 +86,7 @@
 .heading2 {
 	text-align: center;
 	color: #ffa940;
-	font-family: "Luckiest Guy", cursive;
+	/* font-family: "Luckiest Guy", cursive; */
 	font-size: 50px;
 	letter-spacing: 4px;
 	margin-bottom: 80px;
@@ -137,7 +137,7 @@
 }
 
 .descr {
-	/* font-family: "Merriweather", serif; */
+	font-family: var(--font-aileron-bold), serif;
 	font-size: 1.1rem;
 	text-align: center;
 }
