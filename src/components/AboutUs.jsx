@@ -8,15 +8,15 @@ import AU_Frame from './AU_Frame'
 const Aboutus = () => {
   return (
     <>
-        <div id='AU' className={styles.AU}>
-          <Image
-                  src={bglight || "/placeholder.svg"}
-                  alt="Background"
-                  layout="fill"
-                  objectFit="cover"
-                  quality={100}
-                  className="z-0"
-                />
+      <div id='AU' className={`${styles.AU} min-h-screen`}>
+        <Image
+          src={bglight || "/placeholder.svg"}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          className="z-0"
+        />
         <div className={styles.left_AU}>
           <nav className={styles.navabout}>
             {/* <Image src="/static/images/cam-removebg-preview 1.png" width={196} height={146} className={styles.projector} alt="" />
