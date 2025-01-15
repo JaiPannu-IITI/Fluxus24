@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import bglight from "../../public/images/bg/bglight.png";
+import Image from "next/image";
+
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -38,8 +41,16 @@ const FAQ = () => {
   };
 
   return (
-    <div id="FAQ" className="section bg-[#FFF8E1]">
-      <div className="max-w-3xl bg-[#FFF8E1] overflow-hidden mx-auto px-4 py-8 h-fit">
+    <div id="FAQ" className="section relative min-h-screen w-full overflow-hidden">
+      <Image
+        src={bglight || "/placeholder.svg"}
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        className="z-0"
+      />
+      <div className="relative z-10 max-w-3xl mx-auto px-4 py-8 h-fit">
         <h2 className="text-5xl md:text-6xl mt-6 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Frequently Asked"}</h2>
         <h2 className="text-5xl md:text-6xl mt-2 mb-8 text-[rgb(204,117,0)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>{"Questions"}</h2>
         <div className="space-y-4">
@@ -54,7 +65,7 @@ const FAQ = () => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-[1.3em] font-semibold text-left tracking-normal text-[#FF6600] group-hover:text-[#E65C00 transition-all duration-300" style={{fontFamily:"var(--font-aileron-bold)"}}>{faq.question}</span>
+                <span className="text-[1.3em] font-semibold text-left tracking-normal text-[#FF6600] group-hover:text-[#E65C00] transition-all duration-300" style={{fontFamily:"var(--font-aileron-bold)"}}>{faq.question}</span>
                 <span className="ml-6 flex-shrink-0">
                   <div className={`p-[3px] rounded-full border-2 border-purple-600 transform transition-transform duration-300 ease-linear ${activeIndex === index ? "rotate-180" : "rotate-0"}`} style={{borderColor:"rgb(18, 149, 145)"}}>
                     <FiChevronDown className="h-4 w-4 text-purple-600 font-bold" />
@@ -63,10 +74,11 @@ const FAQ = () => {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`transition-all duration-500 ease-in-out ${activeIndex === index
+                className={`transition-all duration-500 ease-in-out ${
+                  activeIndex === index
                     ? "max-h-96 opacity-100"
                     : "max-h-0 opacity-70"
-                  } overflow-hidden`}
+                } overflow-hidden`}
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
               >

@@ -13,7 +13,7 @@ const Nav = () => {
 
     return (
         <>
-            <div className="nav-container flex-none h-auto sticky top-0 z-10">
+            <div className="nav-container flex-none h-auto sticky top-0 z-50">
                 <nav className="flex justify-between items-center flex-nowrap relative w-screen bg-[rgba(31,31,31,0.5)] h-[85px] opacity-100 px-4 md:px-[60px] backdrop-blur-[20px]">
                     <div className="logo">
                         <Link href="/">

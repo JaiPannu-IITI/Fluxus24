@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Camera, Film, Clapperboard, Award } from 'lucide-react';
-import bgdark from "../../../public/images/bg/bgdark.png"
+import bgdark from "../../../public/images/bg/bg.jpg";
+import Image from "next/image";
+
 export default function WhyCA() {
   // Create refs for each section
   const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -52,14 +54,16 @@ export default function WhyCA() {
 
   return (
     <>
-      <div id="whyCA"
-        className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{
-          backgroundImage: `url(${bgdark})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+        <div id="whyCA" className="relative min-h-screen w-full overflow-hidden">
+      <Image
+        src={bgdark || "/placeholder.svg"}
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        className="z-0"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <h1 className="text-center text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-neutral-300">
           WHY SHOULD YOU APPLY?
         </h1>
@@ -106,16 +110,16 @@ export default function WhyCA() {
                 } items-center -gap-5`}
             >
               <motion.div
-                className="w-32 h-32 flex-shrink-0 relative rounded-full overflow-hidden shadow-lg flex items-center justify-center bg-gray-800 hover:scale-110 transition-transform duration-300 group"
+                className="w-32 h-32 flex-shrink-0 relative rounded-full overflow-hidden shadow-lg flex items-center justify-center bg-neutral-800 hover:scale-110 transition-transform duration-300 group"
                 variants={index % 2 === 0 ? leftVariants : rightVariants}
               >
-                <section.icon className="w-24 h-24 text-white group-hover:text-gray-500 transition-colors duration-300" />
+                <section.icon className="w-24 h-24 text-white group-hover:text-neutral-500 transition-colors duration-300" />
               </motion.div>
               <motion.div
                 className="md:w-[calc(100%-17rem)]"
                 variants={index % 2 === 0 ? rightVariants : leftVariants}
               >
-                <div className="bg-gray-800 text-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div className="bg-zinc-800 text-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
                   <h2
                     className={`text-2xl font-semibold mb-3 text-center bg-clip-text text-transparent bg-gradient-to-r ${section.gradient}`}
                   >
@@ -128,6 +132,7 @@ export default function WhyCA() {
           ))}
         </div>
       </div>
+    </div>
     </>
   );
 }

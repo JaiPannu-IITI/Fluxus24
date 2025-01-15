@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../app/styles/resp.module.css'
-
+import bgdark from "../../public/images/bg/bg.jpg"
 import { User, Calendar, Megaphone, Users, Share, Brush } from "lucide-react";
 
 
@@ -41,24 +41,30 @@ const responsibilities = [
 const Ca_responsibilities = () => {
     return (
         <>
-            <div id='responsibilities' className={styles.section}>
-                <div className={styles.content}>
-                    <div className={styles.heading1}>{"YOUR"}</div>
-                    <div className={styles.heading2}>{"RESPONSIBILITIES"}</div>
+             <div id='responsibilities' className={`${styles.section} relative min-h-screen w-full overflow-hidden`}>
+            <Image
+                src={bgdark || "/placeholder.svg"}
+                alt="Background"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                className="z-0"
+            />
+            <div className={`${styles.content} relative z-10`}>
+                <div className={styles.heading1}>{"YOUR"}</div>
+                <div className={styles.heading2}>{"RESPONSIBILITIES"}</div>
 
-                    <ol className={styles.list}>
-                        {responsibilities.map((resp, index) => (
-                            <li key={index}>
-                                <div className={styles.icon}>{resp.icon}</div>
-                                <div className={styles.title}>{resp.title}</div>
-                                <div className={styles.descr}>{resp.desc}</div>
-                            </li>
-                        ))}
-
-                    </ol>
-
-                </div>
+                <ol className={styles.list}>
+                    {responsibilities.map((resp, index) => (
+                        <li key={index}>
+                            <div className={styles.icon}>{resp.icon}</div>
+                            <div className={styles.title}>{resp.title}</div>
+                            <div className={styles.descr}>{resp.desc}</div>
+                        </li>
+                    ))}
+                </ol>
             </div>
+        </div>
         </>
     )
 }

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Award, BadgeIcon as Certificate, Gift, Users, Trophy, MessageSquare, Network, Ticket, Share2, School } from 'lucide-react';
+import Image from 'next/image';
+import bglight from "../../../public/images/bg/bglight.png";
 
 const incentives = [
   {
@@ -86,6 +88,14 @@ const incentives = [
 const CampusAmbassadorIncentives = () => {
   return (
     <div id='incentives' className="min-h-screen pb-20 w-full bg-[#FFF8E1] p-6 relative overflow-hidden">
+              <Image
+                        src={bglight || "/placeholder.svg"}
+                        alt="Background"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        className="z-0"
+                      />
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]] bg-[size:14px_24px]" />
       
