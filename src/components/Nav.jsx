@@ -19,7 +19,7 @@ const Nav = () => {
         <>
             <div className="nav-container flex-none h-auto sticky top-0 z-10">
                 <nav className={`${isMenuOpen? 'flex-col': 'flex-row items-center'} flex justify-between md:justify-normal flex-nowrap relative w-screen bg-[rgba(31,31,31,0.5)] h-[85px] opacity-100 px-4 md:px-[60px] backdrop-blur-[20px]`}>
-                    <div className={` logo`}>
+                    <div className={`logo w-max`}>
                         <Link href="/">
                             <Image width={200} height={200} src="/logo/white_logo.png" alt="logo" />
                         </Link>
