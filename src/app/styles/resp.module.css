@@ -33,7 +33,7 @@
 	text-align: center;
 	color: rgb(255, 168, 0);
 	font-family: var(--font-monument-extended), serif;
-	font-size: 35px;
+	/* font-size: 35px; */
 	line-height: 60px;
 	font-weight: 600;
 	margin-top: 20px;
@@ -43,7 +43,7 @@
 	text-align: center;
 	color: rgb(255, 168, 0);
 	font-family: var(--font-monument-extended), sarif;
-	font-size: 70px;
+	/* font-size: 70px; */
 	letter-spacing: 4px;
 	line-height: 30px;
 	font-weight: 600;
@@ -79,14 +79,14 @@
 	color: #ffa940;
 	/* font-family: "Ranchers", serif; */
 	/* font-family: "Luckiest Guy", cursive; */
-	font-size: 35px;
+	/* font-size: 35px; */
 }
 
 .heading2 {
 	text-align: center;
 	color: #ffa940;
 	/* font-family: "Luckiest Guy", cursive; */
-	font-size: 50px;
+	/* font-size: 50px; */
 	letter-spacing: 4px;
 	margin-bottom: 80px;
 }
