@@ -11,6 +11,11 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+import { BsFillTelephoneFill } from "react-icons/bs";
+
+import { IoMdMail } from "react-icons/io";
+import { icons } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer style={footerStyle}>
@@ -33,6 +38,15 @@ const Footer = () => {
         </a> */}
         <a href="https://www.linkedin.com/company/fluxus---iit-indore/mycompany/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin style={iconStyle} />
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=9474867609" target="_blank">
+          <FaWhatsapp style={iconStyle}/>
+        </a>
+        <a href="tel:9474867609" target="_blank">
+          <BsFillTelephoneFill style={iconStyle}/>
+        </a>
+        <a href="mailto:contactus.fluxus@iiti.ac.in" target="_blank">
+          <IoMdMail style={iconStyle}/>
         </a>
       </div>
     </footer>
