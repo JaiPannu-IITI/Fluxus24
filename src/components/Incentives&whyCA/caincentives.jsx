@@ -99,7 +99,7 @@ const CampusAmbassadorIncentives = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]] bg-[size:14px_24px]" />
       
-      <div className="max-w-4xl mx-auto bg-black border-0 shadow-[0_0_0_1px_rgba(255,255,255,0.1)] overflow-hidden relative rounded-lg">
+      <div className="max-w-5xl mx-auto bg-black border-0 shadow-[0_0_0_1px_rgba(255,255,255,0.1)] overflow-hidden relative rounded-lg">
         {/* Animated gradient border */}
         <div className="absolute inset-0 p-[1px] rounded-lg bg-gradient-to-r from-gray-500 via-white to-gray-500 mask-gradient animate-borderFlow" />
         
@@ -112,10 +112,10 @@ const CampusAmbassadorIncentives = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text">
+              <h1 className="text-5xl md:text-6xl mt-4 text-[rgb(50,50,50)] font-black bg-clip-text" style={{fontFamily:"var(--font-monument-extended)"}}>
                 {"Campus Ambassador"}
               </h1>
-              <p className="text-2xl md:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider">
+              <p className="text-2xl md:text-4xl text-[rgb(204,117,0)] font-bold tracking-wider" style={{fontFamily:"var(--font-monument-extended)"}}>
                 {"Incentives & Rewards"}
               </p>
             </div>
@@ -149,19 +149,19 @@ const CampusAmbassadorIncentives = () => {
 
                     <div className="flex-1 space-y-3">
                       <div className="flex items-center justify-between gap-4">
-                        <h3 className="text-[1.5em] font-bold tracking-tight text-[#ff6f00] group-hover:text-[#e65f00] group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
+                        <h3 className="text-[1.5em] font-bold tracking-tight text-[#ff6f00] group-hover:text-[#e65f00] group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300" style={{fontFamily:"var(--font-aileron-bold)"}}>
                           {incentive.title}
                         </h3>
                         <span 
                           className={`border-0 font-semibold px-4 py-1.5 text-white rounded-full
                                    bg-gradient-to-r ${incentive.gradient} opacity-75
                                    group-hover:opacity-100 transition-all duration-300
-                                   shadow-[0_0_15px_rgba(255,255,255,0.1)]`}
+                                   shadow-[0_0_15px_rgba(255,255,255,0.1)]`} style={{fontFamily:"var(--font-aileron-bold)"}}
                         >
                           {incentive.badge}
                         </span>
                       </div>
-                      <p className="text-m text-gray-600 leading-1 group-hover:text-gray-800 transition-colors duration-300">
+                      <p className="text-m text-gray-600 leading-1 group-hover:text-gray-800 transition-colors duration-300" style={{fontFamily:"var(--font-aileron-bold)"}}>
                         {incentive.description}
                       </p>
                     </div>
