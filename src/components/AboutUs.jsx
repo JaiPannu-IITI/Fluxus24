@@ -5,7 +5,7 @@ import Image from 'next/image'
 import bglight from "../../public/images/bg/bglight.png"
 import AU_Frame from './AU_Frame'
 
-const AboutUs = () => {
+const Aboutus = () => {
   return (
     <>
         <div id='AU' className={styles.AU}>
@@ -36,4 +36,4 @@ const AboutUs = () => {
   )
 }
 
-export default AboutUs
+export default Aboutus

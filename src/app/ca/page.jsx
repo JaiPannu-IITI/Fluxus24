@@ -1,6 +1,6 @@
 import React from "react";
 
-import AboutUs from "@/components/aboutUs";
+import Aboutus from "@/components/aboutus";
 import Ca_responsibilities from "@/components/ca_responsibilities";
 import Footer from "../../components/Footer";
 import FAQ from "@/components/faq";
@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
       <Nav />
-      <AboutUs />
+      <Aboutus />
       <WhyCA />
       <CampusAmbassadorIncentives />
       <Ca_responsibilities />
