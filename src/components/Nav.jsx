@@ -67,13 +67,14 @@ const Nav = () => {
                             isMenuOpen ? 'translate-x-0 block' : 'hidden top-[85px]'
                         } transition-transform duration-500 ease-in-out lg:flex lg:flex-none lg:flex-nowrap gap-[35px] h-min overflow-visible p-0 relative w-full lg:w-min bg-[rgba(31,31,31,0.9)] lg:bg-transparent lg:static  left-0 lg:top-auto lg:left-auto lg:p-0 z-20`}
                     >
-                        <div className="flex flex-col lg:flex-row lg:flex-nowrap w-full lg:w-max lg:gap-x-8" style={{ fontFamily: 'var(--font-aileron-bold)' }}>
+                        <div className="flex flex-col lg:flex-row lg:flex-nowrap w-full lg:w-max lg:gap-x-8 items-center" style={{ fontFamily: 'var(--font-aileron-bold)' }}>
                             <Link href="#" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Home</Link>
                             <Link href="#AU" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">About Us</Link>
                             <Link href="#whyCA" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Why CA</Link>
                             <Link href="#incentives" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Incentives</Link>
                             <Link href="#responsibilities" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Responsibilities</Link>
                             <Link href="#FAQ" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">FAQ</Link>
+                            <Link href="" className="block py-4 px-6 lg:p-2 rounded-xl text-lg lg:inline bg-[rgb(204,117,0)]">Register Now</Link>
                         </div>
                     </div>
                 </nav>
