@@ -23,7 +23,7 @@ export default function Navbar() {
 
     <div className=" w-full flex items-center justify-center gap-5">
     <Link href="/">
-      <Image src="/logo/fluxus.png" alt="Fluxus 24" height={100} width={100}  className=" h-[3rem] brightness-0 invert"/>
+      <Image src="/logo/fluxus.png" alt="Fluxus 24" height={100} width={60}  className=" h-[3rem] brightness-0 invert"/>
       </Link>
     </div>
 
