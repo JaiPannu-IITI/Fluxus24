@@ -7,6 +7,7 @@ import FAQ from "@/components/faq";
 import WhyCA from "@/components/Incentives&whyCA/WhyCA";
 import CampusAmbassadorIncentives from "@/components/Incentives&whyCA/caincentives";
 import Nav from "@/components/Nav";
+import InteractiveTV from "@/components/ca/TV";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <Nav />
       <Aboutus />
       <WhyCA />
+      <InteractiveTV/>
       <CampusAmbassadorIncentives />
       <Ca_responsibilities />
       <FAQ />
