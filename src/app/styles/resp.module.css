@@ -26,44 +26,6 @@
 }
 
 .content {
-	width: 70vw;
-}
-
-.heading1 {
-	text-align: center;
-	color: rgb(255, 168, 0);
-	font-family: var(--font-monument-extended), serif;
-	font-size: 35px;
-	line-height: 60px;
-	font-weight: 600;
-	margin-top: 20px;
-}
-
-.heading2 {
-	text-align: center;
-	color: rgb(255, 168, 0);
-	font-family: var(--font-monument-extended), sarif;
-	font-size: 70px;
-	letter-spacing: 4px;
-	line-height: 30px;
-	font-weight: 600;
-	margin-bottom: 100px;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
-
-.section {
-	padding: 2rem;
-	background-color: #0c0c0c;
-	color: white;
-	font-family: "Lato", Arial, sans-serif;
-	min-height: 100vh;
-	height: auto;
-}
-
-.content {
-	/* max-width: 70vw; */
 	margin: 0 auto;
 	width: 100vw;
 	height: auto;
@@ -77,18 +39,33 @@
 .heading1 {
 	text-align: center;
 	color: #ffa940;
-	/* font-family: "Ranchers", serif; */
-	/* font-family: "Luckiest Guy", cursive; */
-	font-size: 35px;
+	font-family: var(--font-monument-extended), serif;
+	/* font-size: 35px; */
+	line-height: 60px;
+	font-weight: 600;
+	margin-top: 20px;
 }
 
 .heading2 {
 	text-align: center;
 	color: #ffa940;
-	/* font-family: "Luckiest Guy", cursive; */
-	font-size: 50px;
+	font-family: var(--font-monument-extended), sarif;
+	line-height: 30px;
+	font-weight: 600;
 	letter-spacing: 4px;
 	margin-bottom: 80px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+.section {
+	padding: 2rem;
+	background-color: #0c0c0c;
+	color: white;
+	font-family: "Lato", Arial, sans-serif;
+	min-height: 100vh;
+	height: auto;
 }
 
 .list {
@@ -139,4 +116,24 @@
 	font-family: var(--font-aileron-bold), serif;
 	font-size: 1.1rem;
 	text-align: center;
+}
+
+@media screen and (max-width:800px) {
+	.heading1{
+		font-size: 30px;
+		line-height: 40px;
+	}
+	.heading2{
+		font-size: 35px;
+	}
+}
+@media screen and (max-width:550px) {
+	.heading1{
+		font-size: 2rem;
+		line-height: 25px;
+	}
+	.heading2{
+		font-size: 1.7rem;
+		letter-spacing: 3.5px;
+	}
 }

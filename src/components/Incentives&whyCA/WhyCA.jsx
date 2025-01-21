@@ -57,6 +57,7 @@ export default function WhyCA() {
         <div id="whyCA" className="relative min-h-screen w-full overflow-hidden">
       <Image
         src={bgdark || "/placeholder.svg"}
+        blurDataURL={bgdark}
         alt="Background"
         layout="fill"
         objectFit="cover"
@@ -64,7 +65,7 @@ export default function WhyCA() {
         className="z-0"
       />
       <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-center text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-neutral-300">
+        <h1 className="text-center text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-neutral-300" style={{fontFamily:"var(--font-monument-extended)"}} >
           WHY SHOULD YOU APPLY?
         </h1>
 
@@ -121,11 +122,11 @@ export default function WhyCA() {
               >
                 <div className="bg-zinc-800 text-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
                   <h2
-                    className={`text-2xl font-semibold mb-3 text-center bg-clip-text text-transparent bg-gradient-to-r ${section.gradient}`}
+                    className={`text-2xl font-semibold mb-3 text-center bg-clip-text text-transparent bg-gradient-to-r ${section.gradient}`} style={{fontFamily:"var(--font-aileron-bold)"}}
                   >
                     {section.title}
                   </h2>
-                  <p className="text-center text-gray-300">{section.description}</p>
+                  <p className="text-center text-gray-300" style={{fontFamily:"var(--font-aileron-bold)"}} >{section.description}</p>
                 </div>
               </motion.div>
             </motion.div>

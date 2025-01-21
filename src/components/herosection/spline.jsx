@@ -21,7 +21,7 @@ const Spline = dynamic(() => import("@splinetool/react-spline/next"), {
               alt="Fluxus 24"
             blurDataURL="/logo/fluxus.png"
               height={2000}
-              width={2000}
+              width={1200}
               className="h-[10rem] brightness-0 invert"
             />
     </div>
