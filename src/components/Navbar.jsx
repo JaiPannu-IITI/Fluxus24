@@ -28,7 +28,7 @@ export default function Navbar() {
     className=" fixed top-0 flex items-center z-50 w-full h-[5rem] "
     >
   
-    <div className={`${pixelifySans.className} flex flex-row justify-center px-10 w-full`}>
+    <div className={`${pixelifySans.className} flex flex-row justify-start px-10 w-full`}>
       
     {/* <PixelButton>FLUXUS</PixelButton>
       <PixelButton>HOME</PixelButton> */}
