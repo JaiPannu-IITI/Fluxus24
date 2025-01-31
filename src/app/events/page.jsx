@@ -18,10 +18,19 @@ export default function Home() {
     <main className="min-h-screen bg-[#1C050F] text-white relative overflow-hidden">
       {/* Parallax Backgrounds */}
       <div className="fixed inset-0 w-full h-2/3">
+      <div
+          className="absolute inset-0 w-full h-full bg-repeat-x"
+          style={{
+            backgroundImage:  'url(/events/level-0.png)',
+            // transform: `translateY(${scrollY * -0.1}px)`,
+            backgroundPosition: "bottom",
+            backgroundSize: "contain",
+          }}
+        />
         <div
           className="absolute inset-0 w-full h-full bg-repeat-x"
           style={{
-            backgroundImage:  'url(/events/level-1.jpg)',
+            backgroundImage:  'url(/events/level-1.gif)',
             transform: `translateY(${scrollY * -0.1}px)`,
             backgroundPosition: "bottom",
             backgroundSize: "contain",
@@ -30,7 +39,7 @@ export default function Home() {
         <div
           className="absolute inset-0 w-full h-full bg-repeat-x"
           style={{
-            backgroundImage: 'url(/events/level-2.jpg)',
+            backgroundImage: 'url(/events/level-2.gif)',
             transform: `translateY(${scrollY * -0.2}px)`,
             backgroundPosition: "bottom",
             backgroundSize: "contain",
@@ -39,7 +48,7 @@ export default function Home() {
         <div
           className="absolute inset-0 w-full h-full bg-repeat-x"
           style={{
-            backgroundImage:  'url(/events/level-3.jpg)',
+            backgroundImage:  'url(/events/level-3.gif)',
             transform: `translateY(${scrollY * -0.3}px)`,
             backgroundPosition: "bottom",
             backgroundSize: "contain",
