@@ -9,7 +9,7 @@ const pixelifySans = Pixelify_Sans({
 export default function loader() {
   return (
     <div className={`${pixelifySans.className}  w-[100vw] h-[100vh] flex justify-center items-center`}>
-      TELEPORTING TO PIXEL WORLD ...
+      ENTERING PIXEL WORLD ...
       </div>
   )
 }
