@@ -49,7 +49,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full bg-repeat-x"
           style={{
             backgroundImage:  'url(/events/level-3.gif)',
-            transform: `translateY(${scrollY * -0.3}px)`,
+            // transform: `translateY(${scrollY * -0.3}px)`,
             backgroundPosition: "bottom",
             backgroundSize: "contain",
           }}

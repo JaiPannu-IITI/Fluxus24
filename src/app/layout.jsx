@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${monumentExtended.variable} ${aileron.variable} antialiased max-w-[100dvw] overflow-x-clip`}
       >
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </body>
     </html>

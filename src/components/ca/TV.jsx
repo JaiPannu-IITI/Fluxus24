@@ -1,31 +1,23 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { cn } from "@/lib/utils"
-import { Volume2, VolumeX, ChevronUp, ChevronDown } from "lucide-react"
-import bglight from "/public/images/bg/bglight.png"
-import Image from "next/image"
+import { useState, useEffect, useRef } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+import Image from "next/image";
+import bglight from "/public/images/bg/bglight.png";
 
 export default function InteractiveTV() {
-  const [isOn, setIsOn] = useState(true)
-  const [isMuted, setIsMuted] = useState(false)
-  const [volume, setVolume] = useState(50)
-  const [showVolumeBar, setShowVolumeBar] = useState(false)
+  const [isOn, setIsOn] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    if (showVolumeBar) {
-      const timer = setTimeout(() => setShowVolumeBar(false), 3000)
-      return () => clearTimeout(timer)
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
     }
-  }, [showVolumeBar, volume])
-
-  const handleVolumeChange = (newVolume) => {
-    setVolume(newVolume)
-    setShowVolumeBar(true)
-  }
+  }, [isMuted]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen">
+    <div className="relative flex items-center justify-center min-h-screen bg-gray-100">
       {/* Background Image */}
       <Image
         src={bglight}
@@ -35,6 +27,7 @@ export default function InteractiveTV() {
         quality={100}
         className="z-0"
       />
+
 
       {/* Overlay Divisions */}
       <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center justify-around text-center lg:text-left px-4 lg:px-8 py-8">
@@ -48,106 +41,152 @@ export default function InteractiveTV() {
           </p>
         </div>
 
-        {/* Right Section (Interactive TV) */}
-        <div className="relative">
-          {/* Antennas */}
-          <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
-            <div className="relative w-48 h-32">
-              <div className="absolute left-0 bottom-0 w-1 h-28 bg-gradient-to-b from-gray-400 to-gray-600 transform -rotate-15 origin-bottom"></div>
-              <div className="absolute right-0 bottom-0 w-1 h-32 bg-gradient-to-b from-gray-400 to-gray-600 transform rotate-15 origin-bottom"></div>
-            </div>
-          </div>
+      {/* Main Container */}
+      <div className="relative z-10 flex w-full max-w-7xl items-center justify-between px-4 lg:px-8 py-8">
+        {/* Left Section - FLUXUS 2025 */}
+        <h1 className="text-center text-6xl font-bold mb-16 bg-clip-text text-transparent bg-neutral-600" style={{fontFamily:"var(--font-monument-extended)"}} >
+          FLUXUS 2025
+        </h1>
 
-          {/* TV Body */}
-          <div
-            className={cn(
-              "w-96 h-72 bg-gradient-to-b from-amber-700 to-amber-900 rounded-lg shadow-xl overflow-hidden transition-all duration-500",
-              "border-t-8 border-x-8 border-b-16 border-amber-950",
-              "relative"
-            )}
-          >
-            {/* TV Screen */}
-            <div
-              className={cn(
-                "w-full h-full bg-black transition-all duration-500",
-                "rounded-lg",
-                "flex items-center justify-center",
-                isOn ? "opacity-100" : "opacity-0"
-              )}
-            >
-              {isOn && (
-                <div className="w-full h-full bg-white opacity-20 flex items-center justify-center">
-                  <div className="w-4/5 h-4/5 border-t-[20px] border-l-[20px] border-r-[20px] border-b-[40px] border-gray-300 rounded-full"></div>
-                </div>
-              )}
-            </div>
 
-            {/* Power Button */}
-            <button
-              onClick={() => setIsOn(!isOn)}
-              className={cn(
-                "absolute top-2 right-2 w-8 h-8 rounded-full focus:outline-none transition-colors duration-200",
-                isOn ? "bg-green-500 hover:bg-green-600" : "bg-red-500 hover:bg-red-600"
-              )}
-              aria-label={isOn ? "Turn Off" : "Turn On"}
-            >
-              <span className="text-white text-xs font-bold">⏻</span>
-            </button>
+        {/* Right Section - TV Container */}
+        <div className="w-1/2 flex justify-center">
+          <div className="relative">
+            {/* TV Antennas */}
+            <div className="absolute -top-16 left-1/4 w-1 h-20 bg-gray-700 transform -rotate-15"></div>
+            <div className="absolute -top-16 right-1/4 w-1 h-20 bg-gray-700 transform rotate-15"></div>
 
-            {/* Bottom Bezel with Buttons and Sound Bar */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-r from-amber-800 via-amber-900 to-amber-800 flex items-center justify-between px-4">
+            {/* TV Body */}
+            <div className="w-[500px] h-[350px] bg-gray-900 rounded-lg shadow-xl overflow-hidden relative border-8 border-gray-800">
+              {/* Power Button (Top Right) */}
+              <button
+                onClick={() => setIsOn(!isOn)}
+                className={`absolute z-10 top-2 right-2 w-8 h-8 rounded-full focus:outline-none transition-colors duration-200 ${
+                  isOn ? "bg-green-500 hover:bg-green-600" : "bg-red-500 hover:bg-red-600"
+                }`}
+                aria-label={isOn ? "Turn Off" : "Turn On"}
+              >
+                <span className="text-white text-xs font-bold">⏻</span>
+              </button>
+
+              {/* Mute Button (Top Left) */}
               <button
                 onClick={() => setIsMuted(!isMuted)}
                 disabled={!isOn}
-                className={cn(
-                  "w-10 h-10 rounded-full focus:outline-none transition-colors duration-200 flex items-center justify-center",
+                className={`absolute z-10 top-2 left-2 w-8 h-8 rounded-full flex items-center justify-center focus:outline-none transition-colors duration-200 ${
                   isOn
                     ? isMuted
                       ? "bg-yellow-500 hover:bg-yellow-600"
                       : "bg-blue-500 hover:bg-blue-600"
                     : "bg-gray-400"
-                )}
+                }`}
                 aria-label={isMuted ? "Unmute" : "Mute"}
               >
-                {isMuted ? <VolumeX className="w-6 h-6 text-white" /> : <Volume2 className="w-6 h-6 text-white" />}
+                {isMuted ? <VolumeX className="w-5 h-5 text-white" /> : <Volume2 className="w-5 h-5 text-white" />}
               </button>
 
-              {/* Sound Bar */}
-              <div className="flex-1 mx-4 h-2 bg-amber-950 rounded-full overflow-hidden">
-                <div
-                  className={cn(
-                    "h-full bg-blue-500 transition-all duration-300",
-                    showVolumeBar ? "opacity-100" : "opacity-0"
-                  )}
-                  style={{ width: `${volume}%` }}
-                ></div>
-              </div>
-
-              <div className="flex space-x-4">
-                <button
-                  onClick={() => handleVolumeChange(Math.min(volume + 10, 100))}
-                  disabled={!isOn || isMuted}
-                  className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center focus:outline-none hover:bg-amber-600"
-                  aria-label="Increase Volume"
-                >
-                  <ChevronUp className="w-6 h-6 text-white" />
-                </button>
-                <button
-                  onClick={() => handleVolumeChange(Math.max(volume - 10, 0))}
-                  disabled={!isOn || isMuted}
-                  className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center focus:outline-none hover:bg-amber-600"
-                  aria-label="Decrease Volume"
-                >
-                  <ChevronDown className="w-6 h-6 text-white" />
-                </button>
+              {/* TV Screen */}
+              <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
+                {isOn ? (
+                  <video
+                    ref={videoRef}
+                    src="/video.mp4"
+                    className="w-full h-full object-cover transition-opacity duration-500"
+                    autoPlay
+                    loop
+                    muted={isMuted}
+                    controls={false}
+                  />
+                ) : (
+                  // Off screen noise effect
+                  <div className="absolute inset-0 bg-black flex items-center justify-center">
+                    <div className="loading-text">BUFFERING...</div>
+                    <div className="scanlines absolute inset-0 pointer-events-none"></div>
+                    <div className="screen-glow absolute inset-0 pointer-events-none"></div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
-
-          {/* TV Stand */}
-          <div className="w-64 h-12 bg-gradient-to-b from-amber-900 to-amber-950 mx-auto -mt-2 rounded-b-3xl shadow-lg"></div>
         </div>
       </div>
+
+      {/* Noise Buffering Styles */}
+      <style jsx>{`
+        .loading-text {
+          color: #fff;
+          font-family: monospace;
+          font-size: 2rem;
+          position: relative;
+          animation: glitch 1s infinite;
+        }
+
+        .loading-text::before,
+        .loading-text::after {
+          content: 'BUFFERING...';
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: #000;
+        }
+
+        .loading-text::before {
+          left: 2px;
+          text-shadow: -2px 0 #ff0000;
+          animation: glitch-1 2s infinite linear;
+        }
+
+        .loading-text::after {
+          left: -2px;
+          text-shadow: 2px 0 #00ff00;
+          animation: glitch-2 3s infinite linear;
+        }
+
+        .scanlines {
+          background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 51%);
+          background-size: 100% 4px;
+          animation: scanline 10s linear infinite;
+        }
+
+        .screen-glow {
+          box-shadow: 0 0 50px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
+          background: repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 0.5%);
+          opacity: 0.3;
+          mix-blend-mode: overlay;
+        }
+
+        @keyframes glitch {
+          0%, 100% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch-1 {
+          0% { clip-path: inset(20% 0 30% 0); }
+          20% { clip-path: inset(40% 0 10% 0); }
+          40% { clip-path: inset(10% 0 60% 0); }
+          60% { clip-path: inset(50% 0 20% 0); }
+          80% { clip-path: inset(30% 0 40% 0); }
+          100% { clip-path: inset(20% 0 30% 0); }
+        }
+
+        @keyframes glitch-2 {
+          0% { clip-path: inset(30% 0 20% 0); }
+          20% { clip-path: inset(10% 0 40% 0); }
+          40% { clip-path: inset(60% 0 10% 0); }
+          60% { clip-path: inset(20% 0 50% 0); }
+          80% { clip-path: inset(40% 0 30% 0); }
+          100% { clip-path: inset(30% 0 20% 0); }
+        }
+
+        @keyframes scanline {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(4px); }
+        }
+      `}</style>
     </div>
-  )
+  );
 }

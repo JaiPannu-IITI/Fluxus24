@@ -13,9 +13,9 @@ const page = () => {
   return (
     <>
       <Nav />
+      <InteractiveTV/>
       <Aboutus />
       <WhyCA />
-      <InteractiveTV/>
       <CampusAmbassadorIncentives />
       <Ca_responsibilities />
       <FAQ />
