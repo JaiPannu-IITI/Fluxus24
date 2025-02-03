@@ -41,10 +41,10 @@ export default function InteractiveTV() {
         {/* Left Section */}
         <div className="bg-white/90 p-6 rounded-lg shadow-lg max-w-md">
           <h1 className="text-2xl font-bold text-gray-800">
-            Glimpse from previous year's CA program
+            {"Glimpse from previous year's CA program"}
           </h1>
           <p className="text-gray-700 mt-4">
-            Explore highlights, achievements, and unforgettable moments that made the program a grand success!
+           {" Explore highlights, achievements, and unforgettable moments that made the program a grand success!"}
           </p>
         </div>
 
