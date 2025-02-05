@@ -28,12 +28,26 @@ export default function InteractiveTV() {
         className="z-0"
       />
 
+
+      {/* Overlay Divisions */}
+      <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center justify-around text-center lg:text-left px-4 lg:px-8 py-8">
+        {/* Left Section */}
+        <div className="bg-white/90 p-6 rounded-lg shadow-lg max-w-md">
+          <h1 className="text-2xl font-bold text-gray-800">
+            {"Glimpse from previous year's CA program"}
+          </h1>
+          <p className="text-gray-700 mt-4">
+           {" Explore highlights, achievements, and unforgettable moments that made the program a grand success!"}
+          </p>
+        </div>
+
       {/* Main Container */}
       <div className="relative z-10 flex w-full max-w-7xl items-center justify-between px-4 lg:px-8 py-8">
         {/* Left Section - FLUXUS 2025 */}
         <h1 className="text-center text-6xl font-bold mb-16 bg-clip-text text-transparent bg-neutral-600" style={{fontFamily:"var(--font-monument-extended)"}} >
           FLUXUS 2025
         </h1>
+
 
         {/* Right Section - TV Container */}
         <div className="w-1/2 flex justify-center">
