@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { CharacterCard } from "@/components/events/character-card"
 import Image from "next/image";
+import { Pixelify_Sans } from 'next/font/google'
 
 const tech_competitions = [
   {
@@ -244,27 +245,33 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-between h-min w-full">
             {activeDiv === 'buttons' && (
-              <div className="flex justify-around w-full space-x-4 p-6 shadow-lg rounded-lg">
-                <Image
-                  src="/images/comps/arcade.png"
-                  alt="Button 1"
-                  width={370}
-                  height={350}
-                  className={`cursor-pointer transition-all duration-300 ${hoveredButton === 'button1' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button2' ? 'scale-95' : ''}`}
-                  onMouseEnter={() => setHoveredButton('button1')}
-                  onMouseLeave={() => setHoveredButton(null)}
-                  onClick={() => setActiveDiv('div1')}
-                />
-                <Image
-                  src="/images/comps/dance.png"
-                  alt="Button 2"
-                  width={370}
-                  height={350}
-                  className={`cursor-pointer transition-all duration-300 ${hoveredButton === 'button2' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button1' ? 'scale-95' : ''}`}
-                  onMouseEnter={() => setHoveredButton('button2')}
-                  onMouseLeave={() => setHoveredButton(null)}
-                  onClick={() => setActiveDiv('div2')}
-                />
+              <div className="flex justify-evenly gap-28 w-full space-x-4 p-6 shadow-lg rounded-lg">
+                <div>
+                  <Image
+                    src="/images/comps/tech.png"
+                    alt="Button 1"
+                    width={300}
+                    height={250}
+                    className={`cursor-pointer transition-all duration-300 relative ${hoveredButton === 'button1' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button2' ? 'scale-95' : ''}`}
+                    onMouseEnter={() => setHoveredButton('button1')}
+                    onMouseLeave={() => setHoveredButton(null)}
+                    onClick={() => setActiveDiv('div1')}
+                  />
+                  <div className={'${pixelifySans.className} mt-8 text-center'}>{"Technical"}</div>
+                </div>
+                <div>
+                  <Image
+                    src="/images/comps/dance.png"
+                    alt="Button 2"
+                    width={350}
+                    height={350}
+                    className={`cursor-pointer transition-all duration-300 bottom-10 relative ${hoveredButton === 'button2' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button1' ? 'scale-95' : ''}`}
+                    onMouseEnter={() => setHoveredButton('button2')}
+                    onMouseLeave={() => setHoveredButton(null)}
+                    onClick={() => setActiveDiv('div2')}
+                  />
+                  <div className={'${pixelifySans.className} text-center'}>{"Cultural"}</div>
+                </div>
               </div>
             )}
 
