@@ -3,7 +3,7 @@ import Link from "next/link"
   export function CharacterCard({ name, description, image, backgroundColor, link }) {
     return (
       <div className="flex flex-col items-center p-4 w-full max-w-sm">
-        <div className="w-full aspect-square mb-4 p-5 relative" style={{ backgroundColor }}>
+        <div className="w-full aspect-square mb-4 p-2 relative" style={{ backgroundColor }}>
           <img src={image || "/placeholder.svg"} alt={name} className="w-full h-full object-contain" />
         </div>
         <h3 className="text-xl font-bold mb-2 uppercase text-center tracking-wider pixel-font">{name}</h3>
