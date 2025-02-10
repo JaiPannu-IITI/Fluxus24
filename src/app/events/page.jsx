@@ -2,102 +2,182 @@
 
 import { useEffect, useState } from "react"
 import { CharacterCard } from "@/components/events/character-card"
+import Image from "next/image";
 
-const competitions = [
+const tech_competitions = [
+  {
+    name: "FACE RECOGNITION SYSTEM",
+    desc: "Develop an advanced facial recognition system for seamless and secure employee access.",
+    poster: "/images/technical/7.png",
+    color: "#e11d48",
+    link: "https://unstop.com/hackathons/face-recognition-system-fluxus-2025-iit-indore-1391735",
+  },
+  {
+    name: "TINKERHUB",
+    desc: "Showcase your innovative hardware projects! Submit, get shortlisted, and present at IIT Indore.",
+    poster: "/images/technical/14.png",
+    color: "#0d9488",
+    link: "https://unstop.com/competitions/tinkerhub-tech-expo-fluxus-2025-iit-indore-1376794",
+  },
+  {
+    name: "FLOOD FREE CITY DESIGN",
+    desc: "Design sustainable drainage solutions to create a flood-free, eco-friendly city.",
+    poster: "/images/technical/13.png",
+    color: "#2563eb",
+    link: "https://unstop.com/competitions/flood-free-city-design-competition-fluxus-2025-iit-indore-1385599",
+  },
+  {
+    name: "ROBOWARS",
+    desc: "Build, strategize, and battle with your combat robot in an electrifying showdown!",
+    poster: "/images/technical/12.png",
+    color: "#7e30c8",
+    link: "https://unstop.com/competitions/robowars-fluxus-2025-iit-indore-1389313",
+  },
+  {
+    name: "ROBOSOCCER",
+    desc: "Design and control your soccer bot—push, score, and outmaneuver opponents to victory!",
+    poster: "/images/technical/11.png",
+    color: "#e11d48",
+    link: "https://unstop.com/competitions/robosoccer-robotics-challenge-fluxus-2025-iit-indore-1376594",
+  },
+  {
+    name: "HEALTH CARE SYSTEM",
+    desc: "Create a platform to manage student health records, bookings, and medical history.",
+    poster: "/images/technical/8.png",
+    color: "#0d9488",
+    link: "https://unstop.com/hackathons/healthcare-management-system-hackathon-fluxus-2025-iit-indore-1384137",
+  },
+  {
+    name: "ANALYTICAX",
+    desc: "Apply machine learning to real-world problems and impress industry experts with your insights.",
+    poster: "/images/technical/4.png",
+    color: "#2563eb",
+    link: "https://unstop.com/competitions/analyticax-fluxus-2025-iit-indore-1391923",
+  },
+  {
+    name: "CONSULTX",
+    desc: "Solve business challenges with strategic thinking—analyze, innovate, and compete!",
+    poster: "/images/technical/3.png",
+    color: "#7e30c8",
+    link: "https://unstop.com/competitions/consultx-case-study-challenge-fluxus-2025-iit-indore-1385561",
+  },
+  {
+    name: "AERO ARTISTRY",
+    desc: "Design, build, and perfect a remote-controlled aircraft for the longest, smoothest glide.",
+    poster: "/images/technical/2.png",
+    color: "#e11d48",
+    link: "https://unstop.com/competitions/aero-artistry-fluxus-2025-iit-indore-1376783",
+  },
+  {
+    name: "GESTURE CONTROLLED DRONE",
+    desc: "Fly a drone with hand gestures! Innovate, compete, and take control of the skies.",
+    poster: "/images/technical/1.png",
+    color: "#0d9488",
+    link: "https://unstop.com/competitions/gesture-controlled-drone-fluxus-2025-iit-indore-1385701",
+  },
+];
+
+
+const cult_competitions = [
   {
     name: "SHOW IT DOWN",
-    desc: "Get ready to set the stage on fire with your moves! Gather your squad, bring your A-game, and showcase electrifying choreography across any dance style. Whether it's hip-hop, classical, or fusion—own the spotlight and leave the crowd in awe!",
+    desc: "Dominate the stage with electrifying choreography—hip-hop, classical, fusion—bring your best moves!",
     poster: "/images/cultural/1.png",
     color: "#e11d48",
+    link: "https://unstop.com/p/show-it-down-fluxus-2025-iit-indore-1376629",
   },
   {
     name: "3D RENDER",
-    desc: "From concept to creation—showcase your skills in 3D design and visualization! Whether it's architecture, characters, or abstract art, let your renders speak for themselves in this ultimate 3D modeling showdown. Are you ready to shape the digital world?",
+    desc: "Create stunning 3D designs—architecture, characters, or abstract—bring your digital vision to life!",
     poster: "/images/cultural/2.png",
     color: "#0d9488",
+    link: "https://unstop.com/p/3d-render-challenge-fluxus-2025-iit-indore-1376641",
   },
   {
     name: "THROUGH THE LENS",
-    desc: "A picture is worth a thousand words—what will yours say? Showcase your photography skills by capturing stunning shots based on a given theme. Let your creativity, perspective, and storytelling shine through the lens!",
+    desc: "One theme, one shot! Capture the perfect moment and showcase your photography skills.",
     poster: "/images/cultural/3.png",
     color: "#2563eb",
+    link: "https://unstop.com/p/echoes-through-the-lens-fluxus-2025-iit-indore-1376704",
   },
   {
     name: "TURNCOAT",
-    desc: "Ready to think on your feet? In this unique debate competition, you’ll argue both sides of a topic in a single speech—proving your skills in logic, persuasion, and quick thinking. It’s time to turn the tables and show off your debating prowess!",
+    desc: "Argue both sides of a topic in one speech—quick thinking and sharp logic will decide the winner!",
     poster: "/images/cultural/4.png",
-    color: "#e11d48",
+    color: "#7e30c8",
+    link: "https://unstop.com/p/turncoat-fluxus-2025-iit-indore-1380557",
   },
   {
     name: "BATTLE OF BANDS",
-    desc: "Get ready for a head-banging, toe-tapping, soul-stirring battle! Bands, bring your A-game and show off your talent with original compositions and killer covers. Let the music speak louder than words as you compete for the title of the ultimate rockstars!",
+    desc: "Rock the stage with your band! Originals or covers—bring your best sound and own the spotlight.",
     poster: "/images/cultural/5.png",
-    color: "#0d9488",
+    color: "#e11d48",
+    link: "https://unstop.com/events/battle-of-bands-fluxus-2025-iit-indore-1376711",
   },
   {
     name: "BEAT BOXING",
-    desc: "Got the beats? Drop them like never before! Show off your beatboxing skills and create mind-blowing rhythms using nothing but your voice. It’s time to prove that you can make the crowd groove with just your lips!",
+    desc: "Drop beats, create rhythms, and impress with just your voice! Show off your best beatboxing skills.",
     poster: "/images/cultural/6.png",
-    color: "#2563eb",
+    color: "#0d9488",
+    link: "https://unstop.com/events/beat-boxing-iit-indore-1380610",
   },
   {
     name: "VOICE OF FLUXUS",
-    desc: "One mic. One stage. One chance to mesmerize the audience! Step up and showcase your vocal talent across any genre—be it classical, pop, rock, or indie. Sing your heart out and claim your spotlight!",
+    desc: "One mic, one stage—sing your heart out across any genre and let your voice shine!",
     poster: "/images/cultural/7.png",
-    color: "#e11d48",
+    color: "#2563eb",
+    link: "https://unstop.com/events/voice-of-fluxus-iit-indore-1380595",
   },
   {
     name: "VORTEX ZONE",
-    desc: "Step into the arena where rhythm meets rivalry! Bring your best street dance moves, battle it out, and claim the crown in this electrifying showdown. From popping to breaking, let your style speak louder than words!",
+    desc: "Street dance battle! From popping to breaking—step up and prove your dominance on the dance floor.",
     poster: "/images/cultural/8.png",
-    color: "#0d9488",
+    color: "#7e30c8",
+    link: "https://unstop.com/p/vortex-zone-fluxus-2025-iit-indore-1376609",
   },
   {
     name: "KAVYA KUMBH",
-    desc: "Speak your truth, share your soul! In this non-theme-based poetry slam, let your words take center stage. Perform your original poetry and captivate the audience with the power of your voice and verses.",
+    desc: "Unleash your words! Perform your original poetry and captivate the audience with your verses.",
     poster: "/images/cultural/9.png",
-    color: "#2563eb",
+    color: "#e11d48",
+    link: "https://unstop.com/p/kavya-kumbh-fluxus-2025-iit-indore-1376701",
   },
   {
     name: "PARLIAMENTARY DEBATE",
-    desc: "Structured arguments. Critical analysis. Fiery rebuttals. Assemble your team of three and engage in an intense intellectual showdown, where strategy and delivery are just as important as content. Do you have what it takes to win the war of words?",
+    desc: "Three-person teams, structured arguments—strategy, analysis, and delivery will win this war of words.",
     poster: "/images/cultural/10.png",
-    color: "#e11d48",
+    color: "#0d9488",
+    link: "https://unstop.com/p/asian-parliamentary-debate-fluxus-2025-iit-indore-1376648",
   },
   {
     name: "HUNKAAR",
-    desc: "Raise your voice and make an impact! Gather your team and take the streets by storm, tackling social issues with powerful performances. Let your creativity, energy, and message resonate in this outdoor theatre competition!",
+    desc: "Raise your voice through street theatre! Tackle social issues and make an impact with powerful performances.",
     poster: "/images/cultural/11.png",
-    color: "#0d9488",
+    color: "#2563eb",
+    link: "https://unstop.com/p/hunkaar-fluxus-2025-iit-indore-1376678",
   },
   {
     name: "LIVE PAINTING",
-    desc: "Get ready to unleash your creativity! Whether you’re working solo or in a team, let your brush strokes bring the theme to life in this live painting competition. Show us how you turn ideas into masterpieces right before our eyes!",
+    desc: "Bring the theme to life with brushstrokes! Work solo or in a team to create a masterpiece in real time.",
     poster: "/images/cultural/12.png",
-    color: "#2563eb",
+    color: "#7e30c8",
+    link: "https://unstop.com/p/live-sketching-fluxus-2025-iit-indore-1376655",
   },
   {
     name: "ON THE BEAT",
-    desc: "One stage. One dancer. Infinite possibilities. Step up, own the spotlight, and let your moves do the talking! Show off your talent, rhythm, and passion in this electrifying solo dance competition. Are you ready to steal the show?",
+    desc: "One dancer, one stage—own the moment with your moves in this high-energy solo dance competition!",
     poster: "/images/cultural/13.png",
     color: "#e11d48",
+    link: "https://unstop.com/p/on-the-beat-fluxus-2025-iit-indore-1376538",
   },
-  // {
-  //   name: "HUNKAAR",
-  //   desc: "Raise your voice and make an impact! Gather your team and take the streets by storm, tackling social issues with powerful performances. Let your creativity, energy, and message resonate in this outdoor theatre competition!",
-  //   poster: "/images/cultural/14.png",
-  //   color: "#0d9488",
-  // },
-  // {
-  //   name: "LIVE PAINTING",
-  //   desc: "Get ready to unleash your creativity! Whether you’re working solo or in a team, let your brush strokes bring the theme to life in this live painting competition. Show us how you turn ideas into masterpieces right before our eyes!",
-  //   poster: "/images/cultural/16.png",
-  //   color: "#2563eb",
-  // },
 ];
 
+
+
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0);
+  const [activeDiv, setActiveDiv] = useState('buttons');
+  const [hoveredButton, setHoveredButton] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,36 +230,84 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 pt-20 pb-40"
+      <div className="relative z-10 pt-5 pb-40"
         style={{
           transform: `translateY(${scrollY * -0.3}px)`,
           zIndex: 10,
         }}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className=" font-extrabold text-6xl  silkscreen-bold">Events Page </h2>
-            <button className="bg-yellow-400 text-black mt-12 px-8 py-3 uppercase pixel-font hover:bg-yellow-300 transition-colors">
-              View the Collection
-            </button>
-            {/* <p className="mt-8 max-w-2xl mx-auto pixel-font">
-              WIZARDSHOCK IS A CASTLE FULL OF MAGIC, ADVENTURES, WITCHES AND WIZARDS.
-            </p>
-            <p className="mt-4 max-w-2xl mx-auto pixel-font">
-              AN EVIL WIZARD IS ATTACKING WIZARDS, WITCHES, AND NON MAGIC PEOPLE! THE WORLD IS FALLING APART AND PEOPLE
-              ARE DYING! SOMEONE NEEDS TO BE A HERO! BUT WHO?
-            </p> */}
+        <div className="container mx-auto px-0">
+          <div className="text-center mb-10">
+            <h2 className=" font-extrabold text-6xl  silkscreen-bold">{"Competitions"} </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {competitions.map((comp,index)=>(
-              <CharacterCard
-                name= {comp.name}
-                description= {comp.desc}
-                image= {comp.poster}
-                backgroundColor= {comp.color}
-              />
-            ))}
+
+
+          <div className="flex flex-col items-center justify-between h-min w-full">
+            {activeDiv === 'buttons' && (
+              <div className="flex justify-around w-full space-x-4 p-6 shadow-lg rounded-lg">
+                <Image
+                  src="/images/comps/arcade.png"
+                  alt="Button 1"
+                  width={370}
+                  height={350}
+                  className={`cursor-pointer transition-all duration-300 ${hoveredButton === 'button1' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button2' ? 'scale-95' : ''}`}
+                  onMouseEnter={() => setHoveredButton('button1')}
+                  onMouseLeave={() => setHoveredButton(null)}
+                  onClick={() => setActiveDiv('div1')}
+                />
+                <Image
+                  src="/images/comps/dance.png"
+                  alt="Button 2"
+                  width={370}
+                  height={350}
+                  className={`cursor-pointer transition-all duration-300 ${hoveredButton === 'button2' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button1' ? 'scale-95' : ''}`}
+                  onMouseEnter={() => setHoveredButton('button2')}
+                  onMouseLeave={() => setHoveredButton(null)}
+                  onClick={() => setActiveDiv('div2')}
+                />
+              </div>
+            )}
+
+            {activeDiv === 'div1' && (
+              <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
+                <button className="mb-4 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
+                  Go Back
+                </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {tech_competitions.map((comp, index) => (
+                    <CharacterCard
+                      name={comp.name}
+                      description={comp.desc}
+                      image={comp.poster}
+                      backgroundColor={comp.color}
+                      link={comp.link}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeDiv === 'div2' && (
+              <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
+                <button className="mb-4 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
+                  Go Back
+                </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                  {cult_competitions.map((comp, index) => (
+                    <CharacterCard
+                      name={comp.name}
+                      description={comp.desc}
+                      image={comp.poster}
+                      backgroundColor={comp.color}
+                      link={comp.link}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
+
+
         </div>
       </div>
     </main>
