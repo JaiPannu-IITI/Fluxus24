@@ -12,7 +12,7 @@ const pixelifySans = Pixelify_Sans({
 export default function PixelButton({ children = "PLAY", ...props }) {
   return (
     <button
-      className={`${pixelifySans.className} relative px-8 py-2 font-mono text-xl uppercase bg-[#2873a5] text-black border-none 
+      className={`${pixelifySans.className} relative px-8 py-2 font-mono text-xl uppercase bg-[#28a541] text-black border-none 
                 cursor-pointer transition-transform hover:translate-y-[2px] active:translate-y-[4px]
                 [image-rendering:pixelated]
                 before:absolute before:inset-0 before:border-[3px] before:border-black

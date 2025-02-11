@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { createContext, useContext, useEffect, useRef, useState } from "react";
-
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 const ModalContext = createContext(undefined);
 
 export const ModalProvider = ({
@@ -87,7 +87,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "max-h-[100vh] max-w-[100vw]  md:max-w-[40%]   md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
               className
             )}
             initial={{
@@ -113,7 +113,9 @@ export const ModalBody = ({
               damping: 15,
             }}>
             <CloseIcon />
+           
             {children}
+
           </motion.div>
         </motion.div>
       )}
@@ -126,7 +128,7 @@ export const ModalContent = ({
   className
 }) => {
   return (
-    (<div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+    (<div className={cn("flex flex-col flex-1  mx-3 my-3", className)}>
       {children}
     </div>)
   );
@@ -138,11 +140,12 @@ export const ModalFooter = ({
 }) => {
   return (
     (<div
-      className={cn("flex justify-end p-4 bg-gray-100 dark:bg-neutral-900", className)}>
+      className={cn("flex justify-end p-4 z-10", className)}>
       {children}
     </div>)
   );
 };
+
 
 const Overlay = ({
   className
@@ -167,8 +170,8 @@ const Overlay = ({
 const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
-    (<button onClick={() => setOpen(false)} className="absolute top-4 right-4 group">
-      <svg
+    (<button onClick={() => setOpen(false)} className="absolute bottom-4 left-4 group z-10">
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -182,7 +185,8 @@ const CloseIcon = () => {
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
         <path d="M6 6l12 12" />
-      </svg>
+      </svg> */}
+      
     </button>)
   );
 };
@@ -211,3 +215,5 @@ export const useOutsideClick = (
     };
   }, [ref, callback]);
 };
+
+
