@@ -60,28 +60,28 @@ export default function Navbar() {
       category: "Making your experience memorable",
       title: "TEAM",
       src: "/island/ice.jpg",
-      href: "/team",
+      href: "/",
       
     },
     {
       category: "you know them right?",
       title: "SPONSORS",
       src: "/island/money.jpg",
-      href: "/sponsors",
+      href: "/",
       
     },
     {
       category: "Be a part of fluxus 2025",
       title: "GALLERY",
       src: "/island/fire.jpg",
-      href: "/gallery",
+      href: "/",
       
     },
     {
       category: "Happy to help",
       title: "CONTACT US",
       src: "/island/desert.jpg",
-      href: "/contact",
+      href: "/",
     },
   ];
 
@@ -109,7 +109,7 @@ export default function Navbar() {
           <ModalTrigger>
           <PixelButton>MENU</PixelButton>
           </ModalTrigger>
-          <ModalBody className={`${view === "MAP" ? "bg-cyan-600/80 min-w-[60vw]" : "bg-black/30 min-w-[80vw]"}`}>
+          <ModalBody className={`${view === "MAP" ? "bg-cyan-600/80 min-w-[60vw]" : " min-w-[100vw]"}`}>
           {view === "MAP" ?
          <ModalContent>    
          <div className="flex justify-center items-center">
@@ -125,9 +125,9 @@ export default function Navbar() {
          </ModalContent>
          
        }
-        <ModalFooter className={`gap-4 ${view === "MAP" ? "bg-cyan-600" : "bg-zinc-900"}`}>
+        {/* <ModalFooter className={`gap-4 ${view === "MAP" ? "bg-cyan-600" : "bg-zinc-900"}`}>
         <div onClick={changeView}>Change View</div>
-       </ModalFooter>
+       </ModalFooter> */}
       </ModalBody>
       
      

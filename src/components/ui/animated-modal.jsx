@@ -128,7 +128,7 @@ export const ModalContent = ({
   className
 }) => {
   return (
-    (<div className={cn("flex flex-col flex-1 ", className)}>
+    (<div className={cn("flex flex-col flex-1  mx-3 my-3", className)}>
       {children}
     </div>)
   );
@@ -186,7 +186,7 @@ const CloseIcon = () => {
         <path d="M18 6l-12 12" />
         <path d="M6 6l12 12" />
       </svg> */}
-      Close
+      
     </button>)
   );
 };
