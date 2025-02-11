@@ -87,7 +87,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              "max-h-[100vh] max-w-[100vw] min-w-[60vw] md:max-w-[40%] bg-cyan-600/80 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "max-h-[100vh] max-w-[100vw]  md:max-w-[40%]   md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
               className
             )}
             initial={{
@@ -113,9 +113,9 @@ export const ModalBody = ({
               damping: 15,
             }}>
             <CloseIcon />
-            <AnimatedTooltip tooltipContent={{ title: "Hello", subtitle: "I am a tooltip" }}>
+           
             {children}
-            </AnimatedTooltip>
+
           </motion.div>
         </motion.div>
       )}
@@ -129,6 +129,18 @@ export const ModalContent = ({
 }) => {
   return (
     (<div className={cn("flex flex-col flex-1 ", className)}>
+      {children}
+    </div>)
+  );
+};
+
+export const ModalFooter = ({
+  children,
+  className
+}) => {
+  return (
+    (<div
+      className={cn("flex justify-end p-4 z-10", className)}>
       {children}
     </div>)
   );
@@ -158,8 +170,8 @@ const Overlay = ({
 const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
-    (<button onClick={() => setOpen(false)} className="absolute top-4 right-4 group z-10">
-      <svg
+    (<button onClick={() => setOpen(false)} className="absolute bottom-4 left-4 group z-10">
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -173,7 +185,8 @@ const CloseIcon = () => {
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
         <path d="M6 6l12 12" />
-      </svg>
+      </svg> */}
+      Close
     </button>)
   );
 };
@@ -202,3 +215,5 @@ export const useOutsideClick = (
     };
   }, [ref, callback]);
 };
+
+
