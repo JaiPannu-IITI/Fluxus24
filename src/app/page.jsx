@@ -6,10 +6,11 @@ import Demo from "@/components/landingpage/main"
 export default function Home() {
   return (
     <>
-      <Herosection />
+      {/* <Herosection /> */}
       {/* <Accomodation/>
       <PhotoGallery/> */}
-      <Demo/>
+      {/* <Demo/> */}
+      <Accomodation/>
     </>
   );
 }
