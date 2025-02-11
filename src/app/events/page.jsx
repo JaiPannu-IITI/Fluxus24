@@ -3,7 +3,13 @@
 import { useEffect, useState } from "react"
 import { CharacterCard } from "@/components/events/character-card"
 import Image from "next/image";
-import { Pixelify_Sans } from 'next/font/google'
+import { Pixelify_Sans } from 'next/font/google';
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'], // Specify the required subsets
+  weight: ['400', '700'], // Specify required font weights
+  display: 'swap', // Use 'swap' for better font rendering
+});
 
 const tech_competitions = [
   {
@@ -238,26 +244,26 @@ export default function Home() {
         }}>
         <div className="container mx-auto px-0">
           <div className="text-center mb-10">
-            <h2 className=" font-extrabold text-6xl  silkscreen-bold">{"Competitions"} </h2>
+            <h2 className="comp-title font-extrabold text-4xl md:text-5xl lg:text-6xl silkscreen-bold">{"Competitions"} </h2>
           </div>
 
 
 
           <div className="flex flex-col items-center justify-between h-min w-full">
             {activeDiv === 'buttons' && (
-              <div className="flex justify-evenly gap-28 w-full space-x-4 p-6 shadow-lg rounded-lg">
+              <div className="flex flex-wrap justify-evenly gap-24 w-full space-x-4 p-6 shadow-lg rounded-lg">
                 <div>
                   <Image
                     src="/images/comps/tech.png"
                     alt="Button 1"
                     width={300}
                     height={250}
-                    className={`cursor-pointer transition-all duration-300 relative ${hoveredButton === 'button1' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button2' ? 'scale-95' : ''}`}
+                    className={`tech-comp cursor-pointer transition-all duration-300 relative ${hoveredButton === 'button1' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button2' ? 'scale-95' : ''}`}
                     onMouseEnter={() => setHoveredButton('button1')}
                     onMouseLeave={() => setHoveredButton(null)}
                     onClick={() => setActiveDiv('div1')}
                   />
-                  <div className={'${pixelifySans.className} mt-8 text-center'}>{"Technical"}</div>
+                  <div className={`${pixelifySans.className} mt-8 text-3xl text-center`}>{"Technical"}</div>
                 </div>
                 <div>
                   <Image
@@ -265,19 +271,19 @@ export default function Home() {
                     alt="Button 2"
                     width={350}
                     height={350}
-                    className={`cursor-pointer transition-all duration-300 bottom-10 relative ${hoveredButton === 'button2' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button1' ? 'scale-95' : ''}`}
+                    className={`cult-comp cursor-pointer transition-all duration-300 bottom-10 relative ${hoveredButton === 'button2' ? 'scale-[1.03]' : ''} ${hoveredButton === 'button1' ? 'scale-95' : ''}`}
                     onMouseEnter={() => setHoveredButton('button2')}
                     onMouseLeave={() => setHoveredButton(null)}
                     onClick={() => setActiveDiv('div2')}
                   />
-                  <div className={'${pixelifySans.className} text-center'}>{"Cultural"}</div>
+                  <div className={`${pixelifySans.className} text-3xl text-center`}>{"Cultural"}</div>
                 </div>
               </div>
             )}
 
             {activeDiv === 'div1' && (
               <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
-                <button className="mb-4 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
+                <button className="mb-8 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
                   Go Back
                 </button>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -296,7 +302,7 @@ export default function Home() {
 
             {activeDiv === 'div2' && (
               <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
-                <button className="mb-4 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
+                <button className="mb-8 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
                   Go Back
                 </button>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
