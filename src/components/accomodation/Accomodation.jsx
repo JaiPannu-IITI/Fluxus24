@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import { Press_Start_2P } from "next/font/google";
-import { Pixelify_Sans } from 'next/font/google';
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Press_Start_2P } from "next/font/google"
+import { Pixelify_Sans } from "next/font/google"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 import "./parallax.css"
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
+import { FaBan, FaCarAlt, FaUserShield, FaUndo, FaBed, FaSearch, FaDoorOpen, FaIdCard } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/navigation"
 
-//swiper 
+//swiper
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade, Navigation } from "swiper"
 
@@ -26,32 +26,86 @@ const photos = [
   "/images/Accomodation/4.jpg",
 ]
 
+
+//animation
+const listVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.1, duration: 0.4, ease: "easeOut" },
+  }),
+};
+
 const pressStart2P = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
-});
+})
 
 const pixelifySans = Pixelify_Sans({
-  subsets: ['latin'],
-  weight: ['500'],
-  display: 'swap',
-});
+  subsets: ["latin"],
+  weight: ["500"],
+  display: "swap",
+})
 
 const Accomodation = () => {
-  const starsRef = useRef(null);
-  const [isModalVisible, setModalVisible] = useState(false);
-  const [isHovered , setHovered] = useState(false);
+  const starsRef = useRef(null)
+  const [isModalVisible, setModalVisible] = useState(false)
+  const [isHovered, setHovered] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       if (starsRef.current) {
-        const scrollValue = window.scrollY;
-        starsRef.current.style.transform = `translateY(${scrollValue * 0.5}px)`;
+        const scrollValue = window.scrollY
+        starsRef.current.style.transform = `translateY(${scrollValue * 0.5}px)`
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const guidelines = [
+    {
+      title: "Prohibited Items",
+      description: "Strict prohibition of alcohol, drugs, sharp objects, explosives, or any other deemed unsafe items inside the campus.",
+      icon: <FaBan />,
+    },
+    {
+      title: "No External Vehicles",
+      description: "No external vehicles allowed onto the campus during Fluxus 2025.",
+      icon: <FaCarAlt />,
+    },
+    {
+      title: "Guest Conduct",
+      description: "Guests must uphold etiquette and cleanliness, adhering to campus rules throughout their stay.",
+      icon: <FaUserShield />,
+    },
+    {
+      title: "Return Issued Items",
+      description: "All issued items must be returned in satisfactory condition during check-out.",
+      icon: <FaUndo />,
+    },
+    {
+      title: "Accommodation",
+      description: "Triple occupancy rooms provided with mattress, pillow, blankets, bedsheets & hospitality kit each.",
+      icon: <FaBed />,
+    },
+    {
+      title: "Random Checks",
+      description: "Random checks will be conducted to prevent unauthorized stays.",
+      icon: <FaSearch />,
+    },
+    {
+      title: "Entry Restriction",
+      description: "Entry exclusively through 'Gate 1A' of IIT Indore; all other gates will remain closed.",
+      icon: <FaDoorOpen />,
+    },
+    {
+      title: "ID Requirement",
+      description: "Guests must carry valid government photo IDs at all times.",
+      icon: <FaIdCard />,
+    },
+  ];
 
   return (
     <div className={`min-h-screen bg-black relative overflow-hidden ${isModalVisible ? "brightness-100" : ""}`}>
@@ -62,10 +116,10 @@ const Accomodation = () => {
       </div>
 
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row-reverse items-center justify-between relative z-10">
-        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pl-10  relative flex justify-center items-center">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pl-10  relative flex justify-center items-center ">
           <motion.div
             whileHover={{ x: [0, -5, 5, -5, 5, 0] }}
-            transition={{ duration: 0.6, ease: "easeInOut", repeat: Infinity }}
+            transition={{ duration: 0.6, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY }}
             onClick={() => setModalVisible(true)}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -79,29 +133,82 @@ const Accomodation = () => {
               className="w-full h-auto max-h-[1000px] object-contain cursor-pointer"
             />
             {isHovered && (
-               <div className="absolute inset-0 bg-black bg-opacity-40  backdrop-blur-sm flex items-center justify-center">
-                  <p className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md shadow-[8px_8px_0px_0px_white] cursor-pointer">View Photos</p>
-                </div>
-              )  
-            }
+              <div className="absolute inset-0 bg-black bg-opacity-40  backdrop-blur-sm flex items-center justify-center">
+                <p className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md shadow-[8px_8px_0px_0px_white] cursor-pointer">
+                  View Photos
+                </p>
+              </div>
+            )}
           </motion.div>
         </div>
 
-        <div className="w-full md:w-2/3 text-center md:text-left space-y-8">
+        {/* <div className="w-full md:w-2/3 text-center md:text-left space-y-8">
           <div className={pressStart2P.className}>
-            <h1 className="text-4xl md:text-6xl text-cyan-400 mb-6 leading-relaxed">ACCOMMODATION</h1>
-            <p className="text-sm md:text-base text-gray-300 mb-12 leading-relaxed">
-              Discover comfortable and modern living spaces at IIT Indore. Our accommodation facilities provide the
-              perfect environment for students to thrive in their academic journey.
-            </p>
+            <h1 className="text-4xl md:text-6xl text-cyan-400  leading-relaxed mt-7 pt-7">ACCOMMODATION</h1>
+            <h2 className="text-2xl md:text-3xl text-white my-7 ">General Guidelines:</h2>
+            <ul className="text-sm md:text-base text-gray-300 mb-12 leading-relaxed space-y-4">
+              <ul>
+                {guidelines.map((guideline, index) => (
+                  <li key={index} className="flex items-start space-x-5 pb-6">
+                    <span className="text-xl text-blue-500">{guideline.icon}</span>
+                    <div>
+                      <h3 className="font-semibold">{guideline.title}</h3>
+                      <p className="tracking-tight">{guideline.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+            </ul>
           </div>
           <div className={pixelifySans.className}>
-            <button className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md shadow-[8px_8px_0px_0px_white] 
-               transition-transform duration-200 hover:scale-105 hover:shadow-[10px_10px_0px_0px_white]">
+            <button
+              className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md shadow-[8px_8px_0px_0px_white] 
+               transition-transform duration-200 hover:scale-105 hover:shadow-[10px_10px_0px_0px_white]"
+            >
               Register Now
             </button>
           </div>
-        </div>
+        </div> */}
+        <div className="w-full md:w-2/3 text-center md:text-left space-y-10 md:space-y-12 px-4 md:px-0 ">
+  <div className={pressStart2P.className}>
+    <h1 className="text-4xl md:text-6xl text-cyan-400 mb-8 leading-snug mt-7 pt-7">ACCOMMODATION</h1>
+    <h2 className="text-2xl md:text-3xl text-white  my-7 ">General Guidelines:</h2>
+
+    <motion.ul
+  initial="hidden"
+  animate="visible"
+  className="text-sm md:text-base text-gray-300 space-y-5 md:space-y-6"
+>
+  {guidelines.map((guideline, index) => (
+    <motion.li
+      key={index}
+      custom={index}
+      variants={listVariants}
+      whileHover={{ scale: 1.05 }}
+      className="flex items-start space-x-4 md:space-x-5"
+    >
+      <span className="text-xl md:text-2xl text-blue-500">{guideline.icon}</span>
+      <div>
+        <h3 className="font-semibold">{guideline.title}</h3>
+        <p className="leading-relaxed">{guideline.description}</p>
+      </div>
+    </motion.li>
+  ))}
+</motion.ul>
+  </div>
+
+  <div className={`${pixelifySans.className} flex justify-center md:justify-start`}>
+    <button
+      className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
+      shadow-[6px_6px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105 hover:shadow-[8px_8px_0px_0px_white]"
+    >
+      Register Now
+    </button>
+  </div>
+</div>
+
       </div>
 
       {/* Modal Div */}
@@ -154,20 +261,19 @@ const Accomodation = () => {
               </div>
             </div>
             <div className="flex items-center justify-center mt-2">
-            <button
-              className={`${pixelifySans.className} mt-4 bg-cyan-400  text-white px-4 py-2 rounded hover:bg-cyan-600 ` }
-              onClick={() => setModalVisible(false)}
-            >
-              Close
-            </button>
+              <button
+                className={`${pixelifySans.className} mt-4 bg-cyan-400  text-white px-4 py-2 rounded hover:bg-cyan-600 `}
+                onClick={() => setModalVisible(false)}
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default Accomodation;
-
+export default Accomodation
 
