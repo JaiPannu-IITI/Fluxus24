@@ -128,7 +128,7 @@ export const ModalContent = ({
   className
 }) => {
   return (
-    (<div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+    (<div className={cn("flex flex-col flex-1 ", className)}>
       {children}
     </div>)
   );
@@ -158,7 +158,7 @@ const Overlay = ({
 const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
-    (<button onClick={() => setOpen(false)} className="absolute top-4 right-4 group">
+    (<button onClick={() => setOpen(false)} className="absolute top-4 right-4 group z-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
