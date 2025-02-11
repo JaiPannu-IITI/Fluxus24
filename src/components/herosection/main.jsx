@@ -9,25 +9,17 @@ const LazySpline = lazy(() => import("@splinetool/react-spline/next"));
 
 function MainContent() {
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center relative">
-      {/* Background 3D Scene 1 */}
-      <div className="absolute w-[100vw] h-[100vh] top-0 left-0">
-        <LazySpline scene="https://prod.spline.design/DYQgKyYu3rcg9m-c/scene.splinecode" />
-      </div>
+    <div className="w-[100vw] h-[100vh] z-40 flex justify-center items-center relative">
+   
 
-      {/* Background 3D Scene 2 */}
-      <div className="w-[50vw] h-[100vh] absolute top-0 right-[-10%]">
-        <LazySpline scene="https://prod.spline.design/opiHI8ED2FCuwVXQ/scene.splinecode" />
-      </div>
+   <Image
+  src="/logo/main.png"
+  width={4000}
+  height={2000}
+  className="w-[1100px] drop-shadow-2xl filter brightness-0 invert-[30%] sepia-[90%] saturate-[500%] hue-rotate-[100deg] mix-blend-multiply"
+  alt="Main Logo"
+/>
 
-
-      <Image
-        src="/logo/main.png"
-        width={4000}
-        height={2000}
-        className="w-[1100px] drop-shadow-2xl brightness-200"
-        alt="Main Logo"
-      />
     </div>
   );
 }
