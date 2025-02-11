@@ -9,7 +9,7 @@ import { Modal, ModalBody,
   ModalFooter,
   ModalTrigger,
 } from "@/components/ui/animated-modal";
-
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 const pixelifySans = Pixelify_Sans({
   subsets: ['latin'], // Specify the required subsets
   weight: ['400', '700'], // Specify required font weights
@@ -38,18 +38,15 @@ export default function Navbar() {
         </ModalTrigger>
         <ModalBody>
                   <ModalContent>
-                    <h4
-                      className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
-                      PIXEL VERSE
-                    </h4>
+                    
                     <div className="flex justify-center items-center">
-                      
+
+                      <Image src={"/map/map.jpg"} width={1000} height={500} alt="logo" className="w-[100%]" />
+                   
                     </div>
                    
                   </ModalContent>
-                  <ModalFooter className="gap-4">
-                    Switch between worlds
-                  </ModalFooter>
+                
                 </ModalBody>
               </Modal>
 
