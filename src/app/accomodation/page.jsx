@@ -203,8 +203,8 @@ const Accomodation = () => {
       className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
       shadow-[6px_6px_0px_0px_white] transition-transform duration-200 
       hover:scale-105 hover:shadow-[8px_8px_0px_0px_white]"
-    >
-      Register Now
+    > <a href="https://docs.google.com/forms/d/16mnbZAtuuLbQbHO7e4EvsxsggeRkTFW6rxxShT11PKM/edit">
+      Register Now </a>
     </button>
   </div>
 </div>
