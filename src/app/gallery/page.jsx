@@ -4,14 +4,21 @@ import { Press_Start_2P } from "next/font/google"
 import { Pixelify_Sans } from "next/font/google"
 import { motion } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"; 
 
 const images = [
-  "https://dummyimage.com/500x300",
-  "https://dummyimage.com/501x301",
-  "https://dummyimage.com/600x360",
-  "https://dummyimage.com/601x361",
-  "https://dummyimage.com/500x301",
-  "https://dummyimage.com/503x303",
+  "/images/carouselImages/img1.jpg",
+  "/images/carouselImages/img2.jpg",
+  "/images/carouselImages/img3.jpg",
+  "/images/carouselImages/img4.jpg",
+  "/images/carouselImages/img5.jpg",
+  "/images/carouselImages/img6.jpg",
+  "/images/carouselImages/img7.jpg",
+  "/images/carouselImages/img8.jpg",
+  "/images/carouselImages/img9.jpg",
+  "/images/carouselImages/img10.jpg",
+  "/images/carouselImages/img11.jpg",
+  "/images/carouselImages/img12.jpg",
 ]
 
 const pressStart2P = Press_Start_2P({
@@ -71,12 +78,13 @@ const Gallery = () => {
 
       {/* Scrollable Content */}
       <div className="relative w-full min-h-screen overflow-y-auto">
-        <h1 className={`${pressStart2P.className} text-5xl md:text-6xl text-center text-zinc-400 mt-20 pt-5`}>
+        
+        <h1 className={`${pressStart2P.className} text-5xl md:text-6xl text-center text-zinc-300 mt-20 p-5  bg-black bg-opacity-50 backdrop-blur-lg rounded-md mx-auto w-3/4`}>
           Gallery
         </h1>
 
         <div className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto flex flex-wrap">
+          <div className="container px-5 py-20 mx-auto flex flex-wrap">
             {[...Array(3)].map((_, sectionIndex) => (
               <div key={sectionIndex} className="flex flex-wrap w-full md:-m-2 -m-1 mt-10 pt-2">
                 <div className="flex flex-wrap w-1/2">
@@ -96,7 +104,9 @@ const Gallery = () => {
                         <div className="w-full h-full object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
              shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
              hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]">
-                          <img
+                          <Image
+                            height={300}
+                            width={520}
                             alt="gallery"
                             className="w-full object-cover h-full object-center block"
                             src={images[i] || "/placeholder.svg"}
@@ -117,7 +127,9 @@ const Gallery = () => {
                       <div className="w-full h-full object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1  rounded-md 
                                      shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
                                   hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]">
-                        <img
+                        <Image
+                          height={600}
+                          width={1050}
                           alt="gallery"
                           className="w-full h-full object-cover object-center block"
                           src={images[3] || "/placeholder.svg"}
@@ -138,7 +150,9 @@ const Gallery = () => {
                       <div className="h-full w-[525px]  object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1  rounded-md 
                                      shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
                                      hover:scale-105 hover:shadow-[8px_8px_0px_0px_black] ">
-                        <img
+                        <Image
+                          height={300}
+                          width={520}
                           alt="gallery"
                           className="w-[520px] h-[300px] object-cover object-center block"
                           src={images[4] || "/placeholder.svg"}
@@ -162,7 +176,9 @@ const Gallery = () => {
                         <div className="w-full h-full object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
              shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
              hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]">
-                          <img
+                          <Image
+                            height={300}
+                            width={520}
                             alt="gallery"
                             className="w-full object-cover h-full object-center block"
                             src={images[i] || "/placeholder.svg"}
