@@ -242,7 +242,7 @@ export default function Home() {
           transform: `translateY(${scrollY * -0.3}px)`,
           zIndex: 10,
         }}>
-        <div className="container mx-auto px-0">
+        <div className="container h-min mx-auto px-0">
           <div className="text-center mb-10">
             <h2 className="comp-title font-extrabold text-4xl md:text-5xl lg:text-6xl silkscreen-bold">{"Competitions"} </h2>
           </div>
@@ -251,7 +251,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-between h-min w-full">
             {activeDiv === 'buttons' && (
-              <div className="flex flex-wrap justify-evenly gap-24 w-full space-x-4 p-6 shadow-lg rounded-lg">
+              <div className="flex flex-wrap justify-evenly gap-24 w-full space-x-4 p-6 rounded-lg">
                 <div>
                   <Image
                     src="/images/comps/tech.png"
@@ -282,7 +282,7 @@ export default function Home() {
             )}
 
             {activeDiv === 'div1' && (
-              <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
+              <div className="p-6 h-min flex flex-col items-center rounded-lg">
                 <button className="mb-8 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
                   Go Back
                 </button>
@@ -302,7 +302,7 @@ export default function Home() {
             )}
 
             {activeDiv === 'div2' && (
-              <div className="p-6 flex flex-col items-center shadow-lg rounded-lg">
+              <div className="p-6 h-min flex flex-col items-center rounded-lg">
                 <button className="mb-8 bg-yellow-400 text-black text-xl px-6 py-2 uppercase pixel-font hover:bg-white  hover:-translate-y-1 transition-colors" onClick={() => setActiveDiv('buttons')}>
                   Go Back
                 </button>

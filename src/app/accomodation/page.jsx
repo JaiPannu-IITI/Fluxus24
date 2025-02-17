@@ -8,6 +8,7 @@ import "./parallax.css"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { FaBan, FaCarAlt, FaUserShield, FaUndo, FaBed, FaSearch, FaDoorOpen, FaIdCard } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css"
@@ -64,6 +65,32 @@ const Accomodation = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+
+  const contacts = [
+    {
+      name: "Abhijeet Parihar",
+      designation: "Head of Accommodation",
+      phone: "+91 72473 15443",
+      image: "/images/team/abhijeet.jpg", // Add correct image path
+      social: {
+        linkedin: "#",
+        instagram: "#",
+        facebook: "#",
+      },
+    },
+    {
+      name: "Shreyas Kale",
+      designation: "Head of Accommodation",
+      phone: "+91 81081 06458",
+      image: "/images/team/shreyas.jpg", // Add correct image path
+      social: {
+        linkedin: "#",
+        instagram: "#",
+        facebook: "#",
+      },
+    },
+  ];
+  
   const guidelines = [
     {
       title: "Prohibited Items",
@@ -171,50 +198,89 @@ const Accomodation = () => {
           </div>
         </div> */}
         <div className="w-full md:w-2/3 text-center md:text-left space-y-10 md:space-y-12 px-4 md:px-0 ">
-  <div className={pressStart2P.className}>
-    <h1 className="text-4xl md:text-6xl text-cyan-400 mb-8 leading-snug mt-7 pt-7">ACCOMMODATION</h1>
-    <h2 className="text-2xl md:text-3xl text-white  my-7 ">General Guidelines:</h2>
+          <div className={pressStart2P.className}>
+            <h1 className="text-4xl md:text-6xl text-cyan-400 mb-8 leading-snug mt-7 pt-7">ACCOMMODATION</h1>
+            <h2 className="text-2xl md:text-3xl text-white  my-7 ">General Guidelines:</h2>
 
-    <motion.ul
-  initial="hidden"
-  animate="visible"
-  className="text-sm md:text-base text-gray-300 space-y-5 md:space-y-6"
->
-  {guidelines.map((guideline, index) => (
-    <motion.li
-      key={index}
-      custom={index}
-      variants={listVariants}
-      whileHover={{ scale: 1.05 }}
-      className="flex items-start space-x-4 md:space-x-5"
-    >
-      <span className="text-xl md:text-2xl text-blue-500">{guideline.icon}</span>
-      <div>
-        <h3 className="font-semibold">{guideline.title}</h3>
-        <p className="leading-relaxed">{guideline.description}</p>
-      </div>
-    </motion.li>
-  ))}
-</motion.ul>
-  </div>
+            <motion.ul
+              initial="hidden"
+              animate="visible"
+              className="text-sm md:text-base text-gray-300 space-y-5 md:space-y-6"
+            >
+              {guidelines.map((guideline, index) => (
+                <motion.li
+                  key={index}
+                  custom={index}
+                  variants={listVariants}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-start space-x-4 md:space-x-5"
+                >
+                  <span className="text-xl md:text-2xl text-blue-500">{guideline.icon}</span>
+                  <div>
+                    <h3 className="font-semibold">{guideline.title}</h3>
+                    <p className="leading-relaxed">{guideline.description}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
 
-  <div className={`${pixelifySans.className} flex justify-center md:justify-start`}>
-    <button
-      className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
+         
+
+          <div className={`${pixelifySans.className} flex justify-center  mb-4`}>
+            <button
+              className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
       shadow-[6px_6px_0px_0px_white] transition-transform duration-200 
       hover:scale-105 hover:shadow-[8px_8px_0px_0px_white]"
-    >
-      Register Now
-    </button>
-  </div>
-</div>
+            > <a href="https://docs.google.com/forms/d/16mnbZAtuuLbQbHO7e4EvsxsggeRkTFW6rxxShT11PKM/edit">
+                Register Now </a>
+            </button>
+          </div>
+
+
+         
+
+         
+        </div>
+        
 
       </div>
 
+       {/*  Contact Card Section */}
+       <div className="container mx-auto px-4 py-8 mb-10 ">
+      <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6` }>Contact:</h2>
+      <div className="flex flex-wrap justify-center gap-8">
+        {contacts.map((contact, index) => (
+          <div key={index} className="bg-gray-900 w-72 h-64 rounded-lg shadow-lg flex flex-col items-center p-4">
+            <Image
+              src={contact.image}
+              alt={contact.name}
+              width={100}
+              height={100}
+              className="w-24 h-24 rounded-full object-cover border-2 border-white"
+            />
+            <h3 className="text-xl font-semibold mt-3">{contact.name}</h3>
+            <p className="text-sm text-gray-400">{contact.designation}</p>
+            <p className="text-md font-medium mt-2">{contact.phone}</p>
+            <div className="flex space-x-4 mt-3">
+              <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="text-blue-400 text-xl hover:text-blue-600 transition" />
+              </a>
+              <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-pink-400 text-xl hover:text-pink-600 transition" />
+              </a>
+              <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-blue-500 text-xl hover:text-blue-700 transition" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      </div> 
       {/* Modal Div */}
       {isModalVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60  backdrop-blur-sm z-50">
-          <div className="container mx-auto px-4 py-5 relative ">
+        <div className="fixed inset-0 flex items-start justify-center bg-black bg-opacity-60  backdrop-blur-sm z-50 pt-10 mt-10 ">
+          <div className="container mx-auto px-4  relative ">
             <h1 className={`${pressStart2P.className} text-4xl md:text-6xl z-100 text-cyan-400 mb-12 text-center`}>
               PHOTO GALLERY
             </h1>
