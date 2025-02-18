@@ -71,7 +71,7 @@ const Accomodation = () => {
       name: "Abhijeet Parihar",
       designation: "Head of Accommodation",
       phone: "+91 72473 15443",
-      image: "/images/Accomodation/abhi.jpg", // Add correct image path
+      image: "/images/Accomodation/abhi.jpeg", // Add correct image path
       social: {
         linkedin: "https://www.linkedin.com/in/abhijeet-sp?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         instagram: "https://www.instagram.com/ab_hijeet015?igsh=cGdnNjJrNnlkZmY4&utm_source=qr",
@@ -82,7 +82,7 @@ const Accomodation = () => {
       name: "Shreyas Kale",
       designation: "Head of Accommodation",
       phone: "+91 81081 06458",
-      image: "/images/Accomodation/shre.jpg", // Add correct image path
+      image: "/images/Accomodation/shre.jpeg", // Add correct image path
       social: {
         linkedin: "#",
         instagram: "#",
