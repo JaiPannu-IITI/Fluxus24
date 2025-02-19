@@ -84,8 +84,8 @@ const Accomodation = () => {
       phone: "+91 81081 06458",
       image: "/images/Accomodation/shre.jpg", // Add correct image path
       social: {
-        linkedin: "#",
-        instagram: "#",
+        linkedin: "https://www.linkedin.com/in/shreyas-kale-5a3271280",
+        instagram: "https://www.instagram.com/its_shrey04/",
        
       },
     },
@@ -237,34 +237,34 @@ const Accomodation = () => {
       </div>
 
       {/*  Contact Card Section */}
-      <div className="container mx-auto px-4 py-8 mb-10 ">
-        <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {contacts.map((contact, index) => (
-            <div key={index} className="bg-gray-900 w-72 h-64 rounded-lg shadow-lg flex flex-col items-center p-4">
-              <Image
-                src={contact.image}
-                alt={contact.name}
-                width={100}
-                height={100}
-                className="w-24 h-24 rounded-full object-cover border-2 border-white"
-              />
-              <h3 className="text-xl font-semibold mt-3">{contact.name}</h3>
-              <p className="text-sm text-gray-400">{contact.designation}</p>
-              <p className="text-md font-medium mt-2">{contact.phone}</p>
-              <div className="flex space-x-4 mt-3">
-                <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="text-blue-400 text-xl hover:text-blue-600 transition" />
-                </a>
-                <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="text-pink-400 text-xl hover:text-pink-600 transition" />
-                </a>
-               
-              </div>
-            </div>
-          ))}
+      <div className="container mx-auto px-4 py-8 mb-10">
+  <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
+  <div className="flex flex-wrap justify-center gap-8">
+    {contacts.map((contact, index) => (
+      <div key={index} className="bg-gray-900 w-72 h-64 rounded-lg shadow-lg flex flex-col items-center p-4">
+        <Image
+          src={contact.image}
+          alt={contact.name}
+          width={100}
+          height={100}
+          className="w-24 h-24 rounded-full object-cover border-2 border-white"
+        />
+        <h3 className="text-xl font-semibold mt-3">{contact.name}</h3>
+        <p className="text-sm text-gray-400">{contact.designation}</p>
+        <p className="text-md font-medium mt-2">{contact.phone}</p>
+        <div className="flex space-x-4 mt-3">
+          <a href={`${contact.social.linkedin}`} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-blue-400 text-xl hover:text-blue-600 transition" />
+          </a>
+          <a href={`${contact.social.instagram}`} target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="text-pink-400 text-xl hover:text-pink-600 transition" />
+          </a>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
       {/* Modal Div */}
       {isModalVisible && (
         <div className="fixed inset-0 flex items-start justify-center bg-black bg-opacity-60  backdrop-blur-sm z-50 pt-10 mt-10 ">
