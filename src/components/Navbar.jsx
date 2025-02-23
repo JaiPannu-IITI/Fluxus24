@@ -67,7 +67,7 @@ export default function Navbar() {
       category: "you know them right?",
       title: "SPONSORS",
       src: "/island/money.jpg",
-      href: "/",
+      href: "/sponsors",
       
     },
     {
