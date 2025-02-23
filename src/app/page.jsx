@@ -10,14 +10,14 @@ import Landing from "@/components/main/landing";
 export default function Home() {
   return (
     <>
-      {/* <Herosection /> */}
+      <Herosection />
       {/* <Accomodation/>
       <PhotoGallery/> */}
       {/* <Sponsors/> */}
             <Demo/>
       {/* <Demo/> */}
       {/* <Landing/> */}
-      <Team/>
+      {/* <Team/> */}
     </>
   );
 }
