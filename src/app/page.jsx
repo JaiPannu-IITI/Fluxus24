@@ -11,7 +11,6 @@ export default function Home() {
       {/* <Accomodation/>
       <PhotoGallery/> */}
       {/* <Demo/> */}
-      <Team/>
     </>
   );
 }
