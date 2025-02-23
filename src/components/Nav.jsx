@@ -74,7 +74,7 @@ const Nav = () => {
                             <Link href="#incentives" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Incentives</Link>
                             <Link href="#responsibilities" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">Responsibilities</Link>
                             <Link href="#FAQ" onClick={closeMenu} className="block py-4 px-6 lg:py-0 lg:px-0 lg:inline">FAQ</Link>
-                            <Link href="" className="block py-4 px-6 lg:p-2 rounded-xl text-lg lg:inline bg-[rgb(204,117,0)]">Register Now</Link>
+                            <Link href="https://unstop.com/internships/campus-ambassador-programme-fluxus-2025-iit-indore-1365718" className="block py-4 px-6 lg:p-2 rounded-xl text-lg lg:inline bg-[rgb(204,117,0)]" target='_blank'>Register Now</Link>
                         </div>
                     </div>
                 </nav>

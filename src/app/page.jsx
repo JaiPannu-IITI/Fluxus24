@@ -4,14 +4,20 @@ import PhotoGallery from "@/app/accomodation/Photos";
 import Herosection from "@/components/herosection/main"
 import Demo from "@/components/landingpage/main"
 import Sponsors from "./sponsors/page";
+import Team from "@/components/ui/Team";
+import GlitchyTitle from "@/components/main/title";
+import Landing from "@/components/main/landing";
 export default function Home() {
   return (
     <>
-      <Herosection />
+      {/* <Herosection /> */}
       {/* <Accomodation/>
       <PhotoGallery/> */}
       {/* <Sponsors/> */}
             <Demo/>
+      {/* <Demo/> */}
+      {/* <Landing/> */}
+      <Team/>
     </>
   );
 }
