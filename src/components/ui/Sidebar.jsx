@@ -1,4 +1,11 @@
 import React from 'react';
+import { Pixelify_Sans } from 'next/font/google';
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'], // Specify the required subsets
+  weight: ['400', '700'], // Specify required font weights
+  display: 'swap', // Use 'swap' for better font rendering
+});
 
 const Sidebar = ({ title , list_names }) => {
   return (
@@ -7,7 +14,7 @@ const Sidebar = ({ title , list_names }) => {
       <ul className=" list-none p-0 ">
         {
             list_names.map((team , index) => (
-                <li key={index} className="relative cursor-pointer text-white text-xl font-montserrat my-2 transition-transform duration-300 hover:text-red-400 hover:translate-x-2"> <a href={`#${team}`} className="no-underline text-inherit">{team} </a></li>
+                <li key={index} className={`${pixelifySans.className} relative cursor-pointer text-white text-xl font-montserrat my-2 transition-transform duration-300 hover:text-red-400 hover:translate-x-2`}> <a href={`#${team}`} className="no-underline text-inherit">{team} </a></li>
             ))
         }
       </ul>
