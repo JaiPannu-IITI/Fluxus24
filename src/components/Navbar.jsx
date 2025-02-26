@@ -67,14 +67,14 @@ export default function Navbar() {
       category: "you know them right?",
       title: "SPONSORS",
       src: "/island/money.jpg",
-      href: "/",
+      href: "/sponsors",
       
     },
     {
       category: "Be a part of fluxus 2025",
       title: "GALLERY",
       src: "/island/fire.jpg",
-      href: "/",
+      href: "/gallery",
       
     },
     {

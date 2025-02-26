@@ -10,6 +10,33 @@
   src: url('https://fonts.cdnfonts.com/css/press-start-2p') format('woff2');
 }
 
+.floating-coin {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s linear infinite;
+  background-size: 200% 100%;
+}
 
 .silkscreen-bold {
   font-family: 'Silkscreen', cursive;
@@ -70,5 +97,11 @@ body {
   }
   .comp-title{
     margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width:1140px) {
+  .sidebar{
+    display: none;
   }
 }

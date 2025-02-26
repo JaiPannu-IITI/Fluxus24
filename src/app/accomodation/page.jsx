@@ -7,8 +7,8 @@ import { useEffect, useRef, useState } from "react"
 import "./parallax.css"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { FaBan, FaCarAlt, FaUserShield, FaUndo, FaBed, FaSearch, FaDoorOpen, FaIdCard } from "react-icons/fa";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaBan, FaCarAlt, FaUserShield, FaUndo, FaBed, FaSearch, FaDoorOpen, FaIdCard } from "react-icons/fa"
+import { FaInstagram, FaLinkedin } from "react-icons/fa"
 
 // Import Swiper styles
 import "swiper/css"
@@ -27,7 +27,6 @@ const photos = [
   "/images/Accomodation/4.jpg",
 ]
 
-
 //animation
 const listVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -36,7 +35,7 @@ const listVariants = {
     y: 0,
     transition: { delay: index * 0.1, duration: 0.4, ease: "easeOut" },
   }),
-};
+}
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
@@ -65,7 +64,6 @@ const Accomodation = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-
   const contacts = [
     {
       name: "Abhijeet Parihar",
@@ -73,9 +71,9 @@ const Accomodation = () => {
       phone: "+91 72473 15443",
       image: "/images/Accomodation/abhi.jpeg", // Add correct image path
       social: {
-        linkedin: "https://www.linkedin.com/in/abhijeet-sp?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        linkedin:
+          "https://www.linkedin.com/in/abhijeet-sp?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         instagram: "https://www.instagram.com/ab_hijeet015?igsh=cGdnNjJrNnlkZmY4&utm_source=qr",
-       
       },
     },
     {
@@ -86,15 +84,15 @@ const Accomodation = () => {
       social: {
         linkedin: "https://www.linkedin.com/in/shreyas-kale-5a3271280",
         instagram: "https://www.instagram.com/its_shrey04/",
-       
       },
     },
-  ];
+  ]
 
   const guidelines = [
     {
       title: "Prohibited Items",
-      description: "Strict prohibition of alcohol, drugs, sharp objects, explosives, or any other deemed unsafe items inside the campus.",
+      description:
+        "Strict prohibition of alcohol, drugs, sharp objects, explosives, or any other deemed unsafe items inside the campus.",
       icon: <FaBan />,
     },
     {
@@ -132,7 +130,7 @@ const Accomodation = () => {
       description: "Guests must carry valid government photo IDs at all times.",
       icon: <FaIdCard />,
     },
-  ];
+  ]
 
   return (
     <div className={`min-h-screen bg-black relative overflow-hidden ${isModalVisible ? "brightness-100" : ""}`}>
@@ -143,7 +141,7 @@ const Accomodation = () => {
       </div>
 
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row-reverse items-center justify-between relative z-10">
-        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pl-10  relative flex justify-center items-center ">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pl-10  relative flex justify-center items-start ">
           <motion.div
             whileHover={{ x: [0, -5, 5, -5, 5, 0] }}
             transition={{ duration: 0.6, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY }}
@@ -157,7 +155,7 @@ const Accomodation = () => {
               alt="Retro Arcade Cabinet"
               width={500}
               height={1000}
-              className="w-full h-auto max-h-[1000px] object-contain cursor-pointer"
+              className="w-full h-[500px] md:h-[1000px] object-contain cursor-pointer"
             />
             {isHovered && (
               <div className="absolute inset-0 bg-black bg-opacity-40  backdrop-blur-sm flex items-center justify-center">
@@ -199,7 +197,10 @@ const Accomodation = () => {
         </div> */}
         <div className="w-full md:w-2/3 text-center md:text-left space-y-10 md:space-y-12 px-4 md:px-0 ">
           <div className={pressStart2P.className}>
-            <h1 className="text-4xl md:text-6xl text-cyan-400 mb-8 leading-snug mt-7 pt-7">ACCOMMODATION</h1>
+            <h1 className="text-2xl sm:text-4xl md:text-6xl text-cyan-400 mb-8 mt-7 pt-7 w-full text-center md:text-left">
+              ACCOMMODATION
+            </h1>
+
             <h2 className="text-2xl md:text-3xl text-white  my-7 ">General Guidelines:</h2>
 
             <motion.ul
@@ -229,41 +230,53 @@ const Accomodation = () => {
               className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
       shadow-[6px_6px_0px_0px_white] transition-transform duration-200 
       hover:scale-105 hover:shadow-[8px_8px_0px_0px_white]"
-            > <a href="https://docs.google.com/forms/d/16mnbZAtuuLbQbHO7e4EvsxsggeRkTFW6rxxShT11PKM/edit">
-                Register Now </a>
+            >
+              {" "}
+              <a href="https://docs.google.com/forms/d/16mnbZAtuuLbQbHO7e4EvsxsggeRkTFW6rxxShT11PKM/edit">
+                Register Now{" "}
+              </a>
             </button>
           </div>
         </div>
       </div>
 
       {/*  Contact Card Section */}
-      <div className="container mx-auto px-4 py-8 mb-10">
-  <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
-  <div className="flex flex-wrap justify-center gap-8">
-    {contacts.map((contact, index) => (
-      <div key={index} className="bg-gray-900 w-72 h-64 rounded-lg shadow-lg flex flex-col items-center p-4">
-        <Image
-          src={contact.image}
-          alt={contact.name}
-          width={100}
-          height={100}
-          className="w-24 h-24 rounded-full object-cover border-2 border-white"
-        />
-        <h3 className="text-xl font-semibold mt-3">{contact.name}</h3>
-        <p className="text-sm text-gray-400">{contact.designation}</p>
-        <p className="text-md font-medium mt-2">{contact.phone}</p>
-        <div className="flex space-x-4 mt-3">
-          <a href={`${contact.social.linkedin}`} target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-blue-400 text-xl hover:text-blue-600 transition" />
-          </a>
-          <a href={`${contact.social.instagram}`} target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-pink-400 text-xl hover:text-pink-600 transition" />
-          </a>
+      <div className="container mx-auto px-4 py-8 mb-10 z-10 relative">
+        <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
+        <div className="flex flex-wrap justify-center gap-8 my-3">
+          {contacts.map((contact, index) => (
+            <div
+              key={index}
+              className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
+      shadow-[6px_6px_0px_0px_white] mx-3"
+            >
+              <Image
+                src={contact.image || "/placeholder.svg"}
+                alt={contact.name}
+                width={100}
+                height={100}
+                className="w-24 h-24 rounded-full object-cover border-2 border-white"
+              />
+              <h3 className={`${pixelifySans.className} text-xl font-semibold mt-3`}>{contact.name}</h3>
+              <p className={`${pixelifySans.className} text-md text-gray-400`}>{contact.designation}</p>
+              <p className={`${pixelifySans.className} text-md font-medium mt-2`}>{contact.phone}</p>
+              <div className="flex space-x-4 mt-3 ">
+                <a
+                  href={`${contact.social.linkedin}`}
+                  target="_blank"
+                  rel="noopener noreferrer "
+                  className="cursor-pointer"
+                >
+                  <FaLinkedin className="text-blue-400 text-xl hover:text-blue-600 transition" />
+                </a>
+                <a href={`${contact.social.instagram}`} target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="text-pink-400 text-xl hover:text-pink-600 transition" />
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
       {/* Modal Div */}
       {isModalVisible && (
