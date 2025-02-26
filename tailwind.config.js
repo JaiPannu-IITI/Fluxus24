@@ -12,7 +12,8 @@ export default {
         foreground: "var(--foreground)",
       },
       screens:{
-        xl: "1250px"
+        xl: "1300px",
+        sd: "1140px"
       }
       // backgroundImage:{
       //   frame: "url('/src/app/assets/videoframe_6768.png')",

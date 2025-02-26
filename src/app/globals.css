@@ -99,3 +99,9 @@ body {
     margin-top: 3rem;
   }
 }
+
+@media screen and (max-width:1140px) {
+  .sidebar{
+    display: none;
+  }
+}

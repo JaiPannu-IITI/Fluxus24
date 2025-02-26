@@ -17,19 +17,18 @@ const Team = () => {
 
     return (
         <>
-            <div className='bg-[#030410] flex flex-row justify-center' style={{
-                backgroundImage: "url('/images/texture.svg')",
-                backgroundRepeat: "repeat",
-                backgroundSize: "absolute",
+            <div className='bg-[#030410] flex flex-row' style={{
+                backgroundImage: "url('/bg_team.jpg')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundAttachment: "fixed",
                 position: "relative",
-                // top: "-100px"
             }}>
                 {/* <h1 className={`${pixelifySans.className} text-[5em] mb-0 text-white mt-[120px] uppercase text-center`}></h1> */}
 
-                {/* <Sidebar className='sidebar' title={"Teams"} list_names={team_names} /> */}
+                <Sidebar className='sidebar' title={"Teams"} list_names={team_names} />
 
-                <div className=''>
+                <div className='sd:ml-[210px] mx-auto'>
                     {
                         team_names.map((team_name, index) => (
                             <div id={team_name} key={index}>
