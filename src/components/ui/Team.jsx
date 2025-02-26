@@ -20,21 +20,21 @@ const Team = () => {
             <div className='bg-[#030410] flex flex-row justify-center' style={{
                 backgroundImage: "url('/images/texture.svg')",
                 backgroundRepeat: "repeat",
-                backgroundSize: "auto",
+                backgroundSize: "absolute",
                 backgroundAttachment: "fixed",
                 position: "relative",
-                top: "-100px"
+                // top: "-100px"
             }}>
                 {/* <h1 className={`${pixelifySans.className} text-[5em] mb-0 text-white mt-[120px] uppercase text-center`}></h1> */}
 
                 {/* <Sidebar className='sidebar' title={"Teams"} list_names={team_names} /> */}
 
-                <div className='pt-20'>
+                <div className=''>
                     {
                         team_names.map((team_name, index) => (
                             <div id={team_name} key={index}>
                                 <h1 className={`${pixelifySans.className} text-[3em] font-[CustomFont] mb-[40px] text-white mt-[70px] uppercase text-center`}> {team_name}</h1>
-                                <div className="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[70px] px-10">
+                                <div className="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-[60px] gap-x-[70px] px-10">
                                     {
                                         teamData.filter(person => person.team === team_name).map((person, index) => (
                                             <div className='h-full w-full flex items-center justify-center'>
