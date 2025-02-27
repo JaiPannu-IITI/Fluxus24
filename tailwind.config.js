@@ -10,6 +10,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        pink_frame: "#e64282"
       },
       screens:{
         xl: "1300px",
