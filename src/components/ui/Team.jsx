@@ -36,8 +36,8 @@ const Team = () => {
                                 <div className="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-[60px] gap-x-[70px] px-10">
                                     {
                                         teamData.filter(person => person.team === team_name).map((person, index) => (
-                                            <div className='h-full w-full flex items-center justify-center'>
-                                            <Teamcards className='card' key={index} name={person.name} image={person.image} phoneNo={person.phone} emailId={person.email} instagramId={person.instagram} linkedinId={person.linkedin} designation={person.designation} />
+                                            <div key={index} className='h-full w-full flex items-center justify-center'>
+                                            <Teamcards className='card' name={person.name} image={person.image} phoneNo={person.phone} emailId={person.email} instagramId={person.instagram} linkedinId={person.linkedin} designation={person.designation} />
                                             </div>
                                         ))
 
