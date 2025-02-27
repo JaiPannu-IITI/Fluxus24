@@ -289,6 +289,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {tech_competitions.map((comp, index) => (
                     <CharacterCard
+                      key={index}
                       name={comp.name}
                       description={comp.desc}
                       image={comp.poster}
@@ -308,6 +309,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                   {cult_competitions.map((comp, index) => (
                     <CharacterCard
+                    key={index}
                       name={comp.name}
                       description={comp.desc}
                       image={comp.poster}

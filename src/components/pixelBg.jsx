@@ -37,7 +37,7 @@ const PixelBg = () => {
         const delays = shuffle([...Array(amountOfBlocks)].map((_,i)=>i))
         return delays.map((randomDelay,i)=>{
             return (
-            <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0, delay: 0.5*randomDelay}} className='h-[5vw] w-full bg-orange-400' custom={randomDelay}>
+            <motion.div key={i} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0, delay: 0.5*randomDelay}} className='h-[5vw] w-full bg-orange-400' custom={randomDelay}>
             </motion.div>)
         })
 
@@ -46,7 +46,7 @@ const PixelBg = () => {
     <div className='flex h-[85vh] overflow-hidden'>
             {
                 [...Array(20)].map((_,i)=>{
-                    return <div className='w-[5vw] h-[80vh] m-0'>
+                    return <div key={i} className='w-[5vw] h-[80vh] m-0'>
                         {
                             getBlocks()
                         }
