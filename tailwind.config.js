@@ -20,6 +20,17 @@ export default {
     },
     extend: {
       colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        pink_frame: "#e64282"
+      },
+      screens:{
+        xl: "1300px",
+        sd: "1140px"
+      }
+      // backgroundImage:{
+      //   frame: "url('/src/app/assets/videoframe_6768.png')",
+      // }
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

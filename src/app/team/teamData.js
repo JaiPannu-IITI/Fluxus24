@@ -57,7 +57,7 @@ const teamData = [
     "linkedin": null,
     "designation": "Head of Creatives",
     "team": "Heads",
-    "image": "https://drive.google.com/uc?export=view&id=1u4eZGP10Rt9o7ENJASFCuF4p799crlkS"
+    "image": "https://drive.google.com/uc?export=view&id=1B3QI-QDU9iVCxjthygNtzid2dvQ8fRpR"
   },
   {
     "name": "Dinesh Lakshman",
@@ -308,7 +308,7 @@ const teamData = [
     "instagram": "https://www.instagram.com/pranneetha_?igsh=MWExZXZkZGV5eTFjYg==",
     "linkedin": "https://www.linkedin.com/in/praneetha-mannuru-0a6823291",
     "team": "Heads",
-    "image": "https://drive.google.com/uc?export=view&id=16WqUebUZT0I1x0oR0faur1iTRyvVNtiY"
+    "image": "https://drive.google.com/uc?export=view&id=1kv2AqJ6QZn1XEIaCu7WJjUrpvUkDrP1H"
   },
 
   {
@@ -437,7 +437,7 @@ const teamData = [
     "linkedin": "https://www.linkedin.com/in/sahiba-joshi-7578aa317/",
     "designation": "Marketing Associate",
     "team": "Marketing",
-    "image": "https://drive.google.com/uc?export=view&id=1EfNu8k7lETmZuZ4Bl8MzYZLvjkaIrZ5S"
+    "image": "https://drive.google.com/uc?export=view&id=1Gd1SiOgmjmCtd_vn0qqHgPoTVIlRmMEO"
   },
 
   {
@@ -489,7 +489,7 @@ const teamData = [
     "instagram": null,
     "linkedin": null,
     "team": "Outreach",
-    "image": "https://drive.google.com/uc?export=view&id=1JNCObJS9j6cR55mKt0FaVNNDR8ytZDvq"
+    "image": "https://drive.google.com/uc?export=view&id=18R00jfkfujGfFzCuFv8_0IJmlSWoqPJo"
   },
   {
     "name": "Ketki Patil",
@@ -499,7 +499,7 @@ const teamData = [
     "instagram": "https://www.instagram.com/ketkixx?igsh=ZTQ1dmd0dzVxeWZh",
     "linkedin": "https://www.linkedin.com/in/ketki-patil-310259296",
     "team": "Outreach",
-    "image": "https://drive.google.com/uc?export=view&id=1D_4w2OgTlRgxhV1gAuBjVKElX3y9pPId"
+    "image": "https://drive.google.com/uc?export=view&id=15Rg1wSzYVOLlKvBo426nRkoZfhdN899N"
   },
 
   {
@@ -561,7 +561,7 @@ const teamData = [
     "instagram": "https://www.instagram.com/shriyaa_18/#",
     "linkedin": "https://www.linkedin.com/in/shriya-deo-396581334",
     "team": "Outreach",
-    "image": "https://drive.google.com/uc?export=view&id=1COZYUSasTGD65c5wag1nm3pbrR9gXl83"
+    "image": "https://drive.google.com/uc?export=view&id=1MQ5HVZT3vm8Fh1yCP8wQUaaPI0ysZ9FE"
   },
 
   {

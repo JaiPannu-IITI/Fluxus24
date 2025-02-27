@@ -74,7 +74,7 @@ export default function Navbar() {
       category: "Be a part of fluxus 2025",
       title: "GALLERY",
       src: "/island/fire.jpg",
-      href: "/",
+      href: "/gallery",
       
     },
     {
