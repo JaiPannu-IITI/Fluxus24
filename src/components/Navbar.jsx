@@ -81,7 +81,7 @@ export default function Navbar() {
       category: "Happy to help",
       title: "CONTACT US",
       src: "/island/desert.jpg",
-      href: "/",
+      href: "/contactus",
     },
   ];
 
