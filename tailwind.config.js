@@ -22,20 +22,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        pink_frame: "#e64282"
-      },
-      screens:{
-        xl: "1300px",
-        sd: "1140px"
-      }
-      // backgroundImage:{
-      //   frame: "url('/src/app/assets/videoframe_6768.png')",
-      // }
+        pink_frame: "#e64282",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,6 +55,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      screens: {
+        xl: "1300px",
+        sd: "1140px",
+      }, // ✅ Added missing comma
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        frame: "url('/src/app/assets/videoframe_6768.png')",
+      },
       fontFamily: {
         "press-start": ["var(--font-press-start)"],
         pixelify: ["var(--font-pixelify)"],
@@ -93,11 +91,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 8s linear infinite",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
     },
   },
   darkMode: ["class"],
-  plugins: [require("tailwindcss-animate")], // Fix: Ensure this is not overridden
+  plugins: [require("tailwindcss-animate")], // ✅ No issues here
 };
