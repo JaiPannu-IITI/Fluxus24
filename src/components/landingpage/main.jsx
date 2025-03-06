@@ -130,7 +130,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-
+import GlitchyTitle from "../main/title"
+import Image from 'next/image';
 const GameInterface = () => {
   const [gameStarted, setGameStarted] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -168,7 +169,8 @@ const GameInterface = () => {
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
               <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-12 border border-white/10 space-y-8">
-                <h1 className="text-6xl font-bold text-white text-center font-mono">GAME START</h1>
+                           <div className=" flex flex-col items-center justify-center"><GlitchyTitle fontSize="text-[125px]">FLUXUS</GlitchyTitle>
+<GlitchyTitle fontSize="text-[125px]">2025</GlitchyTitle></div>
                 <div className="flex justify-center gap-4">
                   <div className="w-8 h-8 bg-pink-500 rounded-full" />
                   <div className="w-8 h-8 bg-pink-500 rounded-full" />
@@ -179,6 +181,7 @@ const GameInterface = () => {
                 </div>
                 <div className="flex gap-4 justify-center">
                   <button onClick={handleStart} className="bg-red-500 hover:bg-red-600 text-white px-8 py-2 rounded-full">PLAY</button>
+                  {/* <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-2 rounded-full">MENU</button> */}
                 </div>
               </div>
             </motion.div>
@@ -195,6 +198,15 @@ const GameInterface = () => {
             </div>
           </div>
         )}
+           <div className="absolute bottom-8 left-8 flex gap-2">           {[...Array(5)].map((_, i) => (
+             <Image key={i} src="/bg/heart1.png" alt="Red Square" className=" -mx-1" width={45} height={45} />
+          ))}
+        </div>
+        <div className="absolute bottom-8 right-8 flex gap-2">
+          {[...Array(5)].map((_, i) => (
+            <div key={i} className="w-9 h-9 rounded-[50%] bg-blue-400 rotate-45" />
+          ))}
+       </div>
       </div>
     </div>
   )
