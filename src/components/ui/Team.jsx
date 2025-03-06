@@ -18,7 +18,7 @@ const Team = () => {
     return (
         <>
             <div className='bg-[#030410] flex flex-row' style={{
-                backgroundImage: "url('/bg_team.jpg')",
+                backgroundImage: "url('/bg_team.png')",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
