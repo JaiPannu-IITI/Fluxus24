@@ -35,7 +35,7 @@ const Team = () => {
                                 <h1 className={`${pixelifySans.className} text-[3em] font-[CustomFont] mb-[40px] text-white mt-[70px] uppercase text-center`}> {team_name}</h1>
                                 <div className="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-[60px] gap-x-[70px] px-10">
                                     {
-                                        teamData.filter(person => person.team === team_name).map((person, index) => (
+                                        teamData.filter(person => person.team === team_name).sort((a, b) => a.name.localeCompare(b.name)).map((person, index) => (
                                             <div key={index} className='h-full w-full flex items-center justify-center'>
                                             <Teamcards className='card' name={person.name} image={person.image} phoneNo={person.phone} emailId={person.email} instagramId={person.instagram} linkedinId={person.linkedin} designation={person.designation} />
                                             </div>
