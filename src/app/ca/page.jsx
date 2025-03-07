@@ -1,6 +1,6 @@
 import React from "react";
 
-import Aboutus from "@/components/aboutus";
+import Aboutus from "../../components/aboutus";
 import Ca_responsibilities from "@/components/ca_responsibilities";
 import Footer from "../../components/Footer";
 import FAQ from "@/components/faq";
