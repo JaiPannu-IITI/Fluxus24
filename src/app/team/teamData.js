@@ -7,7 +7,8 @@ const teamData = [
     "linkedin": null,
     "designation": "Overall Coordinator",
     "team": "Core Team",
-    "image": "https://drive.google.com/uc?export=view&id=1tVe5NRHFUFXyT4-QPUv_ig92WO5mD5WU"
+    "image": "https://drive.google.com/uc?export=view&id=1tVe5NRHFUFXyT4-QPUv_ig92WO5mD5WU",
+    "priority": true,
   },
   {
     "name": "Pranjay Chouhan",
@@ -745,7 +746,7 @@ const teamData = [
     "instagram": null,
     "linkedin": null,
     "designation": "Co-Head of Marketing",
-    "team": "Core Team",
+    "team": "Heads",
     "image": "https://drive.google.com/uc?export=view&id=1KiPo_AFDdPiuQDG8TnorgxwPDr86byom"
   },
   {
