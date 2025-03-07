@@ -19,6 +19,13 @@ const images = [
   "/images/carouselImages/img12.jpg",
 ]
 
+const chunkedImages = [
+  images.slice(0, 3),
+  images.slice(3, 6),
+  images.slice(6, 9),
+  images.slice(9, 12)
+];
+
 const pressStart2P = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
@@ -33,6 +40,9 @@ const pixelifySans = Pixelify_Sans({
 const Gallery = () => {
   const [scrollY, setScrollY] = useState(0)
   const backgroundRef = useRef(null)
+  const bgref = useRef(null)
+  const [cloudPosition, setCloudPosition] = useState(0)
+  const cloudRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +83,17 @@ const Gallery = () => {
           backgroundAttachment: "fixed",
         }}
       ></div>
+      {/* <div
+        ref={bgref}
+        className="fixed top-0 left-0 w-full h-full z-[-1] brightness-75 transition-transform duration-300 ease-out"
+        style={{
+          backgroundImage: `url(/gallery/bgp.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      ></div> */}
 
       {/* Scrollable Content */}
       <div className="relative w-full min-h-screen overflow-y-auto">
@@ -411,7 +432,18 @@ const Gallery = () => {
 
           </div>
         </div>
+        {/* <div
+        ref={cloudRef}
+        className=" relative top-0 left-0 w-full h-full z-10 pointer-events-none"
+        style={{
+          backgroundImage: `url(/gallery/i3.png), url(/gallery/i.png)`,
+          backgroundSize: "auto 20%, auto 30%",
+          backgroundPosition: `${cloudPosition}px 1%, ${cloudPosition * 0.8}px 20%, ${cloudPosition * 0.6}px 5%`,
+          backgroundRepeat: "repeat-x",
+        }}
+      ></div> */}
       </div>
+
     </div>
   )
 }

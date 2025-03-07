@@ -287,7 +287,7 @@ export default function Home() {
                   Go Back
                 </button>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {tech_competitions.map((comp, index) => (
+                  {tech_competitions.sort((a, b) => a.name.localeCompare(b.name)).map((comp, index) => (
                     <CharacterCard
                       key={index}
                       name={comp.name}
@@ -307,7 +307,7 @@ export default function Home() {
                   Go Back
                 </button>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                  {cult_competitions.map((comp, index) => (
+                  {cult_competitions.sort((a, b) => a.name.localeCompare(b.name)).map((comp, index) => (
                     <CharacterCard
                     key={index}
                       name={comp.name}
