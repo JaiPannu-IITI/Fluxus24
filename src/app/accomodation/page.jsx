@@ -208,7 +208,7 @@ const Accomodation = () => {
               animate="visible"
               className="text-sm md:text-base text-gray-300 space-y-5 md:space-y-6"
             >
-              {guidelines.map((guideline, index) => (
+              {guidelines.sort((a, b) => a.title.localeCompare(b.title)).map((guideline, index) => (
                 <motion.li
                   key={index}
                   custom={index}
@@ -244,7 +244,7 @@ const Accomodation = () => {
       <div className="container mx-auto px-4 py-8 mb-10 z-10 relative">
         <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
         <div className="flex flex-wrap justify-center gap-8 my-3">
-          {contacts.map((contact, index) => (
+          {contacts.sort((a, b) => a.name.localeCompare(b.name)).map((contact, index) => (
             <div
               key={index}
               className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 
