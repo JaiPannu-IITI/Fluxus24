@@ -17,6 +17,7 @@ const Aboutus = () => {
           
                   className="z-0 AUbg"
                 /> */}
+                
         <div className={styles.left_AU}>
           <nav className={styles.navabout}>
             <span className={styles.aboutTitle}>{"About"}</span>
