@@ -1,13 +1,13 @@
-"use client"
-
-import { Press_Start_2P, Pixelify_Sans } from "next/font/google"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import "swiper/css"
-import "swiper/css/effect-fade"
-import "swiper/css/navigation"
-import { Suspense, useEffect } from "react"
-import { Loader2, Coins } from "lucide-react"
+"use client";
+// import { useState, useEffect } from "react";
+import { Press_Start_2P, Pixelify_Sans } from "next/font/google";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { Loader2, Coins } from "lucide-react";
 
 // Initialize fonts
 const pressStart = Press_Start_2P({
@@ -20,13 +20,31 @@ const pixelify = Pixelify_Sans({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-pixelify",
-})
+});
 
 const LoadingSpinner = () => (
   <div className="flex h-64 w-full items-center justify-center">
     <Loader2 className="h-8 w-8 animate-spin text-amber-400" />
   </div>
-)
+);
+
+const ComingSoon = () => {
+  const [dots, setDots] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots((prev) => (prev.length < 3 ? prev + "." : ""));
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-opacity-50">
+      <p className="text-6xl text-yellow-400 font-bold">Coming Soon{dots}</p>
+    </div>
+  );
+};
 
 // Floating coin animation component
 const FloatingCoins = () => {
@@ -67,11 +85,11 @@ const FloatingCoins = () => {
         </motion.div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const SponsorSection = ({ title, children }) => {
-  const childArray = Array.isArray(children) ? children : [children]
+  const childArray = Array.isArray(children) ? children : [children];
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
@@ -95,14 +113,16 @@ const SponsorSection = ({ title, children }) => {
       </div>
       <div
         className={`grid gap-8 ${
-          childArray.length <= 2 ? "grid-cols-1 sm:grid-cols-2 max-w-3xl" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          childArray.length <= 2
+            ? "grid-cols-1 sm:grid-cols-2 max-w-3xl"
+            : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         }`}
       >
         {children}
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const SponsorCard = ({ name, logo, width = 200 }) => (
   <motion.div
@@ -125,32 +145,37 @@ const SponsorCard = ({ name, logo, width = 200 }) => (
     `}
   >
     <div className="relative h-32 w-full">
-      <Image src={logo || "/placeholder.svg"} alt={`${name} logo`} fill className="object-contain" priority />
+      <Image
+        src={logo || "/placeholder.svg"}
+        alt={`${name} logo`}
+        fill
+        className="object-contain"
+        priority
+      />
     </div>
     <p className="mt-4 text-lg font-semibold text-amber-100">{name}</p>
   </motion.div>
-)
+);
 
 export default function Sponsors() {
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const coins = document.querySelectorAll(".floating-coin")
+      const scrollY = window.scrollY;
+      const coins = document.querySelectorAll(".floating-coin");
       coins.forEach((coin) => {
-        const speed = Number.parseFloat(coin.dataset.speed || "1")
-        coin.style.transform = `translateY(${scrollY * speed * -0.2}px)`
-      })
-    }
+        const speed = Number.parseFloat(coin.dataset.speed || "1");
+        coin.style.transform = `translateY(${scrollY * speed * -0.2}px)`;
+      });
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div
       className={`min-h-screen relative overflow-hidden ${pixelify.className}`}
       style={{
-        backgroundImage:
-          "url('/sponsors/bridgebg.jpg.webp')",
+        backgroundImage: "url('/sponsors/bridgebg.jpg.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -201,17 +226,20 @@ export default function Sponsors() {
                 before:rounded-lg before:shadow-lg
               `}
             >
-                Sponsors
+              Sponsors
             </h1>
           </div>
           <div className="mt-6 text-left pl-2">
-            <p className="text-lg sm:text-xl text-black">Join us in celebrating our amazing sponsors</p>
+            <p className="text-lg sm:text-xl text-black">
+              Join us in celebrating our amazing sponsors
+              <ComingSoon></ComingSoon>
+            </p>
           </div>
         </motion.div>
 
         <div className="mx-auto">
           <Suspense fallback={<LoadingSpinner />}>
-            <SponsorSection title="Title Sponsors">
+            {/* <SponsorSection title="Title Sponsors">
               {Array.from({ length: 2 }).map((_, i) => (
                 <SponsorCard key={i} name={`Title Sponsor ${i + 1}`} logo="/sponsors/cocacola.png" />
               ))}
@@ -227,11 +255,10 @@ export default function Sponsors() {
               {Array.from({ length: 5 }).map((_, i) => (
                 <SponsorCard key={i} name={`Silver Sponsor ${i + 1}`} logo="/sponsors/cocacola.png" />
               ))}
-            </SponsorSection>
+            </SponsorSection> */}
           </Suspense>
         </div>
       </div>
     </div>
-  )
+  );
 }
-

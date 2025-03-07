@@ -1,8 +1,6 @@
 "use client"
 
-import { Press_Start_2P } from "next/font/google"
-import { Pixelify_Sans } from "next/font/google"
-import { motion } from "framer-motion"
+import { Press_Start_2P, Pixelify_Sans } from "next/font/google"
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 
@@ -40,7 +38,6 @@ const pixelifySans = Pixelify_Sans({
 })
 
 const Gallery = () => {
-  const [flippedIndex, setFlippedIndex] = useState(null)
   const [scrollY, setScrollY] = useState(0)
   const backgroundRef = useRef(null)
   const bgref = useRef(null)
@@ -48,10 +45,6 @@ const Gallery = () => {
   const cloudRef = useRef(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFlippedIndex(Math.floor(Math.random() * images.length * 3))
-    }, 2000)
-
     const handleScroll = () => {
       setScrollY(window.scrollY)
     }
@@ -59,39 +52,29 @@ const Gallery = () => {
     window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => {
-      clearInterval(interval)
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
   useEffect(() => {
     if (backgroundRef.current) {
-      const scale = 1 + scrollY * 0.00015
+      const scale = 1 + scrollY * 0.0002
       backgroundRef.current.style.transform = `scale(${scale})`
     }
   }, [scrollY])
 
-  useEffect(() => {
-    if (bgref.current) {
-      const scale = 1 + scrollY * 0.003
-      bgref.current.style.transform = `scale(${scale})`
-    }
-  }, [scrollY])
-
-  useEffect(() => {
-    const animateCloud = () => {
-      setCloudPosition((prevPosition) => (prevPosition + 0.5) % window.innerWidth)
-      requestAnimationFrame(animateCloud)
-    }
-    animateCloud()
-  }, [])
+  // Create chunks of 9 images for mobile layout (3x3 grid)
+  const imageChunks = []
+  for (let i = 0; i < images.length; i += 8) {
+    imageChunks.push(images.slice(i, i + 8))
+  }
 
   return (
     <div className="relative w-full min-h-screen">
       {/* Fixed Background with Parallax Zoom Effect */}
       <div
-        //ref={backgroundRef}
-        className="fixed top-0 left-0 w-full h-full z-[-2] brightness-75 transition-transform duration-300 ease-out"
+       // ref={backgroundRef}
+        className="fixed top-0 left-0 w-full h-full z-[-2] brightness-80 transition-transform duration-300 ease-out"
         style={{
           backgroundImage: `url(/gallery/d.jpeg)`,
           backgroundSize: "cover",
@@ -115,323 +98,338 @@ const Gallery = () => {
       {/* Scrollable Content */}
       <div className="relative w-full min-h-screen overflow-y-auto">
         <h1
-          className={`${pressStart2P.className} text-5xl md:text-6xl text-center text-zinc-300 mt-32 p-5 mb `}
+          className={`${pressStart2P.className} text-4xl md:text-5xl lg:text-6xl text-center 
+              bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400
+              text-transparent bg-clip-text mt-16 md:mt-24 lg:mt-32 p-5`}
         >
           Gallery
         </h1>
-
         <div className="text-gray-600 body-font">
-          <div className="container px-2 sm:px-5 pt-18 md:pt-20  pb-24 mx-auto">
-            {/* {[...Array(3)].map((_, sectionIndex) => (
-              <div key={sectionIndex} className="flex flex-wrap w-full md:-m-2 -m-1 mt-10 pt-2">
-                <div className="flex flex-wrap w-full md:w-1/2">
-               
-                  {[0, 1, 2].map((i) => (
-                    <div key={i} className={`md:p-2 p-1 w-1/2 mt-3 pt-2 ${i === 2 ? "mx-auto" : ""}`}>
-                      <motion.div
-                        className="relative"
-                        animate={{ rotateY: flippedIndex === sectionIndex * 6 + i ? 180 : 0 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <div
-                          className="w-full h-full object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
-             shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
-             hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]"
-                        >
-                          <Image
-                            height={300}
-                            width={520}
-                            alt="gallery"
-                            className="w-full object-cover h-full object-center block"
-                            src={images[i] || "/placeholder.svg"}
-                          />
-                        </div>
-                      </motion.div>
-                    </div>
-                  ))}
+          <div className="container px-4 py-8 md:py-12 mx-auto">
+            {/* Desktop layout - hidden on small screens */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full mb-8">
+                <div className="row-span-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[0] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
 
-                  
-                  <div className="md:p-2 p-1 w-full mt-2">
-                    <motion.div
-                      className="relative"
-                      animate={{ rotateY: flippedIndex === sectionIndex * 6 + 3 ? 180 : 0 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <div
-                        className="w-full aspect-[16/9] object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
-             shadow-[6px_6px_0px_0px_white] transition-transform duration-200 
-             hover:scale-105 hover:shadow-[8px_8px_0px_0px_white]"
-                      >
-                        <Image
-                          fill
-                          alt="gallery"
-                          className="object-cover object-center"
-                          src={images[3] || "/placeholder.svg"}
-                        />
-                      </div>
-                    </motion.div>
                   </div>
                 </div>
-                <div className="flex flex-wrap w-full md:w-1/2 mt-2">
-                  <div className="md:p-2 p-1 w-full">
-                    <motion.div
-                      className="relative"
-                      animate={{ rotateY: flippedIndex === sectionIndex * 6 + 4 ? 180 : 0 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <div
-                        className="w-full aspect-[16/9] object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
-                                     shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
-                                     hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]"
-                      >
-                        <Image
-                          fill
-                          alt="gallery"
-                          className="object-cover object-center"
-                          src={images[4] || "/placeholder.svg"}
-                        />
-                      </div>
-                    </motion.div>
-                  </div>
+                <div className="col-span-2 row-span-2 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[1] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
 
-                  {[0, 1, 2].map((i) => (
-                    <div key={i} className={`md:p-2 p-1 w-1/2 mt-3 pt-2 ${i === 2 ? "mx-auto" : ""}`}>
-                      <motion.div
-                        className="relative"
-                        animate={{ rotateY: flippedIndex === sectionIndex * 6 + i + 5 ? 180 : 0 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <div
-                          className="w-full h-full object-cover object-center block bg-white text-white font-medium border border-black pr-1 pb-1 rounded-md 
-             shadow-[6px_6px_0px_0px_black] transition-transform duration-200 
-             hover:scale-105 hover:shadow-[8px_8px_0px_0px_black]"
-                        >
-                          <Image
-                            height={300}
-                            width={520}
-                            alt="gallery"
-                            className="w-full object-cover h-full object-center block"
-                            src={images[i + 5] || "/placeholder.svg"}
-                          />
-                        </div>
-                      </motion.div>
-                    </div>
-                  ))}
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[2] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-5 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[3] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-7 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[4] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-1 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[5] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-3 row-start-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[6] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-2 col-start-4 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[7] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-5 row-start-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[8] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-6 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[9] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 </div>
               </div>
-            ))} */}
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {chunkedImages.map((column, index) => (
-                <div key={index} className="grid gap-4">
-                  {column.map((img, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ rotateY: 180 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <Image
-                        className="h-auto max-w-full rounded-lg"
-                        src={img}
-                        alt="Gallery Image"
-                        width={500}
-                        height={500}
-                        layout="responsive"
-                      />
-                    </motion.div>
-                  ))}
+
+              {/* Second grid for desktop */}
+              <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full">
+                <div className="row-span-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[9] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[1] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[4] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-5 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[5] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-7 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[6] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-1 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[7] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-3 row-start-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[8] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-2 col-start-4 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[9] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="row-span-3 col-start-5 row-start-3 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[10] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 row-span-2 col-start-6 row-start-4 relative" style={{ minHeight: "200px" }}>
+                  <div className="w-full h-full bg-bisque p-3">
+                    <Image
+                      src={images[11] || "/placeholder.svg"}
+                      alt="gallery"
+                      fill
+                      className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile layout - 3x3 grid chunks, visible only on small screens */}
+            {/* <div className="md:hidden">
+              {imageChunks.map((chunk, chunkIndex) => (
+                <div key={chunkIndex} className="mb-8">
+                  <div className="grid grid-cols-2 gap-3">
+                    {chunk.map((img, imgIndex) => (
+                      <div key={imgIndex} className="relative aspect-square">
+                        <div className="w-full h-full bg-bisque p-2">
+                          <div className="relative w-full h-full shadow-[inset_-30px_-30px_0_-25px_tomato,inset_30px_30px_0_-25px_tomato]">
+                            <Image
+                              src={img || "/placeholder.svg"}
+                              alt={`Gallery image ${chunkIndex * 9 + imgIndex + 1}`}
+                              fill
+                              className="object-cover"
+                              sizes="33vw"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div> */}
-            <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full h-full">
-              <div className="row-span-3 relative" style={{ minHeight: "200px" }}>
-             
-                <Image
-                  src="/images/carouselImages/img1.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                
-             
-              </div>
-              <div className="col-span-2 row-span-2 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img2.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img3.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-5 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img4.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-7 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img5.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-1 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img6.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-3 row-start-3 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img7.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="row-span-2 col-start-4 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img8.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-5 row-start-3 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img9.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-6 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img10.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+
+
+            <div className="md:hidden">
+              {imageChunks.map((chunk, chunkIndex) => (
+                <div key={chunkIndex} className="mb-8">
+                  <div className="grid grid-cols-2 grid-rows-2 gap-3">
+                    {chunk.map((img, imgIndex) => (
+                      <div key={imgIndex} className="relative aspect-square">
+                        <div className="w-full h-full bg-bisque p-2">
+                          <div className="relative w-full h-full shadow-[inset_-30px_-30px_0_-25px_tomato,inset_30px_30px_0_-25px_tomato]">
+                            <Image
+                              src={img || "/placeholder.svg"}
+                              alt={`Gallery image ${chunkIndex * 4 + imgIndex + 1}`}
+                              fill
+                              className="object-cover bg-black border-t-2 border-l-2 border-pink_frame  rounded-md 
+      shadow-[2px_2px_0px_0px_white] transition-transform duration-200 
+      hover:scale-105"
+                              sizes="50vw"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full h-full mt-5">
-              <div className="row-span-3 relative" style={{ minHeight: "200px" }}>
-             
-                <Image
-                  src="/images/carouselImages/img1.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                
-             
-              </div>
-              <div className="col-span-2 row-span-2 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img2.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img3.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-5 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img4.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-7 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img5.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-1 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img6.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-3 row-start-3 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img7.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="row-span-2 col-start-4 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img8.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="row-span-3 col-start-5 row-start-3 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img11.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 col-start-6 row-start-4 relative" style={{ minHeight: "200px" }}>
-                <Image
-                  src="/images/carouselImages/img12.jpg"
-                  alt="gallery"
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
+
           </div>
         </div>
         {/* <div
