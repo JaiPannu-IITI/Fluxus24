@@ -24,7 +24,7 @@ const pixelify = Pixelify_Sans({
 
 const teamMembers = [
   {
-    name: "Madhav Mishra",
+    name: "Madhav Rathore",
     role: "Overall Coordinator",
     phone: "+91 79871 99289",
   },
@@ -130,7 +130,7 @@ export default function ContactPage() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
 
-          {teamMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
+          {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, x: -50 }}
