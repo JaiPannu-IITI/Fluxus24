@@ -129,6 +129,7 @@ export default function ContactPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
+
           {teamMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
             <motion.div
               key={member.name}
@@ -166,7 +167,9 @@ export default function ContactPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+
           {socialLinks.sort((a, b) => a.label.localeCompare(b.label)).map((social, index) => (
+
             <motion.div
               key={social.label}
               whileHover={{ y: -5, scale: 1.5 }}
