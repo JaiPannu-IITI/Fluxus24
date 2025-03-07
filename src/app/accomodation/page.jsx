@@ -244,7 +244,9 @@ const Accomodation = () => {
       <div className="container mx-auto px-4 py-8 mb-10 z-10 relative">
         <h2 className={`${pressStart2P.className} text-2xl md:text-3xl text-white mt-12 mb-6`}>Contact:</h2>
         <div className="flex flex-wrap justify-center gap-8 my-3">
+
           {contacts.sort((a, b) => a.name.localeCompare(b.name)).map((contact, index) => (
+
             <div
               key={index}
               className="bg-black text-white font-medium border border-white px-6 py-3 rounded-md 

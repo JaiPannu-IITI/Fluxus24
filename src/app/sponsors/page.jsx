@@ -14,6 +14,7 @@ const pressStart = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-press-start",
+
 })
 
 const pixelify = Pixelify_Sans({
